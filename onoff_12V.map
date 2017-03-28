@@ -1,0 +1,226 @@
+HI-TECH Software C Compiler 
+
+Linker command line:
+
+--edf=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\dat\en_msgs.txt -cs \
+  -h+onoff_12V.sym -z -Q12F675 -ol.obj -Monoff_12V.map -E1 \
+  -ACONST=00h-0FFhx3,0300h-03FEh -ACODE=00h-03FEh -ASTRCODE=00h-03FEh \
+  -AENTRY=00h-0FFhx3,0300h-03FEh -ASTRING=00h-0FFhx3,0300h-03FEh \
+  -ABANK0=020h-05Dh -ARAM=020h-05Dh -AABS1=020h-05Fh -ACOMMON=05Eh-05Fh \
+  -ASFR0=00h-01Fh -ASFR1=080h-0DDh \
+  -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pfunctab=CODE \
+  -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 -AIDLOC=02000h-02003h \
+  -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-07Fh/02100h -peeprom_data=EEDATA \
+  -DEEDATA=2 -posccal=03FFh -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
+  -DENTRY=2 -k C:\Users\sodelab\AppData\Local\Temp\s8n0.obj onoff_12V.obj 
+
+Object code version is 3.10
+
+Machine type is 12F675
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+C:\Users\sodelab\AppData\Local\Temp\s8n0.obj
+                end_init                              F        F        5        8       0
+                reset_vec                             0        0        1        0       0
+onoff_12V.obj   intentry                              4        4        B        8       0
+                config                             2007     2007        1     400E       0
+                text155                              14       14       61        8       0
+                text154                              75       75       12        8       0
+                maintext                             8F       8F        4        8       0
+                cstackBANK0                          26       26        4       20       1
+                bssBANK0                             20       20        6       20       1
+                cinit                                87       87        8        8       0
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   CONST          
+
+        CLASS   CODE           
+                end_init                              F        F        5         0
+                intentry                              4        4        B         0
+                reset_vec                             0        0        1         0
+                text155                              14       14       61         0
+                text154                              75       75       12         0
+                maintext                             8F       8F        4         0
+                cinit                                87       87        8         0
+
+        CLASS   STRCODE        
+
+        CLASS   ENTRY          
+
+        CLASS   STRING         
+
+        CLASS   BANK0          
+                cstackBANK0                          26       26        4         1
+                bssBANK0                             20       20        6         1
+
+        CLASS   RAM            
+
+        CLASS   ABS1           
+                abs_s1                               5E       5E        2         1
+
+        CLASS   COMMON         
+
+        CLASS   SFR0           
+
+        CLASS   SFR1           
+
+        CLASS   CONFIG         
+                config                             2007     2007        1         0
+
+        CLASS   IDLOC          
+
+        CLASS   EEDATA         
+
+        CLASS   BANK1          
+
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
+
+                reset_vec                      000000  000001  000001         0       0  CODE        2
+                intentry                       000004  00008F  000093         8       0  CODE        2
+                bssBANK0                       000020  00000A  00002A        20       1  BANK0       1
+                config                         002007  000001  002008      400E       0  CONFIG      2
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            002A-005D             34           1
+        CODE             0001-0003              3           2
+                         0093-03FE            36C
+        CONST            0001-0003              3           2
+                         0093-03FE            100
+        EEDATA           2100-217F             80           2
+        ENTRY            0001-0003              3           2
+                         0093-03FE            100
+        IDLOC            2000-2003              4           2
+        RAM              002A-005D             34           1
+        SFR0             0000-001F             20           1
+        SFR1             0080-00DD             5E           1
+        STRCODE          0001-0003              3           2
+                         0093-03FE            36C
+        STRING           0001-0003              3           2
+                         0093-03FE            100
+
+                                  Symbol Table
+
+??_intr               cstackBANK0  0026
+??_main               cstackCOMMON 0000
+??_pic_set            cstackCOMMON 0000
+?_intr                cstackBANK0  0026
+?_main                cstackBANK0  0026
+?_pic_set             cstackBANK0  0026
+_ANSEL                (abs)        009F
+_CARRY                (abs)        0018
+_CMCON                (abs)        0019
+_EEADR                (abs)        009B
+_EECON1               (abs)        009C
+_EECON2               (abs)        009D
+_EEDATA               (abs)        009A
+_GIE                  (abs)        005F
+_GPIO                 (abs)        0005
+_GPIO0                (abs)        0028
+_GPIO5                (abs)        002D
+_INTCON               (abs)        000B
+_OPTION_REG           (abs)        0081
+_RD                   (abs)        04E0
+_T0IF                 (abs)        005A
+_TMR0                 (abs)        0001
+_TRISIO               (abs)        0085
+_WR                   (abs)        04E1
+_WREN                 (abs)        04E2
+__Habs1               abs1         07FE
+__Hbank0              bank0        07FE
+__Hbank1              bank1        07FE
+__HbssBANK0           bssBANK0     07FE
+__Hcinit              cinit        07FE
+__Hclrtext            clrtext      07FE
+__Hcode               code         07FE
+__Hcommon             common       07FE
+__Hconfig             config       2008
+__HcstackBANK0        cstackBANK0  07FE
+__HcstackCOMMON       cstackCOMMON 07FE
+__Heeprom_data        eeprom_data  0000
+__Hend_init           end_init     0014
+__Hfunctab            functab      0000
+__Hidloc              idloc        0000
+__Hinit               init         000F
+__Hintentry           intentry     000F
+__Hmaintext           maintext     07FE
+__Hosccal             osccal       03FF
+__Hpowerup            powerup      0000
+__Hram                ram          07FE
+__Hreset_vec          reset_vec    0001
+__Hsfr0               sfr0         07FE
+__Hsfr1               sfr1         07FE
+__Hstrings            strings      07FE
+__Htext               text         07FE
+__Labs1               abs1         07FE
+__Lbank0              bank0        07FE
+__Lbank1              bank1        07FE
+__LbssBANK0           bssBANK0     07FE
+__Lcinit              cinit        07FE
+__Lclrtext            clrtext      07FE
+__Lcode               code         07FE
+__Lcommon             common       07FE
+__Lconfig             config       2007
+__LcstackBANK0        cstackBANK0  07FE
+__LcstackCOMMON       cstackCOMMON 07FE
+__Leeprom_data        eeprom_data  0000
+__Lend_init           end_init     000F
+__Lfunctab            functab      0000
+__Lidloc              idloc        0000
+__Linit               init         000F
+__Lintentry           intentry     0004
+__Lmaintext           maintext     07FE
+__Losccal             osccal       03FF
+__Lpowerup            powerup      0000
+__Lram                ram          07FE
+__Lreset_vec          reset_vec    0000
+__Lsfr0               sfr0         07FE
+__Lsfr1               sfr1         07FE
+__Lstrings            strings      07FE
+__Ltext               text         07FE
+__S0                  (abs)        2008
+__S1                  (abs)        002A
+__S2                  (abs)        0000
+___osccal_val         osccal       03FF
+__end_of_intr         text155      0075
+__end_of_main         maintext     0093
+__end_of_pic_set      text154      0087
+__pbssBANK0           bssBANK0     0020
+__pcstackBANK0        cstackBANK0  0026
+__pcstackCOMMON       cstackCOMMON 0000
+__pintentry           intentry     0004
+__pmaintext           maintext     008F
+__ptext153            text153      0000
+__ptext154            text154      0075
+__ptext155            text155      0014
+__ptext156            text156      0000
+__size_of_intr        (abs)        0000
+__size_of_main        (abs)        0000
+__size_of_pic_set     (abs)        0000
+_counter              bssBANK0     0020
+_exit                 init         000F
+_flg                  bssBANK0     0022
+_intr                 text155      0014
+_main                 maintext     008F
+_pic_set              text154      0075
+_sec                  bssBANK0     0024
+btemp                 (abs)        005E
+end_of_initialization cinit        008D
+interrupt_function    intentry     0004
+intlevel0             functab      0000
+intlevel1             functab      0000
+intlevel2             functab      0000
+intlevel3             functab      0000
+intlevel4             functab      0000
+intlevel5             functab      0000
+reset_vec             reset_vec    0000
+saved_w               (abs)        005E
+start                 init         000F
+start_initialization  cinit        0087
+wtemp0                (abs)        005E

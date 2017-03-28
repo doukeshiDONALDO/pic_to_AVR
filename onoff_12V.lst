@@ -1,0 +1,692 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.83 build 10920 
+                                                                                               Wed Mar 15 16:51:55 2017
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 10920"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	12F675
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 8 "C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff.c"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 8 "C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff.c"
+    45  2007  3FC4               	dw 0x3FFF & 0x3FDF & 0x3FFF & 0x3FEF & 0x3FF7 & 0x3FFC ;#
+    46                           	FNCALL	_main,_pic_set
+    47                           	FNROOT	_main
+    48                           	FNCALL	intlevel1,_intr
+    49                           	global	intlevel1
+    50                           	FNROOT	intlevel1
+    51                           	global	_counter
+    52                           	global	_flg
+    53                           	global	_sec
+    54                           	global	_CMCON
+    55                           psect	text153,local,class=CODE,delta=2
+    56                           global __ptext153
+    57  0000                     __ptext153:
+    58  0019                     _CMCON	set	25
+    59                           	global	_GPIO
+    60  0005                     _GPIO	set	5
+    61                           	global	_INTCON
+    62  000B                     _INTCON	set	11
+    63                           	global	_TMR0
+    64  0001                     _TMR0	set	1
+    65                           	global	_CARRY
+    66  0018                     _CARRY	set	24
+    67                           	global	_GIE
+    68  005F                     _GIE	set	95
+    69                           	global	_GPIO0
+    70  0028                     _GPIO0	set	40
+    71                           	global	_GPIO5
+    72  002D                     _GPIO5	set	45
+    73                           	global	_T0IF
+    74  005A                     _T0IF	set	90
+    75                           	global	_ANSEL
+    76  009F                     _ANSEL	set	159
+    77                           	global	_EEADR
+    78  009B                     _EEADR	set	155
+    79                           	global	_EECON1
+    80  009C                     _EECON1	set	156
+    81                           	global	_EECON2
+    82  009D                     _EECON2	set	157
+    83                           	global	_EEDATA
+    84  009A                     _EEDATA	set	154
+    85                           	global	_OPTION_REG
+    86  0081                     _OPTION_REG	set	129
+    87                           	global	_TRISIO
+    88  0085                     _TRISIO	set	133
+    89                           	global	_RD
+    90  04E0                     _RD	set	1248
+    91                           	global	_WR
+    92  04E1                     _WR	set	1249
+    93                           	global	_WREN
+    94  04E2                     _WREN	set	1250
+    95                           	file	"C:\Users\sodelab\AppData\Local\Temp\s8n0."
+    96                           	line	#
+    97                           psect cinit,class=CODE,delta=2
+    98                           global start_initialization
+    99  0087                     start_initialization:
+   100                           
+   101                           psect	bssBANK0,class=BANK0,space=1
+   102                           global __pbssBANK0
+   103  0020                     __pbssBANK0:
+   104  0020                     _counter:
+   105  0020                            ds      2
+   106                           
+   107  0022                     _flg:
+   108  0022                            ds      2
+   109                           
+   110  0024                     _sec:
+   111  0024                            ds      2
+   112                           
+   113                           ; Clear objects allocated to BANK0
+   114                           psect cinit,class=CODE,delta=2
+   115  0087  01A0               	clrf	((__pbssBANK0)+0)&07Fh
+   116  0088  01A1               	clrf	((__pbssBANK0)+1)&07Fh
+   117  0089  01A2               	clrf	((__pbssBANK0)+2)&07Fh
+   118  008A  01A3               	clrf	((__pbssBANK0)+3)&07Fh
+   119  008B  01A4               	clrf	((__pbssBANK0)+4)&07Fh
+   120  008C  01A5               	clrf	((__pbssBANK0)+5)&07Fh
+   121                           psect cinit,class=CODE,delta=2
+   122                           global end_of_initialization
+   123                           
+   124                           ;End of C runtime variable initialization code
+   125                           
+   126  008D                     end_of_initialization:
+   127  008D  0183               clrf status
+   128  008E  288F               ljmp _main	;jump to C main() function
+   129                           psect	cstackCOMMON,class=COMMON,space=1
+   130                           global __pcstackCOMMON
+   131  0000                     __pcstackCOMMON:
+   132                           	global	??_pic_set
+   133  0000                     ??_pic_set:	; 0 bytes @ 0x0
+   134                           	global	??_main
+   135  0000                     ??_main:	; 0 bytes @ 0x0
+   136                           psect	cstackBANK0,class=BANK0,space=1
+   137                           global __pcstackBANK0
+   138  0026                     __pcstackBANK0:
+   139                           	global	?_pic_set
+   140  0026                     ?_pic_set:	; 0 bytes @ 0x0
+   141                           	global	?_intr
+   142  0026                     ?_intr:	; 0 bytes @ 0x0
+   143                           	global	??_intr
+   144  0026                     ??_intr:	; 0 bytes @ 0x0
+   145                           	global	?_main
+   146  0026                     ?_main:	; 2 bytes @ 0x0
+   147  0026                     	ds	4
+   148 ;;Data sizes: Strings 0, constant 0, data 0, bss 6, persistent 0 stack 0
+   149 ;;Auto spaces:   Size  Autos    Used
+   150 ;; COMMON           0      0       0
+   151 ;; BANK0           62      4      10
+   152                           
+   153 ;;
+   154 ;; Pointer list with targets:
+   155                           
+   156                           
+   157                           
+   158 ;;
+   159 ;; Critical Paths under _main in COMMON
+   160 ;;
+   161 ;;   None.
+   162 ;;
+   163 ;; Critical Paths under _intr in COMMON
+   164 ;;
+   165 ;;   None.
+   166 ;;
+   167 ;; Critical Paths under _main in BANK0
+   168 ;;
+   169 ;;   None.
+   170 ;;
+   171 ;; Critical Paths under _intr in BANK0
+   172 ;;
+   173 ;;   None.
+   174                           
+   175 ;;
+   176 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   177 ;;
+   178                           
+   179 ;;
+   180 ;;Call Graph Tables:
+   181 ;;
+   182 ;; ---------------------------------------------------------------------------------
+   183 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   184 ;; ---------------------------------------------------------------------------------
+   185 ;; (0) _main                                                 2     2      0       0
+   186 ;;                            _pic_set
+   187 ;; ---------------------------------------------------------------------------------
+   188 ;; (1) _pic_set                                              0     0      0       0
+   189 ;; ---------------------------------------------------------------------------------
+   190 ;; Estimated maximum stack depth 1
+   191 ;; ---------------------------------------------------------------------------------
+   192 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   193 ;; ---------------------------------------------------------------------------------
+   194 ;; (2) _intr                                                 4     4      0       0
+   195 ;;                                              0 BANK0      4     4      0
+   196 ;; ---------------------------------------------------------------------------------
+   197 ;; Estimated maximum stack depth 2
+   198 ;; ---------------------------------------------------------------------------------
+   199                           
+   200 ;; Call Graph Graphs:
+   201                           
+   202 ;; _main (ROOT)
+   203 ;;   _pic_set
+   204 ;;
+   205 ;; _intr (ROOT)
+   206 ;;
+   207                           
+   208 ;; Address spaces:
+   209                           
+   210 ;;Name               Size   Autos  Total    Cost      Usage
+   211 ;;BITCOMMON            0      0       0       0        0.0%
+   212 ;;EEDATA              80      0       0       0        0.0%
+   213 ;;NULL                 0      0       0       0        0.0%
+   214 ;;CODE                 0      0       0       0        0.0%
+   215 ;;BITSFR0              0      0       0       1        0.0%
+   216 ;;SFR0                 0      0       0       1        0.0%
+   217 ;;COMMON               0      0       0       1        0.0%
+   218 ;;BITSFR1              0      0       0       2        0.0%
+   219 ;;SFR1                 0      0       0       2        0.0%
+   220 ;;STACK                0      0       1       2        0.0%
+   221 ;;BITBANK0            3E      0       0       3        0.0%
+   222 ;;BANK0               3E      4       A       4       16.1%
+   223 ;;ABS                  0      0       A       5        0.0%
+   224 ;;DATA                 0      0       B       6        0.0%
+   225                           
+   226                           	global	_main
+   227                           psect	maintext,global,class=CODE,delta=2
+   228                           global __pmaintext
+   229  008F                     __pmaintext:
+   230                           
+   231 ;; *************** function _main *****************
+   232 ;; Defined at:
+   233 ;;		line 46 in file "C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff.c"
+   234 ;; Parameters:    Size  Location     Type
+   235 ;;		None
+   236 ;; Auto vars:     Size  Location     Type
+   237 ;;  value           2    0        int 
+   238 ;; Return value:  Size  Location     Type
+   239 ;;                  2  388[BANK0 ] int 
+   240 ;; Registers used:
+   241 ;;		wreg, status,2, status,0, pclath, cstack
+   242 ;; Tracked objects:
+   243 ;;		On entry : 17F/0
+   244 ;;		On exit  : 0/0
+   245 ;;		Unchanged: 0/0
+   246 ;; Data sizes:     COMMON   BANK0
+   247 ;;      Params:         0       0
+   248 ;;      Locals:         0       0
+   249 ;;      Temps:          0       0
+   250 ;;      Totals:         0       0
+   251 ;;Total ram usage:        0 bytes
+   252 ;; Hardware stack levels required when called:    2
+   253 ;; This function calls:
+   254 ;;		_pic_set
+   255 ;; This function is called by:
+   256 ;;		Startup code after reset
+   257 ;; This function uses a non-reentrant model
+   258 ;;
+   259                           psect	maintext
+   260                           	file	"C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff.c"
+   261                           	line	46
+   262                           	global	__size_of_main
+   263  0004                     	__size_of_main	equ	__end_of_main-_main
+   264                           	
+   265  008F                     _main:	
+   266                           	opt	stack 6
+   267                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   268                           	line	48
+   269                           	
+   270  008F                     l2068:	
+   271                           ;onoff.c: 47: int value;
+   272                           ;onoff.c: 48: pic_set();
+   273  008F  2075               	fcall	_pic_set
+   274  0090  2891               	goto	l390
+   275                           	line	49
+   276                           ;onoff.c: 49: while(1){
+   277                           	
+   278  0091                     l389:	
+   279                           	line	58
+   280                           	
+   281  0091                     l390:	
+   282                           	line	49
+   283  0091  2891               	goto	l390
+   284                           	
+   285  0092                     l391:	
+   286                           	line	59
+   287                           	
+   288  0092                     l392:	
+   289                           	global	start
+   290  0092  280F               	ljmp	start
+   291                           	opt stack 0
+   292                           GLOBAL	__end_of_main
+   293  0093                     	__end_of_main:
+   294 ;; =============== function _main ends ============
+   295                           
+   296                           	signat	_main,90
+   297                           	global	_pic_set
+   298                           psect	text154,local,class=CODE,delta=2
+   299                           global __ptext154
+   300  0075                     __ptext154:
+   301                           
+   302 ;; *************** function _pic_set *****************
+   303 ;; Defined at:
+   304 ;;		line 62 in file "C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff.c"
+   305 ;; Parameters:    Size  Location     Type
+   306 ;;		None
+   307 ;; Auto vars:     Size  Location     Type
+   308 ;;		None
+   309 ;; Return value:  Size  Location     Type
+   310 ;;		None               void
+   311 ;; Registers used:
+   312 ;;		wreg, status,2
+   313 ;; Tracked objects:
+   314 ;;		On entry : 0/0
+   315 ;;		On exit  : 0/0
+   316 ;;		Unchanged: 0/0
+   317 ;; Data sizes:     COMMON   BANK0
+   318 ;;      Params:         0       0
+   319 ;;      Locals:         0       0
+   320 ;;      Temps:          0       0
+   321 ;;      Totals:         0       0
+   322 ;;Total ram usage:        0 bytes
+   323 ;; Hardware stack levels used:    1
+   324 ;; Hardware stack levels required when called:    1
+   325 ;; This function calls:
+   326 ;;		Nothing
+   327 ;; This function is called by:
+   328 ;;		_main
+   329 ;; This function uses a non-reentrant model
+   330 ;;
+   331                           psect	text154
+   332                           	file	"C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff.c"
+   333                           	line	62
+   334                           	global	__size_of_pic_set
+   335  0012                     	__size_of_pic_set	equ	__end_of_pic_set-_pic_set
+   336                           	
+   337  0075                     _pic_set:	
+   338                           	opt	stack 6
+   339                           ; Regs used in _pic_set: [wreg+status,2]
+   340                           	line	63
+   341                           	
+   342  0075                     l2054:	
+   343                           ;onoff.c: 63: ANSEL=0x00;
+   344  0075  1683               	bsf	status, 5	;RP0=1, select bank1
+   345  0076  019F               	clrf	(159)^080h	;volatile
+   346                           	line	64
+   347                           	
+   348  0077                     l2056:	
+   349                           ;onoff.c: 64: TRISIO=0x01;
+   350  0077  3001               	movlw	(01h)
+   351  0078  0085               	movwf	(133)^080h	;volatile
+   352                           	line	65
+   353                           	
+   354  0079                     l2058:	
+   355                           ;onoff.c: 65: GPIO=0x20;
+   356  0079  3020               	movlw	(020h)
+   357  007A  1283               	bcf	status, 5	;RP0=0, select bank0
+   358  007B  0085               	movwf	(5)	;volatile
+   359                           	line	66
+   360                           	
+   361  007C                     l2060:	
+   362                           ;onoff.c: 66: CMCON=0x07;
+   363  007C  3007               	movlw	(07h)
+   364  007D  0099               	movwf	(25)	;volatile
+   365                           	line	68
+   366                           	
+   367  007E                     l2062:	
+   368                           ;onoff.c: 68: OPTION_REG=0x02;
+   369  007E  3002               	movlw	(02h)
+   370  007F  1683               	bsf	status, 5	;RP0=1, select bank1
+   371  0080  0081               	movwf	(129)^080h	;volatile
+   372                           	line	69
+   373                           	
+   374  0081                     l2064:	
+   375                           ;onoff.c: 69: TMR0=6;
+   376  0081  3006               	movlw	(06h)
+   377  0082  1283               	bcf	status, 5	;RP0=0, select bank0
+   378  0083  0081               	movwf	(1)	;volatile
+   379                           	line	70
+   380                           	
+   381  0084                     l2066:	
+   382                           ;onoff.c: 70: INTCON=0xA0;
+   383  0084  30A0               	movlw	(0A0h)
+   384  0085  008B               	movwf	(11)	;volatile
+   385                           	line	72
+   386                           	
+   387  0086                     l395:	
+   388  0086  0008               	return
+   389                           	opt stack 0
+   390                           GLOBAL	__end_of_pic_set
+   391  0087                     	__end_of_pic_set:
+   392 ;; =============== function _pic_set ends ============
+   393                           
+   394                           	signat	_pic_set,88
+   395                           	global	_intr
+   396                           psect	text155,local,class=CODE,delta=2
+   397                           global __ptext155
+   398  0014                     __ptext155:
+   399                           
+   400 ;; *************** function _intr *****************
+   401 ;; Defined at:
+   402 ;;		line 18 in file "C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff.c"
+   403 ;; Parameters:    Size  Location     Type
+   404 ;;		None
+   405 ;; Auto vars:     Size  Location     Type
+   406 ;;		None
+   407 ;; Return value:  Size  Location     Type
+   408 ;;		None               void
+   409 ;; Registers used:
+   410 ;;		wreg, status,2, status,0, btemp+1
+   411 ;; Tracked objects:
+   412 ;;		On entry : 0/0
+   413 ;;		On exit  : 0/0
+   414 ;;		Unchanged: 0/0
+   415 ;; Data sizes:     COMMON   BANK0
+   416 ;;      Params:         0       0
+   417 ;;      Locals:         0       0
+   418 ;;      Temps:          0       4
+   419 ;;      Totals:         0       4
+   420 ;;Total ram usage:        4 bytes
+   421 ;; Hardware stack levels used:    1
+   422 ;; This function calls:
+   423 ;;		Nothing
+   424 ;; This function is called by:
+   425 ;;		Interrupt level 1
+   426 ;; This function uses a non-reentrant model
+   427 ;;
+   428                           psect	text155
+   429                           	file	"C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff.c"
+   430                           	line	18
+   431                           	global	__size_of_intr
+   432  0061                     	__size_of_intr	equ	__end_of_intr-_intr
+   433                           	
+   434  0014                     _intr:	
+   435                           	opt	stack 6
+   436                           ; Regs used in _intr: [wreg+status,2+status,0+btemp+1]
+   437                           psect	intentry,class=CODE,delta=2
+   438                           global __pintentry
+   439  0004                     __pintentry:
+   440                           global interrupt_function
+   441  0004                     interrupt_function:
+   442                           	global saved_w
+   443  005E                     	saved_w	set	btemp+0
+   444  0004  00DE               	movwf	saved_w
+   445  0005  0E03               	swapf	status,w
+   446  0006  1283               	bcf	status, 5	;RP0=0, select bank0
+   447  0007  00A6               	movwf	(??_intr+0)
+   448  0008  0804               	movf	fsr0,w
+   449  0009  00A7               	movwf	(??_intr+1)
+   450  000A  080A               	movf	pclath,w
+   451  000B  00A8               	movwf	(??_intr+2)
+   452  000C  085F               	movf	btemp+1,w
+   453  000D  00A9               	movwf	(??_intr+3)
+   454  000E  2814               	ljmp	_intr
+   455                           psect	text155
+   456                           	line	19
+   457                           	
+   458  0014                     i1l2030:	
+   459                           ;onoff.c: 19: T0IF = 0;
+   460  0014  110B               	bcf	(90/8),(90)&7
+   461                           	line	20
+   462                           	
+   463  0015                     i1l2032:	
+   464                           ;onoff.c: 20: TMR0 = 6;
+   465  0015  3006               	movlw	(06h)
+   466  0016  0081               	movwf	(1)	;volatile
+   467                           	line	22
+   468                           	
+   469  0017                     i1l2034:	
+   470                           ;onoff.c: 22: if(++counter >= 496){
+   471  0017  3001               	movlw	low(01h)
+   472  0018  07A0               	addwf	(_counter),f
+   473  0019  1803               	skipnc
+   474  001A  0AA1               	incf	(_counter+1),f
+   475  001B  3000               	movlw	high(01h)
+   476  001C  07A1               	addwf	(_counter+1),f
+   477  001D  0821               	movf	((_counter+1)),w
+   478  001E  3A80               	xorlw	80h
+   479  001F  00DF               	movwf	btemp+1
+   480  0020  3081               	movlw	(high(01F0h))^80h
+   481  0021  025F               	subwf	btemp+1,w
+   482  0022  1D03               	skipz
+   483  0023  2826               	goto	u227_25
+   484  0024  30F0               	movlw	low(01F0h)
+   485  0025  0220               	subwf	((_counter)),w
+   486  0026                     u227_25:
+   487                           
+   488  0026  1C03               	skipc
+   489  0027  2829               	goto	u227_21
+   490  0028  282A               	goto	u227_20
+   491  0029                     u227_21:
+   492  0029  2869               	goto	i1l386
+   493  002A                     u227_20:
+   494                           	line	23
+   495                           	
+   496  002A                     i1l2036:	
+   497                           ;onoff.c: 23: counter = 0;
+   498  002A  1283               	bcf	status, 5	;RP0=0, select bank0
+   499  002B  01A0               	clrf	(_counter)
+   500  002C  01A1               	clrf	(_counter+1)
+   501                           	line	24
+   502                           	
+   503  002D                     i1l2038:	
+   504                           ;onoff.c: 24: sec++;
+   505  002D  3001               	movlw	low(01h)
+   506  002E  07A4               	addwf	(_sec),f
+   507  002F  1803               	skipnc
+   508  0030  0AA5               	incf	(_sec+1),f
+   509  0031  3000               	movlw	high(01h)
+   510  0032  07A5               	addwf	(_sec+1),f
+   511                           	line	25
+   512                           	
+   513  0033                     i1l2040:	
+   514                           ;onoff.c: 25: if(flg==0){
+   515  0033  0823               	movf	((_flg+1)),w
+   516  0034  0422               	iorwf	((_flg)),w
+   517  0035  1D03               	skipz
+   518  0036  2838               	goto	u228_21
+   519  0037  2839               	goto	u228_20
+   520  0038                     u228_21:
+   521  0038  2853               	goto	i1l2048
+   522  0039                     u228_20:
+   523                           	line	27
+   524                           	
+   525  0039                     i1l2042:	
+   526                           ;onoff.c: 27: if(sec>=30 || GPIO0==1){
+   527  0039  0825               	movf	(_sec+1),w
+   528  003A  3A80               	xorlw	80h
+   529  003B  00DF               	movwf	btemp+1
+   530  003C  3080               	movlw	(high(01Eh))^80h
+   531  003D  025F               	subwf	btemp+1,w
+   532  003E  1D03               	skipz
+   533  003F  2842               	goto	u229_25
+   534  0040  301E               	movlw	low(01Eh)
+   535  0041  0224               	subwf	(_sec),w
+   536  0042                     u229_25:
+   537                           
+   538  0042  1803               	skipnc
+   539  0043  2845               	goto	u229_21
+   540  0044  2846               	goto	u229_20
+   541  0045                     u229_21:
+   542  0045  284B               	goto	i1l383
+   543  0046                     u229_20:
+   544                           	
+   545  0046                     i1l2044:	
+   546  0046  1283               	bcf	status, 5	;RP0=0, select bank0
+   547  0047  1C05               	btfss	(40/8),(40)&7
+   548  0048  284A               	goto	u230_21
+   549  0049  284B               	goto	u230_20
+   550  004A                     u230_21:
+   551  004A  2869               	goto	i1l386
+   552  004B                     u230_20:
+   553                           	
+   554  004B                     i1l383:	
+   555                           	line	29
+   556                           ;onoff.c: 29: GPIO5=0;
+   557  004B  1283               	bcf	status, 5	;RP0=0, select bank0
+   558  004C  1285               	bcf	(45/8),(45)&7
+   559                           	line	30
+   560                           	
+   561  004D                     i1l2046:	
+   562                           ;onoff.c: 30: flg=1;
+   563  004D  3001               	movlw	low(01h)
+   564  004E  00A2               	movwf	(_flg)
+   565  004F  3000               	movlw	high(01h)
+   566  0050  00A3               	movwf	((_flg))+1
+   567  0051  2869               	goto	i1l386
+   568                           	line	31
+   569                           	
+   570  0052                     i1l381:	
+   571                           	line	33
+   572                           ;onoff.c: 31: }
+   573                           ;onoff.c: 33: }else {
+   574  0052  2869               	goto	i1l386
+   575                           	
+   576  0053                     i1l380:	
+   577                           	line	35
+   578                           	
+   579  0053                     i1l2048:	
+   580                           ;onoff.c: 35: if(sec >=3240){
+   581  0053  0825               	movf	(_sec+1),w
+   582  0054  3A80               	xorlw	80h
+   583  0055  00DF               	movwf	btemp+1
+   584  0056  308C               	movlw	(high(0CA8h))^80h
+   585  0057  025F               	subwf	btemp+1,w
+   586  0058  1D03               	skipz
+   587  0059  285C               	goto	u231_25
+   588  005A  30A8               	movlw	low(0CA8h)
+   589  005B  0224               	subwf	(_sec),w
+   590  005C                     u231_25:
+   591                           
+   592  005C  1C03               	skipc
+   593  005D  285F               	goto	u231_21
+   594  005E  2860               	goto	u231_20
+   595  005F                     u231_21:
+   596  005F  2869               	goto	i1l386
+   597  0060                     u231_20:
+   598                           	line	37
+   599                           	
+   600  0060                     i1l2050:	
+   601                           ;onoff.c: 37: GPIO5=1;
+   602  0060  1283               	bcf	status, 5	;RP0=0, select bank0
+   603  0061  1685               	bsf	(45/8),(45)&7
+   604                           	line	38
+   605                           	
+   606  0062                     i1l2052:	
+   607                           ;onoff.c: 38: sec=0;
+   608  0062  01A4               	clrf	(_sec)
+   609  0063  01A5               	clrf	(_sec+1)
+   610                           	line	39
+   611                           ;onoff.c: 39: flg=0;
+   612  0064  01A2               	clrf	(_flg)
+   613  0065  01A3               	clrf	(_flg+1)
+   614  0066  2869               	goto	i1l386
+   615                           	line	40
+   616                           	
+   617  0067                     i1l385:	
+   618  0067  2869               	goto	i1l386
+   619                           	line	41
+   620                           	
+   621  0068                     i1l384:	
+   622  0068  2869               	goto	i1l386
+   623                           	line	42
+   624                           	
+   625  0069                     i1l379:	
+   626                           	line	43
+   627                           	
+   628  0069                     i1l386:	
+   629  0069  1283               	bcf	status, 5	;RP0=0, select bank0
+   630  006A  0829               	movf	(??_intr+3),w
+   631  006B  00DF               	movwf	btemp+1
+   632  006C  0828               	movf	(??_intr+2),w
+   633  006D  008A               	movwf	pclath
+   634  006E  0827               	movf	(??_intr+1),w
+   635  006F  0084               	movwf	fsr0
+   636  0070  0E26               	swapf	(??_intr+0)^00h,w
+   637  0071  0083               	movwf	status
+   638  0072  0EDE               	swapf	saved_w,f
+   639  0073  0E5E               	swapf	saved_w,w
+   640  0074  0009               	retfie
+   641                           	opt stack 0
+   642                           GLOBAL	__end_of_intr
+   643  0075                     	__end_of_intr:
+   644 ;; =============== function _intr ends ============
+   645                           
+   646                           	signat	_intr,88
+   647                           psect	text156,local,class=CODE,delta=2
+   648                           global __ptext156
+   649  0000                     __ptext156:
+   650                           	global	btemp
+   651  005E                     	btemp set 05Eh
+   652                           
+   653                           	DABS	1,94,2	;btemp
+   654                           	global	wtemp0
+   655  005E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.83 build 10920 
+Symbol Table                                                                                   Wed Mar 15 16:51:55 2017
+
+                  _RD 04E0                    _WR 04E1                   l390 0091                   l391 0092  
+                 l392 0092                   l395 0086                   l389 0091                   _GIE 005F  
+                 _flg 0022                   _sec 0024                   fsr0 0004                  l2060 007C  
+                l2062 007E                  l2054 0075                  l2064 0081                  l2056 0077  
+                l2066 0084                  l2058 0079                  l2068 008F                  _T0IF 005A  
+                _GPIO 0005                  _TMR0 0001                  _WREN 04E2                  _main 008F  
+                _intr 0014                  btemp 005E                  start 000F                 ?_main 0026  
+               ?_intr 0026                 _EEADR 009B                 _CARRY 0018                 _CMCON 0019  
+               _ANSEL 009F                 _GPIO0 0028                 _GPIO5 002D                 i1l380 0053  
+               i1l381 0052                 i1l383 004B                 i1l384 0068                 i1l385 0067  
+               i1l386 0069                 i1l379 0069       __end_of_pic_set 0087                 pclath 000A  
+               status 0003                 wtemp0 005E          __end_of_main 0093          __end_of_intr 0075  
+              ??_main 0000                ??_intr 0026                _EEDATA 009A                _EECON1 009C  
+              _EECON2 009D                i1l2030 0014                i1l2040 0033                i1l2032 0015  
+              i1l2050 0060                i1l2042 0039                i1l2034 0017                i1l2052 0062  
+              i1l2044 0046                i1l2036 002A                i1l2046 004D                i1l2038 002D  
+              i1l2048 0053                u230_20 004B                u230_21 004A                u231_20 0060  
+              u231_21 005F                u231_25 005C                _INTCON 000B                u227_20 002A  
+              u227_21 0029                u227_25 0026                u228_20 0039                u228_21 0038  
+              u229_20 0046                u229_21 0045                u229_25 0042                _TRISIO 0085  
+           ??_pic_set 0000                saved_w 005E        __pcstackCOMMON 0000            __pbssBANK0 0020  
+          __pmaintext 008F            __pintentry 0004               _counter 0020               _pic_set 0075  
+end_of_initialization 008D   start_initialization 0087         __pcstackBANK0 0026             __ptext153 0000  
+           __ptext154 0075             __ptext155 0014             __ptext156 0000              ?_pic_set 0026  
+   interrupt_function 0004      __size_of_pic_set 0012         __size_of_main 0004         __size_of_intr 0061  
+            intlevel1 0000            _OPTION_REG 0081  
