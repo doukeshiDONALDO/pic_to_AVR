@@ -15,6 +15,45 @@ ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 
 TraceCmdString=
 DebugOptions=
 [File001]
+Location=H:\MPLAB\ONOFF_12V\onoff.p1
+Folder=Intermediary
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File002]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\onoff.p1
+Folder=Intermediary
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File003]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.p1
+Folder=Intermediary
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File004]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff_12V.cof
 Folder=Output
 DeviceName=PIC12F675
@@ -27,7 +66,7 @@ SuiteArgsString=
 ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
 TraceCmdString=
 DebugOptions=
-[File002]
+[File005]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff_12V.hex
 Folder=Output
 DeviceName=PIC12F675
@@ -40,7 +79,7 @@ SuiteArgsString=
 ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
 TraceCmdString=
 DebugOptions=
-[File003]
+[File006]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff_12V.sym
 Folder=Output
 DeviceName=PIC12F675
@@ -53,7 +92,7 @@ SuiteArgsString=
 ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
 TraceCmdString=
 DebugOptions=
-[File004]
+[File007]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff_12V.map
 Folder=Output
 DeviceName=PIC12F675
@@ -66,7 +105,7 @@ SuiteArgsString=
 ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
 TraceCmdString=
 DebugOptions=
-[File005]
+[File008]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff_12V.hxl
 Folder=Output
 DeviceName=PIC12F675
@@ -79,7 +118,7 @@ SuiteArgsString=
 ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
 TraceCmdString=
 DebugOptions=
-[File006]
+[File009]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\startup.lst
 Folder=Output
 DeviceName=PIC12F675
@@ -92,7 +131,7 @@ SuiteArgsString=
 ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
 TraceCmdString=
 DebugOptions=
-[File007]
+[File010]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\startup.rlf
 Folder=Output
 DeviceName=PIC12F675
@@ -105,7 +144,7 @@ SuiteArgsString=
 ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
 TraceCmdString=
 DebugOptions=
-[File008]
+[File011]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\doprnt.p1
 Folder=Output
 DeviceName=PIC12F675
@@ -118,7 +157,7 @@ SuiteArgsString=
 ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
 TraceCmdString=
 DebugOptions=
-[File009]
+[File012]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\doprnt.pre
 Folder=Output
 DeviceName=PIC12F675
@@ -131,7 +170,7 @@ SuiteArgsString=
 ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
 TraceCmdString=
 DebugOptions=
-[File010]
+[File013]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff_12V.obj
 Folder=Output
 DeviceName=PIC12F675
@@ -144,7 +183,7 @@ SuiteArgsString=
 ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
 TraceCmdString=
 DebugOptions=
-[File011]
+[File014]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff_12V.lst
 Folder=Output
 DeviceName=PIC12F675
@@ -157,7 +196,7 @@ SuiteArgsString=
 ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
 TraceCmdString=
 DebugOptions=
-[File012]
+[File015]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff_12V.rlf
 Folder=Output
 DeviceName=PIC12F675
@@ -170,10 +209,517 @@ SuiteArgsString=
 ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
 TraceCmdString=
 DebugOptions=
-[File013]
+[File016]
 Location=C:\Users\sodelab\Documents\PIC\ONOFF_12V\onoff_12V.sdb
 Folder=Output
 DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File017]
+Location=H:\MPLAB\ONOFF_12V\onoff_12V.cof
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File018]
+Location=H:\MPLAB\ONOFF_12V\onoff_12V.hex
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File019]
+Location=H:\MPLAB\ONOFF_12V\onoff_12V.sym
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File020]
+Location=H:\MPLAB\ONOFF_12V\onoff_12V.map
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File021]
+Location=H:\MPLAB\ONOFF_12V\onoff_12V.hxl
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File022]
+Location=H:\MPLAB\ONOFF_12V\startup.lst
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File023]
+Location=H:\MPLAB\ONOFF_12V\startup.rlf
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File024]
+Location=H:\MPLAB\ONOFF_12V\doprnt.p1
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File025]
+Location=H:\MPLAB\ONOFF_12V\doprnt.pre
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File026]
+Location=H:\MPLAB\ONOFF_12V\onoff_12V.obj
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File027]
+Location=H:\MPLAB\ONOFF_12V\onoff_12V.lst
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File028]
+Location=H:\MPLAB\ONOFF_12V\onoff_12V.rlf
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File029]
+Location=H:\MPLAB\ONOFF_12V\onoff_12V.sdb
+Folder=Output
+DeviceName=PIC12F675
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File030]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\onoff_12V.cof
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File031]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\onoff_12V.hex
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File032]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\onoff_12V.sym
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File033]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\onoff_12V.map
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File034]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\onoff_12V.hxl
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File035]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\startup.lst
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File036]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\startup.rlf
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File037]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\doprnt.p1
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File038]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\doprnt.pre
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File039]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\onoff_12V.obj
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File040]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\onoff_12V.lst
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File041]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\onoff_12V.rlf
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File042]
+Location=C:\Users\igalab\Desktop\ONOFF_12V\ONOFF_12V\onoff_12V.sdb
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File043]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff_12V.cof
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File044]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff_12V.hex
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File045]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff_12V.sym
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File046]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff_12V.map
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File047]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff_12V.hxl
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File048]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\startup.lst
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File049]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\startup.rlf
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File050]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\doprnt.p1
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File051]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\doprnt.pre
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File052]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff_12V.obj
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File053]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff_12V.lst
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File054]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff_12V.rlf
+Folder=Output
+DeviceName=PIC12LF1822
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|onoff.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C6=31 DB=0 DC=9 D1=_LEGACY_HEADERS DF=0 DD=1 C2=0 C3=0 DE=1 D7=1 11E=0 121=0 122=0 123=0 124=0 125=0 11F=96 C9=1 FE=31 EC=1 F0=0 EF=1 EE=0 104=0 E9= C4=0 F2= F3= F4= F8=1 F5= F9=0 FA=0 FB=0 C0=0 C1=0 BD=0 BC=0 BB=0 BF=0 BE=0 B8= 101=0 103= 102=0 BA= FF=0 100=0 106=0 109=0 10A=1 10B=0 10C=0 10E=0 10F=1 110=0 118=0 116=0 117= 10D=0 114=-1 113=-1 111=0 115=-1 F5=0 E5=0 E7=0 E8=0 126=0 F1=0 F6= F7= B9=-1 107=0
+TraceCmdString=
+DebugOptions=
+[File055]
+Location=C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff_12V.sdb
+Folder=Output
+DeviceName=PIC12LF1822
 LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
 LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
 LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\bin\picc.exe

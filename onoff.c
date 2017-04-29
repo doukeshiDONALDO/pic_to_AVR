@@ -1,104 +1,142 @@
-/** I N C L U D E S ************************************************/
+
 #include <pic.h>
 #include <htc.h>
-#include <pic12f675.h>
-static void pic_set();
-int adcon();
-/*** Configuration *******/
-__CONFIG(UNPROTECT & MCLRDIS & BOREN & PWRTEN & WDTDIS & INTIO) ;
+#include <pic12lf1822.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+//#define _XTAL_FREQ  8000000    // delay用(クロック８MHzで動作時)
 
 /* グローバル関数 */
-static int counter = 0;		//割り込みカウンタ
-static int sec = 0;			//1秒カウンタ
-static int flg = 0;			//ONOFF_flag
-//static void Delay_ms(unsigned char ms);
-//static void Delay_1ms();		//1m_sDaly
 
-/*********** 割り込み処理　************/
-static void interrupt intr(void) {
-	T0IF = 0;		//TMR0割り込みクリア
-	TMR0 = 6;		//TMR0再設定
-  
-	if(++counter >= 496){		//1秒経過したら(500+補正値5)
-		counter = 0;
-		sec++;
-		if(flg==0){
 
-			if(sec>=30 || GPIO0==1){		//360 5分経過したら(5[min]*60=300[sec])
-			//if(sec>=10){     //動作確認用 10秒計測
-				GPIO5=0;
-				flg=1;
-			}
-				
-		}else {
-		    //if(sec>=10){     //動作確認用 10秒計測
-			if(sec >=3240){		//12時間経過したら(カメラ用)(12[hour]*60*60=43200[sec])
-								//1時間経過したら(ロガー用)(1[hour]*60*60=3600[sec]	3300
-				GPIO5=1;
-				sec=0;
-				flg=0;
-			}
-		}
-	}
+static void init();
+
+// コンフィギュレーション１の設定
+// CLKOUTﾋﾟﾝをRA4ﾋﾟﾝで使用しない(CLKOUTEN_OFF)：内部ｸﾛｯｸ使用する(INTIO)
+// 外部ｸﾛｯｸ監視しない(FCMEN_OFF)：外部・内部ｸﾛｯｸの切替えでの起動はなし(IESO_OFF)
+// 電源電圧降下常時監視機能ON(BOREN_ON)：電源ONから64ms後にﾌﾟﾛｸﾞﾗﾑを開始する(PWRTEN_ON)
+// ｳｵｯﾁﾄﾞｯｸﾞﾀｲﾏｰ無し(WDTE_OFF)：
+// 外部ﾘｾｯﾄ信号は使用せずにﾃﾞｼﾞﾀﾙ入力(RA3)ﾋﾟﾝとする(MCLRE_OFF)
+// ﾌﾟﾛｸﾞﾗﾑﾒﾓﾘｰを保護しない(CP_OFF)：ﾃﾞｰﾀﾒﾓﾘｰを保護しない(CPD_OFF)
+__CONFIG(CLKOUTEN_OFF & FOSC_INTOSC & FCMEN_OFF & IESO_OFF & BOREN_ON &
+         PWRTE_ON & WDTE_OFF & MCLRE_OFF & CP_OFF & CPD_OFF) ;
+// コンフィギュレーション２の設定
+// 動作クロックを32MHzでは動作させない(PLLEN_OFF)
+// スタックがオーバフローやアンダーフローしたらリセットをする(STVREN_ON)
+// 低電圧プログラミング機能使用しない(LVP_OFF)
+// Flashﾒﾓﾘｰを保護しない(WRT_OFF)：電源電圧降下常時監視電圧(2.5V)設定(BORV_HI)
+__CONFIG(PLLEN_OFF & STVREN_ON & WRT_OFF & BORV_HI & LVP_OFF);
+
+
+// ＵＳＡＲＴ通信の受信割込み処理
+void interrupt InterReceiver( void )
+{
+static int counter = 0;    //割り込みカウンタ
+static int sec = 0;     //1秒カウンタ
+static int flg = 0;     //ONOFF_flag
+static int rev_flg = 0;     //ONOFF_flag
+static int now_sec = 0;
+
+static int offtime = 300;     
+static int offtime_flg = 0;     //flag
+static int now_offtime = 0;     
+
+	
+	
+	
+  if (RCIF == 1) {          // usart receive interrupt 
+	if ( RCREG == '$') {   // receive start
+      sec = now_sec;
+      now_sec = 0;
+	  offtime = now_offtime;
+      now_offtime = 0;
+      flg = 0;
+      RA2 = 1;
+    }
+    else if ( RCREG == '_') {   // receive start
+      rev_flg = 1;
+    }
+    else if ( RCREG == '|') {  // receive stop
+      rev_flg = 0;
+   }
+    else if (rev_flg) {
+	    now_sec = now_sec * 10 + (RCREG - '0');    
+    }
+    
+    else if ( RCREG == '(') {  
+      offtime_flg = 1;
+    }
+    else if ( RCREG == ')') {  
+      offtime_flg = 0;
+    }
+    else if (offtime_flg) {
+	    now_offtime = now_offtime * 10 + (RCREG - '0');    
+    }
+   RCIF = 0;           // usart receive interrupt flag reset
+  }
+
+  if (TMR0IF == 1) {           // timer0 interrupt
+    TMR0IF = 0 ;            // timer0 interrupt flag reset
+    TMR0 = 141;         // TMR0 reset
+    if (++counter >= 1000) {
+      counter = 0;
+      sec++;
+      if (flg == 0) {
+
+        if (sec >= offtime || RA0 == 1) { 
+          RA2 = 0;
+          flg = 1;
+        }
+
+      } else if(flg){
+        if (sec >= 3600) { 
+          RA2 = 1;
+          sec = 0;
+          flg = 0;
+        }
+      }
+    }
+  }
 }
 
-/**********　メイン関数　**********/
-main() {
-	int value;
-	pic_set();		//picの初期設定
-	while(1){
-/*
-		value = adcon();
-		if(value <= 50) {
-			INTCON=0x20;
-		}else if(value > 50) {
-			INTCON=0xA0;
-		}
-*/
-	}
+
+// メインの処理
+void main()
+{
+ 
+
+  init();
+  while (1) {
+ 
+  }
 }
 
-/********** PICの初期化 **********/
-static void pic_set() {
-	ANSEL=0x00;			//analogPin  doc.p44
-	TRISIO=0x01;		//GP0のみINPUT,残りはOUTPUT  	doc.p20	Note: TRISIO<3> always reads 1
-	GPIO=0x20;			//GP5を出力 doc.p19
-	CMCON=0x07;			//コンパレータ未使用
-	//ADCON0=0b10000001;	//AN0をA/D変換ピンとして使用する
-	OPTION_REG=0x02;	//TMR0プリスケーラ1:4(1カウント1μs)
-	TMR0=6;				//TMR0初期値(maxカウント250μs)
-	INTCON=0xA0;
-	//_delay_us(20);
-}
-/*電圧測定(未使用)
-int adcon() {
-	unsigned int volt;
+static void init() {
+  OSCCON = 0b01011010 ;     // 内部クロックは1ＭＨｚとする
+  ANSELA = 0b00000000 ;     // アナログは使用しない（すべてデジタルI/Oに割当てる）
+  TRISA  = 0b00001001 ;     // input RA3 RA0 , output other 
+  PORTA  = 0b00000100 ;     // outout pin init , RA2 is high
+  // ＵＳＡＲＴ機能の設定を行う
+  RXDTSEL = 1 ;             // 2番ピン(RA5)をＲＸ受信ピンとする
+  TXCKSEL = 1 ;             // 3番ピン(RA4)をＴＸ送信ピンとする
+  BRG16 = 1;       // baud rate 　set bit
+  TXSTA  = 0b00100100 ;     // 送信情報設定：非同期モード　８ビット・ノンパリティ
+  RCSTA  = 0b10010000 ;     // 受信情報設定
+  SPBRG  = 25 ;             // ボーレートを９６００(高速モード)に設定
 
-	ADCON0bits.GO = 1;
-	while(GO);
-	volt = ( volt << 8 ) | ADRESH;
-	volt = ADRESL;
-	return volt;
-}
-*/
-/********* １ｍＳ×ms ウェイトルーチン *************/
-/*
-static void Delay_ms(unsigned char ms) {
-	unsigned char c;
-	for (c=ms ; c>0 ; c--) {
-		Delay_1ms();
-	}
-}
-*/
-/********* １ｍＳウェイトルーチン *****************/
-/*
-static void Delay_1ms() {
-	unsigned int cnt;
-	unsigned int i;
-	cnt = 76;
+  RCIF = 0 ;                // ＵＳＡＲＴ割込み受信フラグの初期化
+ 
 
-	for	(i=0 ; i<cnt ; i++) {
-		NOP();
-	}
+  OPTION_REG = 0b00000000; // 内部ｸﾛｯｸでTIMER0を使用、ﾌﾟﾘｽｹｰﾗｶｳﾝﾄ値 1:2
+  TMR0   = 141;         // タイマー0の初期化
+  TMR0IF = 0;              // タイマー0割込フラグ(T0IF)を0にする
+
+
+
+  RCIE = 1 ;                // ＵＳＡＲＴ割込み受信を有効にする
+    TMR0IE = 1;              // タイマー0割込み(T0IE)を許可する
+  PEIE = 1 ;                // 周辺装置割込みを有効にする
+  GIE  = 1 ;                // 全割込み処理を許可する
 }
-*/
+
