@@ -1481,9 +1481,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S170 . . ]
 "2170 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic12lf1822.h
 [v _TOSHbits `VS170  1 e@4079 ]
+"154 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic.h
+[v __delay `(v  0 ef1`ul ]
+[p i __delay ]
 [p mainexit ]
-"13 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
-[v _init `(v  0 sf ]
 [; ;pic12lf1822.h: 132: volatile unsigned char INDF0 @ 0x000;
 [; ;pic12lf1822.h: 136: volatile unsigned char INDF1 @ 0x001;
 [; ;pic12lf1822.h: 140: volatile unsigned char PCL @ 0x002;
@@ -2988,351 +2989,128 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 146: extern char * utoa(char * buf, unsigned val, int base);
 [; ;stdlib.h: 147: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 148: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;onoff.c: 13: static void init();
-"22 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
-[; ;onoff.c: 22: asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFFFF & 0xFFFC & 0xDFFF & 0xEFFF & 0xFFFF & 0xFFDF & 0xFFE7 & 0xFFBF & 0xFFFF & 0xFFFF") ;
+"17 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
+[; ;onoff.c: 17: asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFFFF & 0xFFFC & 0xDFFF & 0xEFFF & 0xFFFF & 0xFFDF & 0xFFE7 & 0xFFBF & 0xFFFF & 0xFFFF") ;
 [; 	psect config,class=CONFIG,delta=2 ;#
 [; 	dw 0xFFFF & 0xFFFC & 0xDFFF & 0xEFFF & 0xFFFF & 0xFFDF & 0xFFE7 & 0xFFBF & 0xFFFF & 0xFFFF ;#
-"29
-[; ;onoff.c: 29: asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFEFF & 0xFFFF & 0xFFFF & 0xFBFF & 0xDFFF");
+"24
+[; ;onoff.c: 24: asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFEFF & 0xFFFF & 0xFFFF & 0xFBFF & 0xDFFF");
 [; 	psect config,class=CONFIG,delta=2 ;#
 [; 	dw 0xFEFF & 0xFFFF & 0xFFFF & 0xFBFF & 0xDFFF ;#
-"34
-[v F2070 `(v  1 tf ]
-[v _InterReceiver `IF2070  1 e ]
+"28
+[v _Wait `(v  1 ef1`ui ]
 {
-[; ;onoff.c: 33: void interrupt InterReceiver( void )
-[; ;onoff.c: 34: {
-[e :U _InterReceiver ]
+[; ;onoff.c: 27: void Wait(unsigned int num)
+[; ;onoff.c: 28: {
+[e :U _Wait ]
+[v _num `ui  1 r1 ]
 [f ]
-"35
-[v F2071 `i  1 s counter ]
-[i F2071
--> 0 `i
-]
-"36
-[v F2072 `i  1 s sec ]
-[i F2072
--> 0 `i
-]
-"37
-[v F2073 `i  1 s flg ]
-[i F2073
--> 0 `i
-]
-"38
-[v F2074 `i  1 s rev_flg ]
-[i F2074
--> 0 `i
-]
-"39
-[v F2075 `i  1 s now_sec ]
-[i F2075
--> 0 `i
-]
-"41
-[v F2076 `i  1 s offtime ]
-[i F2076
--> 300 `i
-]
-"42
-[v F2077 `i  1 s offtime_flg ]
-[i F2077
--> 0 `i
-]
-"43
-[v F2078 `i  1 s now_offtime ]
-[i F2078
--> 0 `i
-]
-[; ;onoff.c: 35: static int counter = 0;
-[; ;onoff.c: 36: static int sec = 0;
-[; ;onoff.c: 37: static int flg = 0;
-[; ;onoff.c: 38: static int rev_flg = 0;
-[; ;onoff.c: 39: static int now_sec = 0;
-[; ;onoff.c: 41: static int offtime = 300;
-[; ;onoff.c: 42: static int offtime_flg = 0;
-[; ;onoff.c: 43: static int now_offtime = 0;
-[; ;onoff.c: 48: if (RCIF == 1) {
-"48
-[e $ ! == -> _RCIF `i -> 1 `i 178  ]
+"29
+[v _i `i  1 a ]
+[; ;onoff.c: 29: int i ;
+[; ;onoff.c: 32: for (i=0 ; i < num ; i++) {
+"32
 {
-[; ;onoff.c: 49: if ( RCREG == '$') {
-"49
-[e $ ! == -> _RCREG `ui -> 36 `ui 179  ]
-{
-[; ;onoff.c: 50: sec = now_sec;
-"50
-[e = F2072 F2075 ]
-[; ;onoff.c: 51: now_sec = 0;
-"51
-[e = F2075 -> 0 `i ]
-[; ;onoff.c: 52: offtime = now_offtime;
-"52
-[e = F2076 F2078 ]
-[; ;onoff.c: 53: now_offtime = 0;
-"53
-[e = F2078 -> 0 `i ]
-[; ;onoff.c: 54: flg = 0;
-"54
-[e = F2073 -> 0 `i ]
-[; ;onoff.c: 55: RA2 = 1;
-"55
-[e = _RA2 -> -> 1 `i `b ]
-"56
-}
-[; ;onoff.c: 56: }
-[e $U 180  ]
-"57
-[e :U 179 ]
-[; ;onoff.c: 57: else if ( RCREG == '_') {
-[e $ ! == -> _RCREG `ui -> 95 `ui 181  ]
-{
-[; ;onoff.c: 58: rev_flg = 1;
-"58
-[e = F2074 -> 1 `i ]
-"59
-}
-[; ;onoff.c: 59: }
-[e $U 182  ]
-"60
-[e :U 181 ]
-[; ;onoff.c: 60: else if ( RCREG == '|') {
-[e $ ! == -> _RCREG `ui -> 124 `ui 183  ]
-{
-[; ;onoff.c: 61: rev_flg = 0;
-"61
-[e = F2074 -> 0 `i ]
-"62
-}
-[; ;onoff.c: 62: }
-[e $U 184  ]
-"63
-[e :U 183 ]
-[; ;onoff.c: 63: else if (rev_flg) {
-[e $ ! != F2074 -> 0 `i 185  ]
-{
-[; ;onoff.c: 64: now_sec = now_sec * 10 + (RCREG - '0');
-"64
-[e = F2075 -> + -> * F2075 -> 10 `i `ui - -> _RCREG `ui -> 48 `ui `i ]
-"65
-}
-[; ;onoff.c: 65: }
-[e $U 186  ]
-"67
-[e :U 185 ]
-[; ;onoff.c: 67: else if ( RCREG == '(') {
-[e $ ! == -> _RCREG `ui -> 40 `ui 187  ]
-{
-[; ;onoff.c: 68: offtime_flg = 1;
-"68
-[e = F2077 -> 1 `i ]
-"69
-}
-[; ;onoff.c: 69: }
-[e $U 188  ]
-"70
-[e :U 187 ]
-[; ;onoff.c: 70: else if ( RCREG == ')') {
-[e $ ! == -> _RCREG `ui -> 41 `ui 189  ]
-{
-[; ;onoff.c: 71: offtime_flg = 0;
-"71
-[e = F2077 -> 0 `i ]
-"72
-}
-[; ;onoff.c: 72: }
-[e $U 190  ]
-"73
-[e :U 189 ]
-[; ;onoff.c: 73: else if (offtime_flg) {
-[e $ ! != F2077 -> 0 `i 191  ]
-{
-[; ;onoff.c: 74: now_offtime = now_offtime * 10 + (RCREG - '0');
-"74
-[e = F2078 -> + -> * F2078 -> 10 `i `ui - -> _RCREG `ui -> 48 `ui `i ]
-"75
-}
-[e :U 191 ]
-"76
-[e :U 190 ]
-[e :U 188 ]
-[e :U 186 ]
-[e :U 184 ]
-[e :U 182 ]
-[e :U 180 ]
-[; ;onoff.c: 75: }
-[; ;onoff.c: 76: RCIF = 0;
-[e = _RCIF -> -> 0 `i `b ]
-"77
-}
+[e = _i -> 0 `i ]
+[e $U 181  ]
 [e :U 178 ]
-[; ;onoff.c: 77: }
-[; ;onoff.c: 79: if (TMR0IF == 1) {
-"79
-[e $ ! == -> _TMR0IF `i -> 1 `i 192  ]
 {
-[; ;onoff.c: 80: TMR0IF = 0 ;
-"80
-[e = _TMR0IF -> -> 0 `i `b ]
-[; ;onoff.c: 81: TMR0 = 141;
-"81
-[e = _TMR0 -> -> 141 `i `uc ]
-[; ;onoff.c: 82: if (++counter >= 1000) {
-"82
-[e $ ! >= =+ F2071 -> 1 `i -> 1000 `i 193  ]
-{
-[; ;onoff.c: 83: counter = 0;
-"83
-[e = F2071 -> 0 `i ]
-[; ;onoff.c: 84: sec++;
-"84
-[e ++ F2072 -> 1 `i ]
-[; ;onoff.c: 85: if (flg == 0) {
-"85
-[e $ ! == F2073 -> 0 `i 194  ]
-{
-[; ;onoff.c: 87: if (sec >= offtime || RA0 == 1) {
-"87
-[e $ ! || >= F2072 F2076 == -> _RA0 `i -> 1 `i 195  ]
-{
-[; ;onoff.c: 88: RA2 = 0;
-"88
-[e = _RA2 -> -> 0 `i `b ]
-[; ;onoff.c: 89: flg = 1;
-"89
-[e = F2073 -> 1 `i ]
-"90
+[; ;onoff.c: 33: _delay((unsigned long)((10)*(1000000/4000.0))) ;
+"33
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"34
 }
-[e :U 195 ]
-"92
+"32
+[e ++ _i -> 1 `i ]
+[e :U 181 ]
+[e $ < -> _i `ui _num 178  ]
+[e :U 179 ]
+"34
 }
-[; ;onoff.c: 90: }
-[; ;onoff.c: 92: } else if(flg){
-[e $U 196  ]
-[e :U 194 ]
-[e $ ! != F2073 -> 0 `i 197  ]
-{
-[; ;onoff.c: 93: if (sec >= 3600) {
-"93
-[e $ ! >= F2072 -> 3600 `i 198  ]
-{
-[; ;onoff.c: 94: RA2 = 1;
-"94
-[e = _RA2 -> -> 1 `i `b ]
-[; ;onoff.c: 95: sec = 0;
-"95
-[e = F2072 -> 0 `i ]
-[; ;onoff.c: 96: flg = 0;
-"96
-[e = F2073 -> 0 `i ]
-"97
-}
-[e :U 198 ]
-"98
-}
-[e :U 197 ]
-"99
-[e :U 196 ]
-}
-[e :U 193 ]
-"100
-}
-[e :U 192 ]
-[; ;onoff.c: 97: }
-[; ;onoff.c: 98: }
-[; ;onoff.c: 99: }
-[; ;onoff.c: 100: }
-[; ;onoff.c: 101: }
-"101
+[; ;onoff.c: 34: }
+[; ;onoff.c: 35: }
+"35
 [e :UE 177 ]
 }
-"106
+"38
 [v _main `(v  1 ef ]
 {
-[; ;onoff.c: 105: void main()
-[; ;onoff.c: 106: {
+[; ;onoff.c: 37: void main()
+[; ;onoff.c: 38: {
 [e :U _main ]
 [f ]
-[; ;onoff.c: 109: init();
-"109
-[e ( _init ..  ]
-[; ;onoff.c: 110: while (1) {
-"110
-[e :U 201 ]
-{
-"112
-}
-[e :U 200 ]
-"110
-[e $U 201  ]
-[e :U 202 ]
-[; ;onoff.c: 112: }
-[; ;onoff.c: 113: }
-"113
-[e :UE 199 ]
-}
-"115
-[v _init `(v  1 sf ]
-{
-[; ;onoff.c: 115: static void init() {
-[e :U _init ]
-[f ]
-[; ;onoff.c: 116: OSCCON = 0b01011010 ;
-"116
+"39
+[v _i `uc  1 a ]
+[; ;onoff.c: 39: char i ;
+[; ;onoff.c: 41: OSCCON = 0b01011010 ;
+"41
 [e = _OSCCON -> -> 90 `i `uc ]
-[; ;onoff.c: 117: ANSELA = 0b00000000 ;
-"117
+[; ;onoff.c: 42: ANSELA = 0b00000000 ;
+"42
 [e = _ANSELA -> -> 0 `i `uc ]
-[; ;onoff.c: 118: TRISA = 0b00001001 ;
-"118
-[e = _TRISA -> -> 9 `i `uc ]
-[; ;onoff.c: 119: PORTA = 0b00000100 ;
-"119
-[e = _PORTA -> -> 4 `i `uc ]
-[; ;onoff.c: 121: RXDTSEL = 1 ;
-"121
+[; ;onoff.c: 43: TRISA = 0b00001000 ;
+"43
+[e = _TRISA -> -> 8 `i `uc ]
+[; ;onoff.c: 44: PORTA = 0b00000000 ;
+"44
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;onoff.c: 46: RXDTSEL = 1 ;
+"46
 [e = _RXDTSEL -> -> 1 `i `b ]
-[; ;onoff.c: 122: TXCKSEL = 1 ;
-"122
+[; ;onoff.c: 47: TXCKSEL = 1 ;
+"47
 [e = _TXCKSEL -> -> 1 `i `b ]
-[; ;onoff.c: 123: BRG16 = 1;
-"123
+[; ;onoff.c: 48: BRG16 = 1;
+"48
 [e = _BRG16 -> -> 1 `i `b ]
-[; ;onoff.c: 124: TXSTA = 0b00100100 ;
-"124
+[; ;onoff.c: 49: TXSTA = 0b00100100 ;
+"49
 [e = _TXSTA -> -> 36 `i `uc ]
-[; ;onoff.c: 125: RCSTA = 0b10010000 ;
-"125
+[; ;onoff.c: 50: RCSTA = 0b10010000 ;
+"50
 [e = _RCSTA -> -> 144 `i `uc ]
-[; ;onoff.c: 126: SPBRG = 25 ;
-"126
+[; ;onoff.c: 51: SPBRG = 25 ;
+"51
 [e = _SPBRG -> -> 25 `i `uc ]
-[; ;onoff.c: 128: RCIF = 0 ;
-"128
-[e = _RCIF -> -> 0 `i `b ]
-[; ;onoff.c: 131: OPTION_REG = 0b00000000;
-"131
-[e = _OPTION_REG -> -> 0 `i `uc ]
-[; ;onoff.c: 132: TMR0 = 141;
-"132
-[e = _TMR0 -> -> 141 `i `uc ]
-[; ;onoff.c: 133: TMR0IF = 0;
-"133
-[e = _TMR0IF -> -> 0 `i `b ]
-[; ;onoff.c: 137: RCIE = 1 ;
-"137
-[e = _RCIE -> -> 1 `i `b ]
-[; ;onoff.c: 138: TMR0IE = 1;
-"138
-[e = _TMR0IE -> -> 1 `i `b ]
-[; ;onoff.c: 139: PEIE = 1 ;
-"139
-[e = _PEIE -> -> 1 `i `b ]
-[; ;onoff.c: 140: GIE = 1 ;
-"140
-[e = _GIE -> -> 1 `i `b ]
-[; ;onoff.c: 141: }
-"141
-[e :UE 203 ]
+[; ;onoff.c: 53: Wait(500) ;
+"53
+[e ( _Wait (1 -> -> 500 `i `ui ]
+[; ;onoff.c: 54: i = 0x30 ;
+"54
+[e = _i -> -> 48 `i `uc ]
+[; ;onoff.c: 56: while(1) {
+"56
+[e :U 184 ]
+{
+[; ;onoff.c: 57: while(TXIF==0) ;
+"57
+[e $U 186  ]
+[e :U 187 ]
+[e :U 186 ]
+[e $ == -> _TXIF `i -> 0 `i 187  ]
+[e :U 188 ]
+[; ;onoff.c: 58: TXREG = i ;
+"58
+[e = _TXREG _i ]
+[; ;onoff.c: 60: i++ ;
+"60
+[e ++ _i -> -> 1 `i `uc ]
+[; ;onoff.c: 61: if (i > 0x7b) i=0x30 ;
+"61
+[e $ ! > -> _i `i -> 123 `i 189  ]
+[e = _i -> -> 48 `i `uc ]
+[e :U 189 ]
+[; ;onoff.c: 63: Wait(100) ;
+"63
+[e ( _Wait (1 -> -> 100 `i `ui ]
+"64
+}
+[e :U 183 ]
+"56
+[e $U 184  ]
+[e :U 185 ]
+[; ;onoff.c: 64: }
+[; ;onoff.c: 65: }
+"65
+[e :UE 182 ]
 }

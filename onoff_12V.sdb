@@ -774,8 +774,6 @@
 [s S2045 . 1 `uc 1 TOSH 1 0 :7:0 
 ]
 [u S2047 . 1 `S2045 1 . 1 0 ]
-"34 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
-[v F2070 `(v  1 t 0 ]
 "5 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\sources\abdiv.c
 [v ___abdiv `(c  1 e 1 0 ]
 "5 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\sources\abmod.c
@@ -848,12 +846,10 @@
 [v ___tmul `(um  1 e 3 0 ]
 "3 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\sources\wmul.c
 [v ___wmul `(ui  1 e 2 0 ]
-"34 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
-[v _InterReceiver `I(v  1 e 0 0 ]
-"106
+"28 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
+[v _Wait `(v  1 e 0 0 ]
+"38
 [v _main `(v  1 e 0 0 ]
-"115
-[v _init `(v  1 s 0 init ]
 "7 eeprom.c
 [v _eecpymem `(v  1 e 0 0 ]
 "25
@@ -2022,44 +2018,19 @@
 [v _STKPTRbits `VES2018  1 e 1 @4077 ]
 "2170
 [v _TOSHbits `VES83  1 e 1 @4079 ]
-"106 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
+"38 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
 [v _main `(v  1 e 0 0 ]
 {
-"113
-} 0
-"115
-[v _init `(v  1 s 0 init ]
-{
-"141
-} 0
-"34
-[v _InterReceiver `I(v  1 e 0 0 ]
-{
-"35
-[v InterReceiver@counter `i  1 s 2 counter ]
-"36
-[v InterReceiver@sec `i  1 s 2 sec ]
-"37
-[v InterReceiver@flg `i  1 s 2 flg ]
-"38
-[v InterReceiver@rev_flg `i  1 s 2 rev_flg ]
 "39
-[v InterReceiver@now_sec `i  1 s 2 now_sec ]
-"41
-[v InterReceiver@offtime `i  1 s 2 offtime ]
-"42
-[v InterReceiver@offtime_flg `i  1 s 2 offtime_flg ]
-"43
-[v InterReceiver@now_offtime `i  1 s 2 now_offtime ]
-"101
+[v main@i `uc  1 a 1 7 ]
+"65
 } 0
-"3 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\sources\wmul.c
-[v ___wmul `(ui  1 e 2 0 ]
+"28
+[v _Wait `(v  1 e 0 0 ]
 {
-"4
-[v ___wmul@product `ui  1 a 2 4 ]
-"3
-[v ___wmul@multiplier `ui  1 p 2 0 ]
-[v ___wmul@multiplicand `ui  1 p 2 2 ]
-"13
+"29
+[v Wait@i `i  1 a 2 4 ]
+"28
+[v Wait@num `ui  1 p 2 0 ]
+"35
 } 0
