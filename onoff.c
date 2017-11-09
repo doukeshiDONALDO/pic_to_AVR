@@ -5,7 +5,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define _XTAL_FREQ  1000000    // delay用(クロック８MHzで動作時)
+#define _XTAL_FREQ  1000000    // delay用(クロック1MHzで動作時)
 
 // コンフィギュレーション１の設定
 // CLKOUTﾋﾟﾝをRA4ﾋﾟﾝで使用する(CLKOUTEN_OFF)：内部ｸﾛｯｸ使用する(INTIO)
@@ -39,13 +39,13 @@ void main()
      char i ;
 
      OSCCON = 0b01011010 ;     // 内部クロックは1ＭＨｚとする
-     ANSELA = 0b00000000 ;     // アナログは使用しない（すべてデジタルI/Oに割当てる）
-     TRISA  = 0b00001000 ;     // ピンは全て出力に割当てる(RA3は入力専用)
-     PORTA  = 0b00000000 ;     // 出力ピンの初期化(全てLOWにする)
+     ANSELA = 0b00000000 ;     // no use analog（すべてデジタルI/Oに割当てる）
+     TRISA  = 0b00001000 ;     // ピンは全て出力に割当てる(RA3 is INPUT only)
+     PORTA  = 0b00000000 ;     // reset OUTPUT pin(all LOW)
      // ＵＳＡＲＴ機能の設定を行う
      RXDTSEL = 1 ;             // 2番ピン(RA5)をＲＸ受信ピンとする
      TXCKSEL = 1 ;             // 3番ピン(RA4)をＴＸ送信ピンとする
- BRG16 = 1;       // baud rate 　set bit
+ 	 BRG16 = 1;                // baud rate 　set bit
      TXSTA  = 0b00100100 ;     // 送信情報設定：非同期モード　８ビット・ノンパリティ
      RCSTA  = 0b10010000 ;     // 受信情報設定
      SPBRG  = 25 ;             // ボーレートを９６００(高速モード)に設定
