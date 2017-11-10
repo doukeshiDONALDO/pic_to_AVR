@@ -2191,6 +2191,31 @@ _delay((unsigned long)((10)*(1000000/4000.0))) ;
 }
 }
 
+void interrupt InterReceiver( void )
+{
+static char i = 0x30;
+static int debug = 0;
+
+# 47
+if (RCIF == 1) {
+
+# 57
+debug = 1-debug;
+Wait(500) ;
+if(debug){
+RA2 = 1;
+RA1 = 1;
+}
+else
+{
+RA2 = 0;
+RA1 = 0;
+}
+}
+RCIF = 0;
+}
+
+
 void main()
 {
 char i ;
@@ -2206,17 +2231,17 @@ BRG16 = 1;
 TXSTA = 0b00100100 ;
 RCSTA = 0b10010000 ;
 SPBRG = 25 ;
+RCIF = 0;
+RCIE = 1 ;
+
+PEIE = 1 ;
+GIE = 1 ;
 
 Wait(500) ;
 i = 0x30 ;
 
 while(1) {
-while(TXIF==0) ;
-TXREG = i ;
 
-i++ ;
-if (i > 0x7b) i=0x30 ;
-
-Wait(100) ;
+# 105
 }
 }

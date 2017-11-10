@@ -3033,84 +3033,146 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 177 ]
 }
 "38
-[v _main `(v  1 ef ]
+[v F2073 `(v  1 tf ]
+[v _InterReceiver `IF2073  1 e ]
 {
-[; ;onoff.c: 37: void main()
+[; ;onoff.c: 37: void interrupt InterReceiver( void )
 [; ;onoff.c: 38: {
-[e :U _main ]
+[e :U _InterReceiver ]
 [f ]
 "39
-[v _i `uc  1 a ]
-[; ;onoff.c: 39: char i ;
-[; ;onoff.c: 41: OSCCON = 0b01011010 ;
-"41
-[e = _OSCCON -> -> 90 `i `uc ]
-[; ;onoff.c: 42: ANSELA = 0b00000000 ;
-"42
-[e = _ANSELA -> -> 0 `i `uc ]
-[; ;onoff.c: 43: TRISA = 0b00001000 ;
-"43
-[e = _TRISA -> -> 8 `i `uc ]
-[; ;onoff.c: 44: PORTA = 0b00000000 ;
-"44
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;onoff.c: 46: RXDTSEL = 1 ;
-"46
-[e = _RXDTSEL -> -> 1 `i `b ]
-[; ;onoff.c: 47: TXCKSEL = 1 ;
+[v F2074 `uc  1 s i ]
+[i F2074
+-> -> 48 `i `uc
+]
+"40
+[v F2075 `i  1 s debug ]
+[i F2075
+-> 0 `i
+]
+[; ;onoff.c: 39: static char i = 0x30;
+[; ;onoff.c: 40: static int debug = 0;
+[; ;onoff.c: 47: if (RCIF == 1) {
 "47
-[e = _TXCKSEL -> -> 1 `i `b ]
-[; ;onoff.c: 48: BRG16 = 1;
-"48
-[e = _BRG16 -> -> 1 `i `b ]
-[; ;onoff.c: 49: TXSTA = 0b00100100 ;
-"49
-[e = _TXSTA -> -> 36 `i `uc ]
-[; ;onoff.c: 50: RCSTA = 0b10010000 ;
-"50
-[e = _RCSTA -> -> 144 `i `uc ]
-[; ;onoff.c: 51: SPBRG = 25 ;
-"51
-[e = _SPBRG -> -> 25 `i `uc ]
-[; ;onoff.c: 53: Wait(500) ;
-"53
-[e ( _Wait (1 -> -> 500 `i `ui ]
-[; ;onoff.c: 54: i = 0x30 ;
-"54
-[e = _i -> -> 48 `i `uc ]
-[; ;onoff.c: 56: while(1) {
-"56
-[e :U 184 ]
+[e $ ! == -> _RCIF `i -> 1 `i 183  ]
 {
-[; ;onoff.c: 57: while(TXIF==0) ;
+[; ;onoff.c: 57: debug = 1-debug;
 "57
-[e $U 186  ]
-[e :U 187 ]
-[e :U 186 ]
-[e $ == -> _TXIF `i -> 0 `i 187  ]
-[e :U 188 ]
-[; ;onoff.c: 58: TXREG = i ;
+[e = F2075 - -> 1 `i F2075 ]
+[; ;onoff.c: 58: Wait(500) ;
 "58
-[e = _TXREG _i ]
-[; ;onoff.c: 60: i++ ;
+[e ( _Wait (1 -> -> 500 `i `ui ]
+[; ;onoff.c: 59: if(debug){
+"59
+[e $ ! != F2075 -> 0 `i 184  ]
+{
+[; ;onoff.c: 60: RA2 = 1;
 "60
-[e ++ _i -> -> 1 `i `uc ]
-[; ;onoff.c: 61: if (i > 0x7b) i=0x30 ;
+[e = _RA2 -> -> 1 `i `b ]
+[; ;onoff.c: 61: RA1 = 1;
 "61
-[e $ ! > -> _i `i -> 123 `i 189  ]
-[e = _i -> -> 48 `i `uc ]
-[e :U 189 ]
-[; ;onoff.c: 63: Wait(100) ;
+[e = _RA1 -> -> 1 `i `b ]
+"62
+}
+[; ;onoff.c: 62: }
+[e $U 185  ]
 "63
-[e ( _Wait (1 -> -> 100 `i `ui ]
+[e :U 184 ]
+[; ;onoff.c: 63: else
+[; ;onoff.c: 64: {
 "64
+{
+[; ;onoff.c: 65: RA2 = 0;
+"65
+[e = _RA2 -> -> 0 `i `b ]
+[; ;onoff.c: 66: RA1 = 0;
+"66
+[e = _RA1 -> -> 0 `i `b ]
+"67
+}
+[e :U 185 ]
+"68
 }
 [e :U 183 ]
-"56
-[e $U 184  ]
-[e :U 185 ]
-[; ;onoff.c: 64: }
-[; ;onoff.c: 65: }
-"65
+[; ;onoff.c: 67: }
+[; ;onoff.c: 68: }
+[; ;onoff.c: 69: RCIF = 0;
+"69
+[e = _RCIF -> -> 0 `i `b ]
+[; ;onoff.c: 70: }
+"70
 [e :UE 182 ]
+}
+"74
+[v _main `(v  1 ef ]
+{
+[; ;onoff.c: 73: void main()
+[; ;onoff.c: 74: {
+[e :U _main ]
+[f ]
+"75
+[v _i `uc  1 a ]
+[; ;onoff.c: 75: char i ;
+[; ;onoff.c: 77: OSCCON = 0b01011010 ;
+"77
+[e = _OSCCON -> -> 90 `i `uc ]
+[; ;onoff.c: 78: ANSELA = 0b00000000 ;
+"78
+[e = _ANSELA -> -> 0 `i `uc ]
+[; ;onoff.c: 79: TRISA = 0b00001000 ;
+"79
+[e = _TRISA -> -> 8 `i `uc ]
+[; ;onoff.c: 80: PORTA = 0b00000000 ;
+"80
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;onoff.c: 82: RXDTSEL = 1 ;
+"82
+[e = _RXDTSEL -> -> 1 `i `b ]
+[; ;onoff.c: 83: TXCKSEL = 1 ;
+"83
+[e = _TXCKSEL -> -> 1 `i `b ]
+[; ;onoff.c: 84: BRG16 = 1;
+"84
+[e = _BRG16 -> -> 1 `i `b ]
+[; ;onoff.c: 85: TXSTA = 0b00100100 ;
+"85
+[e = _TXSTA -> -> 36 `i `uc ]
+[; ;onoff.c: 86: RCSTA = 0b10010000 ;
+"86
+[e = _RCSTA -> -> 144 `i `uc ]
+[; ;onoff.c: 87: SPBRG = 25 ;
+"87
+[e = _SPBRG -> -> 25 `i `uc ]
+[; ;onoff.c: 88: RCIF = 0;
+"88
+[e = _RCIF -> -> 0 `i `b ]
+[; ;onoff.c: 89: RCIE = 1 ;
+"89
+[e = _RCIE -> -> 1 `i `b ]
+[; ;onoff.c: 91: PEIE = 1 ;
+"91
+[e = _PEIE -> -> 1 `i `b ]
+[; ;onoff.c: 92: GIE = 1 ;
+"92
+[e = _GIE -> -> 1 `i `b ]
+[; ;onoff.c: 94: Wait(500) ;
+"94
+[e ( _Wait (1 -> -> 500 `i `ui ]
+[; ;onoff.c: 95: i = 0x30 ;
+"95
+[e = _i -> -> 48 `i `uc ]
+[; ;onoff.c: 97: while(1) {
+"97
+[e :U 188 ]
+{
+"105
+}
+[e :U 187 ]
+"97
+[e $U 188  ]
+[e :U 189 ]
+[; ;onoff.c: 105: }
+[; ;onoff.c: 106: }
+"106
+[e :UE 186 ]
 }

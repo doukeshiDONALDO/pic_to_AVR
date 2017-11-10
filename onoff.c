@@ -33,6 +33,42 @@ void Wait(unsigned int num)
           __delay_ms(10) ;     // 10msプログラムの一時停止
      }
 }
+
+void interrupt InterReceiver( void )
+{
+	static char i = 0x30;
+	static int debug = 0;
+/*	if (RCIF == 1) {          // usart receive interrupt 
+		while(TXIF==0) ;      // wait until possible send
+          TXREG = RCREG ;     // send
+		RCIF = 0;           // reset usart receive interrupt flag
+	}
+*/
+if (RCIF == 1) {
+/*
+          while(TXIF==0) ;     // 送信可能になるまで待つ    *1)
+          TXREG = i ;          // 送信する
+          // 送信データを作成する(モニターに表示しやすい用に文字データを作成)
+          i++ ;
+          if (i > 0x7b) i=0x30 ;
+
+          Wait(100) ;          // １秒後に処理を繰り返す
+*/
+	debug = 1-debug;
+Wait(500) ;
+if(debug){
+     RA2 = 1;
+      RA1 = 1;
+} 
+else
+{
+     RA2 = 0;
+      RA1 = 0;
+}
+}
+RCIF = 0;
+}
+
 // メインの処理
 void main()
 {
@@ -49,17 +85,22 @@ void main()
      TXSTA  = 0b00100100 ;     // 送信情報設定：非同期モード　８ビット・ノンパリティ
      RCSTA  = 0b10010000 ;     // 受信情報設定
      SPBRG  = 25 ;             // ボーレートを９６００(高速モード)に設定
+RCIF = 0;
+RCIE = 1 ;                // ＵＳＡＲＴ割込み受信を有効にする
+//TMR0IE = 1;              // タイマー0割込み(T0IE)を許可する
+PEIE = 1 ;                // 周辺装置割込みを有効にする
+GIE  = 1 ;                // 全割込み処理を許可する
 
      Wait(500) ;               // ５秒後に開始する
      i = 0x30 ;
 
      while(1) {
-          while(TXIF==0) ;     // 送信可能になるまで待つ    *1)
+/*          while(TXIF==0) ;     // 送信可能になるまで待つ    *1)
           TXREG = i ;          // 送信する
           // 送信データを作成する(モニターに表示しやすい用に文字データを作成)
           i++ ;
           if (i > 0x7b) i=0x30 ;
 
           Wait(100) ;          // １秒後に処理を繰り返す
-     }
+ */    }
 }

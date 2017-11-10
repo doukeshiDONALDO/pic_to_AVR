@@ -1,3 +1,5 @@
-_main: CODE, 1980 0 68
-_Wait: CODE, 1952 0 28
-Total: 96
+_main: CODE, 52 0 43
+_InterReceiver: CODE, 4 0 46
+_Wait: CODE, 95 0 30
+i1_Wait: CODE, 125 0 28
+Total: 147
