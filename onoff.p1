@@ -3015,18 +3015,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;onoff.c: 36: OSCCON = 0b01011010 ;
 "36
 [e = _OSCCON -> -> 90 `i `uc ]
-[; ;onoff.c: 37: PORTA = 0x00;
+[; ;onoff.c: 37: PORTA = 0b00000100 ;
 "37
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;onoff.c: 39: RXDTSEL = 1 ;
-"39
+[e = _PORTA -> -> 4 `i `uc ]
+[; ;onoff.c: 38: RXDTSEL = 1 ;
+"38
 [e = _RXDTSEL -> -> 1 `i `b ]
-[; ;onoff.c: 40: TXCKSEL = 1 ;
-"40
+[; ;onoff.c: 39: TXCKSEL = 1 ;
+"39
 [e = _TXCKSEL -> -> 1 `i `b ]
-[; ;onoff.c: 41: TRISA = 0b11101011;
+[; ;onoff.c: 41: TRISA = 0b00101001 ;
 "41
-[e = _TRISA -> -> 235 `i `uc ]
+[e = _TRISA -> -> 41 `i `uc ]
 [; ;onoff.c: 42: ANSELA = 0x00;
 "42
 [e = _ANSELA -> -> 0 `i `uc ]

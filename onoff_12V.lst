@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PIC LITE Macro Assembler V9.83 build 10920 
-                                                                                               Fri Nov 17 19:46:24 2017
+                                                                                               Fri Nov 17 19:52:59 2017
 
 HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
      1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 10920"
@@ -122,20 +122,20 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    115  0CAA                     _WREN	set	3242
    116                           	global	_WPUA
    117  020C                     _WPUA	set	524
-   118                           	file	"C:\Users\igalab\AppData\Local\Temp\s8pg."
+   118                           	file	"C:\Users\igalab\AppData\Local\Temp\s7as."
    119                           	line	#
    120                           psect cinit,class=CODE,delta=2
    121                           global start_initialization
-   122  0746                     start_initialization:
+   122  0745                     start_initialization:
    123                           
    124                           psect cinit,class=CODE,delta=2
    125                           global end_of_initialization
    126                           
    127                           ;End of C runtime variable initialization code
    128                           
-   129  0746                     end_of_initialization:
-   130  0746  0020               movlb 0
-   131  0747  2F98               ljmp _main	;jump to C main() function
+   129  0745                     end_of_initialization:
+   130  0745  0020               movlb 0
+   131  0746  2F97               ljmp _main	;jump to C main() function
    132                           psect	cstackCOMMON,class=COMMON,space=1
    133                           global __pcstackCOMMON
    134  0070                     __pcstackCOMMON:
@@ -298,7 +298,7 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    291                           	global	_main
    292                           psect	maintext,global,class=CODE,delta=2
    293                           global __pmaintext
-   294  0798                     __pmaintext:
+   294  0797                     __pmaintext:
    295                           
    296 ;; *************** function _main *****************
    297 ;; Defined at:
@@ -333,572 +333,570 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    326                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
    327                           	line	33
    328                           	global	__size_of_main
-   329  0068                     	__size_of_main	equ	__end_of_main-_main
+   329  0069                     	__size_of_main	equ	__end_of_main-_main
    330                           	
-   331  0798                     _main:	
+   331  0797                     _main:	
    332                           	opt	stack 15
    333                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    334                           	line	36
    335                           	
-   336  0798                     l3512:	
+   336  0797                     l3512:	
    337                           ;onoff.c: 34: char RxData;
    338                           ;onoff.c: 36: OSCCON = 0b01011010 ;
-   339  0798  305A               	movlw	(05Ah)
-   340  0799  0021               	movlb 1	; select bank1
-   341  079A  0099               	movwf	(153)^080h	;volatile
+   339  0797  305A               	movlw	(05Ah)
+   340  0798  0021               	movlb 1	; select bank1
+   341  0799  0099               	movwf	(153)^080h	;volatile
    342                           	line	37
-   343                           	
-   344  079B                     l3514:	
-   345                           ;onoff.c: 37: PORTA = 0x00;
-   346  079B  0020               	movlb 0	; select bank0
-   347  079C  018C               	clrf	(12)	;volatile
-   348                           	line	39
-   349                           	
-   350  079D                     l3516:	
-   351                           ;onoff.c: 39: RXDTSEL = 1 ;
-   352  079D  0022               	movlb 2	; select bank2
-   353  079E  179D               	bsf	(2287/8)^0100h,(2287)&7
-   354                           	line	40
-   355                           	
-   356  079F                     l3518:	
-   357                           ;onoff.c: 40: TXCKSEL = 1 ;
-   358  079F  151D               	bsf	(2282/8)^0100h,(2282)&7
-   359                           	line	41
-   360                           	
-   361  07A0                     l3520:	
-   362                           ;onoff.c: 41: TRISA = 0b11101011;
-   363  07A0  30EB               	movlw	(0EBh)
-   364  07A1  0021               	movlb 1	; select bank1
-   365  07A2  008C               	movwf	(140)^080h	;volatile
-   366                           	line	42
-   367                           ;onoff.c: 42: ANSELA = 0x00;
-   368  07A3  0023               	movlb 3	; select bank3
-   369  07A4  018C               	clrf	(396)^0180h	;volatile
-   370                           	line	43
-   371                           	
-   372  07A5                     l3522:	
-   373                           ;onoff.c: 43: WPUA = 0b00011111;
-   374  07A5  301F               	movlw	(01Fh)
-   375  07A6  0024               	movlb 4	; select bank4
-   376  07A7  008C               	movwf	(524)^0200h	;volatile
-   377                           	line	44
-   378                           	
-   379  07A8                     l3524:	
-   380                           ;onoff.c: 44: nWPUEN = 0;
-   381  07A8  0021               	movlb 1	; select bank1
-   382  07A9  1395               	bcf	(1199/8)^080h,(1199)&7
-   383                           	line	47
-   384                           	
-   385  07AA                     l3526:	
-   386                           ;onoff.c: 47: RCSTA = 0b10010000;
-   387  07AA  3090               	movlw	(090h)
-   388  07AB  0023               	movlb 3	; select bank3
-   389  07AC  009D               	movwf	(413)^0180h	;volatile
-   390                           	line	48
-   391                           	
-   392  07AD                     l3528:	
-   393                           ;onoff.c: 48: TXSTA = 0b00100100;
-   394  07AD  3024               	movlw	(024h)
-   395  07AE  009E               	movwf	(414)^0180h	;volatile
-   396                           	line	49
-   397                           	
-   398  07AF                     l3530:	
-   399                           ;onoff.c: 49: BAUDCON = 0b00001000;
-   400  07AF  3008               	movlw	(08h)
-   401  07B0  009F               	movwf	(415)^0180h	;volatile
-   402                           	line	52
-   403                           	
-   404  07B1                     l3532:	
-   405                           ;onoff.c: 52: BRG16 = 1;
-   406  07B1  159F               	bsf	(3323/8)^0180h,(3323)&7
-   407                           	line	53
-   408                           	
-   409  07B2                     l3534:	
-   410                           ;onoff.c: 53: SPBRG = 25 ;
-   411  07B2  3019               	movlw	(019h)
-   412  07B3  009B               	movwf	(411)^0180h	;volatile
-   413  07B4  2FB6               	goto	l1150
-   414                           	line	56
-   415                           ;onoff.c: 56: while(1){
-   416                           	
-   417  07B5                     l1149:	
-   418                           	line	57
-   419                           ;onoff.c: 57: while (!RCIF);
-   420  07B5  2FB6               	goto	l1150
-   421                           	
-   422  07B6                     l1151:	
-   423                           	
-   424  07B6                     l1150:	
-   425  07B6  0020               	movlb 0	; select bank0
-   426  07B7  1E91               	btfss	(141/8),(141)&7
-   427  07B8  2FBA               	goto	u2161
-   428  07B9  2FBB               	goto	u2160
-   429  07BA                     u2161:
-   430  07BA  2FB6               	goto	l1150
-   431  07BB                     u2160:
-   432                           	
-   433  07BB                     l1152:	
-   434                           	line	58
-   435                           ;onoff.c: 58: if(RCSTAbits.OERR){
-   436  07BB  0023               	movlb 3	; select bank3
-   437  07BC  1C9D               	btfss	(413)^0180h,1	;volatile
-   438  07BD  2FBF               	goto	u2171
-   439  07BE  2FC0               	goto	u2170
-   440  07BF                     u2171:
-   441  07BF  2FC7               	goto	l3540
-   442  07C0                     u2170:
-   443                           	line	59
-   444                           	
-   445  07C0                     l3536:	
-   446                           ;onoff.c: 59: RCSTAbits.CREN=0;
-   447  07C0  121D               	bcf	(413)^0180h,4	;volatile
-   448                           	line	60
-   449                           ;onoff.c: 60: RCSTAbits.CREN=1;
-   450  07C1  161D               	bsf	(413)^0180h,4	;volatile
-   451                           	line	61
-   452                           	
-   453  07C2                     l3538:	
-   454                           ;onoff.c: 61: RxData = RCREG;
-   455  07C2  0819               	movf	(409)^0180h,w	;volatile
-   456  07C3  00F3               	movwf	(??_main+0)+0
-   457  07C4  0873               	movf	(??_main+0)+0,w
-   458  07C5  00F4               	movwf	(main@RxData)
-   459                           	line	62
-   460                           ;onoff.c: 62: continue;
-   461  07C6  2FB6               	goto	l1150
-   462                           	line	63
-   463                           	
-   464  07C7                     l1153:	
-   465                           	line	64
-   466                           	
-   467  07C7                     l3540:	
-   468                           ;onoff.c: 63: }
-   469                           ;onoff.c: 64: RxData = RCREG;
-   470  07C7  0819               	movf	(409)^0180h,w	;volatile
-   471  07C8  00F3               	movwf	(??_main+0)+0
-   472  07C9  0873               	movf	(??_main+0)+0,w
-   473  07CA  00F4               	movwf	(main@RxData)
-   474                           	line	65
-   475                           ;onoff.c: 65: while(TXIF==0);
-   476  07CB  2FCC               	goto	l1155
-   477                           	
-   478  07CC                     l1156:	
-   479                           	
-   480  07CC                     l1155:	
-   481  07CC  0020               	movlb 0	; select bank0
-   482  07CD  1E11               	btfss	(140/8),(140)&7
-   483  07CE  2FD0               	goto	u2181
-   484  07CF  2FD1               	goto	u2180
-   485  07D0                     u2181:
-   486  07D0  2FCC               	goto	l1155
-   487  07D1                     u2180:
-   488  07D1  2FD2               	goto	l3542
-   489                           	
-   490  07D2                     l1157:	
-   491                           	line	66
-   492                           	
-   493  07D2                     l3542:	
-   494                           ;onoff.c: 66: TXREG = RxData;
-   495  07D2  0874               	movf	(main@RxData),w
-   496  07D3  0023               	movlb 3	; select bank3
-   497  07D4  009A               	movwf	(410)^0180h	;volatile
-   498                           	line	67
-   499                           ;onoff.c: 67: switch(RxData){
-   500  07D5  2FEF               	goto	l3556
-   501                           	line	68
-   502                           ;onoff.c: 68: case '1':FlashLED(1);break;
-   503                           	
-   504  07D6                     l1159:	
-   505                           	
-   506  07D6                     l3544:	
-   507  07D6  3001               	movlw	(01h)
-   508  07D7  3187  2748  3187   	fcall	_FlashLED
-   509  07DA  2FB6               	goto	l1150
-   510                           	line	69
-   511                           ;onoff.c: 69: case '2':FlashLED(2);break;
-   512                           	
-   513  07DB                     l1161:	
-   514                           	
-   515  07DB                     l3546:	
-   516  07DB  3002               	movlw	(02h)
-   517  07DC  3187  2748  3187   	fcall	_FlashLED
-   518  07DF  2FB6               	goto	l1150
-   519                           	line	70
-   520                           ;onoff.c: 70: case '3':FlashLED(3);break;
-   521                           	
-   522  07E0                     l1162:	
-   523                           	
-   524  07E0                     l3548:	
-   525  07E0  3003               	movlw	(03h)
-   526  07E1  3187  2748  3187   	fcall	_FlashLED
-   527  07E4  2FB6               	goto	l1150
-   528                           	line	71
-   529                           ;onoff.c: 71: case '4':FlashLED(4);break;
-   530                           	
-   531  07E5                     l1163:	
-   532                           	
-   533  07E5                     l3550:	
-   534  07E5  3004               	movlw	(04h)
-   535  07E6  3187  2748  3187   	fcall	_FlashLED
-   536  07E9  2FB6               	goto	l1150
-   537                           	line	72
-   538                           ;onoff.c: 72: default :ErrorInd() ;break;
-   539                           	
-   540  07EA                     l1164:	
-   541                           	
-   542  07EA                     l3552:	
-   543  07EA  3187  276B  3187   	fcall	_ErrorInd
-   544  07ED  2FB6               	goto	l1150
-   545                           	line	73
-   546                           	
-   547  07EE                     l3554:	
-   548                           ;onoff.c: 73: }
-   549  07EE  2FB6               	goto	l1150
-   550                           	line	67
-   551                           	
-   552  07EF                     l1158:	
-   553                           	
-   554  07EF                     l3556:	
-   555  07EF  0874               	movf	(main@RxData),w
-   556                           	; Switch size 1, requested type "space"
-   557                           ; Number of cases is 4, Range of values is 49 to 52
-   558                           ; switch strategies available:
-   559                           ; Name         Instructions Cycles
-   560                           ; simple_byte           13     7 (average)
-   561                           ; direct_byte           17     9 (fixed)
-   562                           ; jumptable            263     9 (fixed)
-   563                           ;	Chosen strategy is simple_byte
-   564                           
-   565                           	opt asmopt_off
-   566  07F0  3A31               	xorlw	49^0	; case 49
-   567  07F1  1903               	skipnz
-   568  07F2  2FD6               	goto	l3544
-   569  07F3  3A03               	xorlw	50^49	; case 50
-   570  07F4  1903               	skipnz
-   571  07F5  2FDB               	goto	l3546
-   572  07F6  3A01               	xorlw	51^50	; case 51
-   573  07F7  1903               	skipnz
-   574  07F8  2FE0               	goto	l3548
-   575  07F9  3A07               	xorlw	52^51	; case 52
-   576  07FA  1903               	skipnz
-   577  07FB  2FE5               	goto	l3550
-   578  07FC  2FEA               	goto	l3552
-   579                           	opt asmopt_on
-   580                           
-   581                           	line	73
-   582                           	
-   583  07FD                     l1160:	
-   584  07FD  2FB6               	goto	l1150
-   585                           	line	74
-   586                           	
-   587  07FE                     l1154:	
-   588                           	line	56
-   589  07FE  2FB6               	goto	l1150
-   590                           	
-   591  07FF                     l1165:	
-   592                           	line	75
-   593                           	
-   594  07FF                     l1166:	
-   595                           	global	start
-   596  07FF  2801               	ljmp	start
-   597                           	opt stack 0
-   598                           GLOBAL	__end_of_main
-   599  0800                     	__end_of_main:
-   600 ;; =============== function _main ends ============
-   601                           
-   602                           	signat	_main,88
-   603                           	global	_ErrorInd
-   604                           psect	text89,local,class=CODE,delta=2
-   605                           global __ptext89
-   606  076B                     __ptext89:
-   607                           
-   608 ;; *************** function _ErrorInd *****************
-   609 ;; Defined at:
-   610 ;;		line 84 in file "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   611 ;; Parameters:    Size  Location     Type
-   612 ;;		None
-   613 ;; Auto vars:     Size  Location     Type
-   614 ;;		None
-   615 ;; Return value:  Size  Location     Type
-   616 ;;		None               void
-   617 ;; Registers used:
-   618 ;;		wreg
-   619 ;; Tracked objects:
-   620 ;;		On entry : 0/0
-   621 ;;		On exit  : 0/0
-   622 ;;		Unchanged: 0/0
-   623 ;; Data sizes:     COMMON   BANK0   BANK1
-   624 ;;      Params:         0       0       0
-   625 ;;      Locals:         0       0       0
-   626 ;;      Temps:          2       0       0
-   627 ;;      Totals:         2       0       0
-   628 ;;Total ram usage:        2 bytes
-   629 ;; Hardware stack levels used:    1
-   630 ;; This function calls:
-   631 ;;		Nothing
-   632 ;; This function is called by:
-   633 ;;		_main
-   634 ;; This function uses a non-reentrant model
-   635 ;;
-   636                           psect	text89
-   637                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   638                           	line	84
-   639                           	global	__size_of_ErrorInd
-   640  002D                     	__size_of_ErrorInd	equ	__end_of_ErrorInd-_ErrorInd
-   641                           	
-   642  076B                     _ErrorInd:	
-   643                           	opt	stack 15
-   644                           ; Regs used in _ErrorInd: [wreg]
-   645                           	line	85
-   646                           	
-   647  076B                     l3502:	
-   648                           ;onoff.c: 85: LATA2 = 1; _delay((unsigned long)((50)*(1000000/4000.0)));
-   649  076B  0022               	movlb 2	; select bank2
-   650  076C  150C               	bsf	(2146/8)^0100h,(2146)&7
-   651                           	
-   652  076D                     l3504:	
-   653                           	opt asmopt_off
-   654  076D  3011               movlw	17
-   655  076E  00F1               movwf	((??_ErrorInd+0)+0+1),f
-   656  076F  303A               	movlw	58
-   657  0770  00F0               movwf	((??_ErrorInd+0)+0),f
-   658  0771                     u2197:
-   659  0771  0BF0               	decfsz	((??_ErrorInd+0)+0),f
-   660  0772  2F71               	goto	u2197
-   661  0773  0BF1               	decfsz	((??_ErrorInd+0)+0+1),f
-   662  0774  2F71               	goto	u2197
-   663  0775  0064               	clrwdt
-   664                           opt asmopt_on
-   665                           
-   666                           	line	86
-   667                           	
-   668  0776                     l3506:	
-   669                           ;onoff.c: 86: LATA2 = 0; _delay((unsigned long)((50)*(1000000/4000.0)));
-   670  0776  0022               	movlb 2	; select bank2
-   671  0777  110C               	bcf	(2146/8)^0100h,(2146)&7
-   672                           	opt asmopt_off
-   673  0778  3011               movlw	17
-   674  0779  00F1               movwf	((??_ErrorInd+0)+0+1),f
-   675  077A  303A               	movlw	58
-   676  077B  00F0               movwf	((??_ErrorInd+0)+0),f
-   677  077C                     u2207:
-   678  077C  0BF0               	decfsz	((??_ErrorInd+0)+0),f
-   679  077D  2F7C               	goto	u2207
-   680  077E  0BF1               	decfsz	((??_ErrorInd+0)+0+1),f
-   681  077F  2F7C               	goto	u2207
-   682  0780  0064               	clrwdt
-   683                           opt asmopt_on
-   684                           
-   685                           	line	87
-   686                           	
-   687  0781                     l3508:	
-   688                           ;onoff.c: 87: LATA2 = 1; _delay((unsigned long)((50)*(1000000/4000.0)));
-   689  0781  0022               	movlb 2	; select bank2
-   690  0782  150C               	bsf	(2146/8)^0100h,(2146)&7
-   691                           	opt asmopt_off
-   692  0783  3011               movlw	17
-   693  0784  00F1               movwf	((??_ErrorInd+0)+0+1),f
-   694  0785  303A               	movlw	58
-   695  0786  00F0               movwf	((??_ErrorInd+0)+0),f
-   696  0787                     u2217:
-   697  0787  0BF0               	decfsz	((??_ErrorInd+0)+0),f
-   698  0788  2F87               	goto	u2217
-   699  0789  0BF1               	decfsz	((??_ErrorInd+0)+0+1),f
-   700  078A  2F87               	goto	u2217
-   701  078B  0064               	clrwdt
-   702                           opt asmopt_on
-   703                           
-   704                           	line	88
-   705                           	
-   706  078C                     l3510:	
-   707                           ;onoff.c: 88: LATA2 = 0; _delay((unsigned long)((50)*(1000000/4000.0)));
-   708  078C  0022               	movlb 2	; select bank2
-   709  078D  110C               	bcf	(2146/8)^0100h,(2146)&7
-   710                           	opt asmopt_off
-   711  078E  3011               movlw	17
-   712  078F  00F1               movwf	((??_ErrorInd+0)+0+1),f
-   713  0790  303A               	movlw	58
-   714  0791  00F0               movwf	((??_ErrorInd+0)+0),f
-   715  0792                     u2227:
-   716  0792  0BF0               	decfsz	((??_ErrorInd+0)+0),f
-   717  0793  2F92               	goto	u2227
-   718  0794  0BF1               	decfsz	((??_ErrorInd+0)+0+1),f
-   719  0795  2F92               	goto	u2227
-   720  0796  0064               	clrwdt
-   721                           opt asmopt_on
-   722                           
-   723                           	line	89
-   724                           	
-   725  0797                     l1175:	
-   726  0797  0008               	return
-   727                           	opt stack 0
-   728                           GLOBAL	__end_of_ErrorInd
-   729  0798                     	__end_of_ErrorInd:
-   730 ;; =============== function _ErrorInd ends ============
-   731                           
-   732                           	signat	_ErrorInd,88
-   733                           	global	_FlashLED
-   734                           psect	text90,local,class=CODE,delta=2
-   735                           global __ptext90
-   736  0748                     __ptext90:
-   737                           
-   738 ;; *************** function _FlashLED *****************
-   739 ;; Defined at:
-   740 ;;		line 77 in file "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   741 ;; Parameters:    Size  Location     Type
-   742 ;;  i               1    wreg     unsigned char 
-   743 ;; Auto vars:     Size  Location     Type
-   744 ;;  i               1    2[COMMON] unsigned char 
-   745 ;; Return value:  Size  Location     Type
-   746 ;;		None               void
-   747 ;; Registers used:
-   748 ;;		wreg, status,2, status,0
-   749 ;; Tracked objects:
-   750 ;;		On entry : 0/0
-   751 ;;		On exit  : 0/0
-   752 ;;		Unchanged: 0/0
-   753 ;; Data sizes:     COMMON   BANK0   BANK1
-   754 ;;      Params:         0       0       0
-   755 ;;      Locals:         1       0       0
-   756 ;;      Temps:          2       0       0
-   757 ;;      Totals:         3       0       0
-   758 ;;Total ram usage:        3 bytes
-   759 ;; Hardware stack levels used:    1
-   760 ;; This function calls:
-   761 ;;		Nothing
-   762 ;; This function is called by:
-   763 ;;		_main
-   764 ;; This function uses a non-reentrant model
-   765 ;;
-   766                           psect	text90
-   767                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   768                           	line	77
-   769                           	global	__size_of_FlashLED
-   770  0023                     	__size_of_FlashLED	equ	__end_of_FlashLED-_FlashLED
-   771                           	
-   772  0748                     _FlashLED:	
-   773                           	opt	stack 15
-   774                           ; Regs used in _FlashLED: [wreg+status,2+status,0]
-   775                           ;FlashLED@i stored from wreg
-   776  0748  00F2               	movwf	(FlashLED@i)
-   777                           	line	78
-   778                           	
-   779  0749                     l3494:	
-   780                           ;onoff.c: 78: while(i--){
-   781  0749  2F61               	goto	l3500
-   782                           	
-   783  074A                     l1170:	
-   784                           	line	79
-   785                           ;onoff.c: 79: LATA2 = 1; _delay((unsigned long)((250)*(1000000/4000.0)));
-   786  074A  0022               	movlb 2	; select bank2
-   787  074B  150C               	bsf	(2146/8)^0100h,(2146)&7
-   788                           	
-   789  074C                     l3496:	
-   790                           	opt asmopt_off
-   791  074C  3052               movlw	82
-   792  074D  00F1               movwf	((??_FlashLED+0)+0+1),f
-   793  074E  3029               	movlw	41
-   794  074F  00F0               movwf	((??_FlashLED+0)+0),f
-   795  0750                     u2237:
-   796  0750  0BF0               	decfsz	((??_FlashLED+0)+0),f
-   797  0751  2F50               	goto	u2237
-   798  0752  0BF1               	decfsz	((??_FlashLED+0)+0+1),f
-   799  0753  2F50               	goto	u2237
-   800  0754  2F55               	nop2
-   801                           opt asmopt_on
-   802                           
-   803                           	line	80
-   804                           	
-   805  0755                     l3498:	
-   806                           ;onoff.c: 80: LATA2 = 0; _delay((unsigned long)((250)*(1000000/4000.0)));
-   807  0755  0022               	movlb 2	; select bank2
-   808  0756  110C               	bcf	(2146/8)^0100h,(2146)&7
-   809                           	opt asmopt_off
-   810  0757  3052               movlw	82
-   811  0758  00F1               movwf	((??_FlashLED+0)+0+1),f
-   812  0759  3029               	movlw	41
-   813  075A  00F0               movwf	((??_FlashLED+0)+0),f
-   814  075B                     u2247:
-   815  075B  0BF0               	decfsz	((??_FlashLED+0)+0),f
-   816  075C  2F5B               	goto	u2247
-   817  075D  0BF1               	decfsz	((??_FlashLED+0)+0+1),f
-   818  075E  2F5B               	goto	u2247
-   819  075F  2F60               	nop2
-   820                           opt asmopt_on
-   821                           
-   822  0760  2F61               	goto	l3500
-   823                           	line	81
-   824                           	
-   825  0761                     l1169:	
-   826                           	line	78
-   827                           	
-   828  0761                     l3500:	
-   829  0761  3001               	movlw	low(01h)
-   830  0762  02F2               	subwf	(FlashLED@i),f
-   831  0763  0872               	movf	((FlashLED@i)),w
-   832  0764  3AFF               	xorlw	0FFh&0ffh
-   833  0765  1D03               	skipz
-   834  0766  2F68               	goto	u2151
-   835  0767  2F69               	goto	u2150
-   836  0768                     u2151:
-   837  0768  2F4A               	goto	l1170
-   838  0769                     u2150:
-   839  0769  2F6A               	goto	l1172
-   840                           	
-   841  076A                     l1171:	
-   842                           	line	82
-   843                           	
-   844  076A                     l1172:	
-   845  076A  0008               	return
-   846                           	opt stack 0
-   847                           GLOBAL	__end_of_FlashLED
-   848  076B                     	__end_of_FlashLED:
-   849 ;; =============== function _FlashLED ends ============
-   850                           
-   851                           	signat	_FlashLED,4216
-   852                           psect	text91,local,class=CODE,delta=2
-   853                           global __ptext91
-   854  0000                     __ptext91:
-   855                           	global	btemp
-   856  007E                     	btemp set 07Eh
-   857                           
-   858                           	DABS	1,126,2	;btemp
-   859                           	global	wtemp0
-   860  007E                     	wtemp0 set btemp
+   343                           ;onoff.c: 37: PORTA = 0b00000100 ;
+   344  079A  3004               	movlw	(04h)
+   345  079B  0020               	movlb 0	; select bank0
+   346  079C  008C               	movwf	(12)	;volatile
+   347                           	line	38
+   348                           	
+   349  079D                     l3514:	
+   350                           ;onoff.c: 38: RXDTSEL = 1 ;
+   351  079D  0022               	movlb 2	; select bank2
+   352  079E  179D               	bsf	(2287/8)^0100h,(2287)&7
+   353                           	line	39
+   354                           	
+   355  079F                     l3516:	
+   356                           ;onoff.c: 39: TXCKSEL = 1 ;
+   357  079F  151D               	bsf	(2282/8)^0100h,(2282)&7
+   358                           	line	41
+   359                           ;onoff.c: 41: TRISA = 0b00101001 ;
+   360  07A0  3029               	movlw	(029h)
+   361  07A1  0021               	movlb 1	; select bank1
+   362  07A2  008C               	movwf	(140)^080h	;volatile
+   363                           	line	42
+   364                           	
+   365  07A3                     l3518:	
+   366                           ;onoff.c: 42: ANSELA = 0x00;
+   367  07A3  0023               	movlb 3	; select bank3
+   368  07A4  018C               	clrf	(396)^0180h	;volatile
+   369                           	line	43
+   370                           	
+   371  07A5                     l3520:	
+   372                           ;onoff.c: 43: WPUA = 0b00011111;
+   373  07A5  301F               	movlw	(01Fh)
+   374  07A6  0024               	movlb 4	; select bank4
+   375  07A7  008C               	movwf	(524)^0200h	;volatile
+   376                           	line	44
+   377                           	
+   378  07A8                     l3522:	
+   379                           ;onoff.c: 44: nWPUEN = 0;
+   380  07A8  0021               	movlb 1	; select bank1
+   381  07A9  1395               	bcf	(1199/8)^080h,(1199)&7
+   382                           	line	47
+   383                           	
+   384  07AA                     l3524:	
+   385                           ;onoff.c: 47: RCSTA = 0b10010000;
+   386  07AA  3090               	movlw	(090h)
+   387  07AB  0023               	movlb 3	; select bank3
+   388  07AC  009D               	movwf	(413)^0180h	;volatile
+   389                           	line	48
+   390                           	
+   391  07AD                     l3526:	
+   392                           ;onoff.c: 48: TXSTA = 0b00100100;
+   393  07AD  3024               	movlw	(024h)
+   394  07AE  009E               	movwf	(414)^0180h	;volatile
+   395                           	line	49
+   396                           	
+   397  07AF                     l3528:	
+   398                           ;onoff.c: 49: BAUDCON = 0b00001000;
+   399  07AF  3008               	movlw	(08h)
+   400  07B0  009F               	movwf	(415)^0180h	;volatile
+   401                           	line	52
+   402                           	
+   403  07B1                     l3530:	
+   404                           ;onoff.c: 52: BRG16 = 1;
+   405  07B1  159F               	bsf	(3323/8)^0180h,(3323)&7
+   406                           	line	53
+   407                           	
+   408  07B2                     l3532:	
+   409                           ;onoff.c: 53: SPBRG = 25 ;
+   410  07B2  3019               	movlw	(019h)
+   411  07B3  009B               	movwf	(411)^0180h	;volatile
+   412  07B4  2FB6               	goto	l1150
+   413                           	line	56
+   414                           ;onoff.c: 56: while(1){
+   415                           	
+   416  07B5                     l1149:	
+   417                           	line	57
+   418                           ;onoff.c: 57: while (!RCIF);
+   419  07B5  2FB6               	goto	l1150
+   420                           	
+   421  07B6                     l1151:	
+   422                           	
+   423  07B6                     l1150:	
+   424  07B6  0020               	movlb 0	; select bank0
+   425  07B7  1E91               	btfss	(141/8),(141)&7
+   426  07B8  2FBA               	goto	u2161
+   427  07B9  2FBB               	goto	u2160
+   428  07BA                     u2161:
+   429  07BA  2FB6               	goto	l1150
+   430  07BB                     u2160:
+   431                           	
+   432  07BB                     l1152:	
+   433                           	line	58
+   434                           ;onoff.c: 58: if(RCSTAbits.OERR){
+   435  07BB  0023               	movlb 3	; select bank3
+   436  07BC  1C9D               	btfss	(413)^0180h,1	;volatile
+   437  07BD  2FBF               	goto	u2171
+   438  07BE  2FC0               	goto	u2170
+   439  07BF                     u2171:
+   440  07BF  2FC7               	goto	l3538
+   441  07C0                     u2170:
+   442                           	line	59
+   443                           	
+   444  07C0                     l3534:	
+   445                           ;onoff.c: 59: RCSTAbits.CREN=0;
+   446  07C0  121D               	bcf	(413)^0180h,4	;volatile
+   447                           	line	60
+   448                           ;onoff.c: 60: RCSTAbits.CREN=1;
+   449  07C1  161D               	bsf	(413)^0180h,4	;volatile
+   450                           	line	61
+   451                           	
+   452  07C2                     l3536:	
+   453                           ;onoff.c: 61: RxData = RCREG;
+   454  07C2  0819               	movf	(409)^0180h,w	;volatile
+   455  07C3  00F3               	movwf	(??_main+0)+0
+   456  07C4  0873               	movf	(??_main+0)+0,w
+   457  07C5  00F4               	movwf	(main@RxData)
+   458                           	line	62
+   459                           ;onoff.c: 62: continue;
+   460  07C6  2FB6               	goto	l1150
+   461                           	line	63
+   462                           	
+   463  07C7                     l1153:	
+   464                           	line	64
+   465                           	
+   466  07C7                     l3538:	
+   467                           ;onoff.c: 63: }
+   468                           ;onoff.c: 64: RxData = RCREG;
+   469  07C7  0819               	movf	(409)^0180h,w	;volatile
+   470  07C8  00F3               	movwf	(??_main+0)+0
+   471  07C9  0873               	movf	(??_main+0)+0,w
+   472  07CA  00F4               	movwf	(main@RxData)
+   473                           	line	65
+   474                           ;onoff.c: 65: while(TXIF==0);
+   475  07CB  2FCC               	goto	l1155
+   476                           	
+   477  07CC                     l1156:	
+   478                           	
+   479  07CC                     l1155:	
+   480  07CC  0020               	movlb 0	; select bank0
+   481  07CD  1E11               	btfss	(140/8),(140)&7
+   482  07CE  2FD0               	goto	u2181
+   483  07CF  2FD1               	goto	u2180
+   484  07D0                     u2181:
+   485  07D0  2FCC               	goto	l1155
+   486  07D1                     u2180:
+   487  07D1  2FD2               	goto	l3540
+   488                           	
+   489  07D2                     l1157:	
+   490                           	line	66
+   491                           	
+   492  07D2                     l3540:	
+   493                           ;onoff.c: 66: TXREG = RxData;
+   494  07D2  0874               	movf	(main@RxData),w
+   495  07D3  0023               	movlb 3	; select bank3
+   496  07D4  009A               	movwf	(410)^0180h	;volatile
+   497                           	line	67
+   498                           ;onoff.c: 67: switch(RxData){
+   499  07D5  2FEF               	goto	l3554
+   500                           	line	68
+   501                           ;onoff.c: 68: case '1':FlashLED(1);break;
+   502                           	
+   503  07D6                     l1159:	
+   504                           	
+   505  07D6                     l3542:	
+   506  07D6  3001               	movlw	(01h)
+   507  07D7  3187  2747  3187   	fcall	_FlashLED
+   508  07DA  2FB6               	goto	l1150
+   509                           	line	69
+   510                           ;onoff.c: 69: case '2':FlashLED(2);break;
+   511                           	
+   512  07DB                     l1161:	
+   513                           	
+   514  07DB                     l3544:	
+   515  07DB  3002               	movlw	(02h)
+   516  07DC  3187  2747  3187   	fcall	_FlashLED
+   517  07DF  2FB6               	goto	l1150
+   518                           	line	70
+   519                           ;onoff.c: 70: case '3':FlashLED(3);break;
+   520                           	
+   521  07E0                     l1162:	
+   522                           	
+   523  07E0                     l3546:	
+   524  07E0  3003               	movlw	(03h)
+   525  07E1  3187  2747  3187   	fcall	_FlashLED
+   526  07E4  2FB6               	goto	l1150
+   527                           	line	71
+   528                           ;onoff.c: 71: case '4':FlashLED(4);break;
+   529                           	
+   530  07E5                     l1163:	
+   531                           	
+   532  07E5                     l3548:	
+   533  07E5  3004               	movlw	(04h)
+   534  07E6  3187  2747  3187   	fcall	_FlashLED
+   535  07E9  2FB6               	goto	l1150
+   536                           	line	72
+   537                           ;onoff.c: 72: default :ErrorInd() ;break;
+   538                           	
+   539  07EA                     l1164:	
+   540                           	
+   541  07EA                     l3550:	
+   542  07EA  3187  276A  3187   	fcall	_ErrorInd
+   543  07ED  2FB6               	goto	l1150
+   544                           	line	73
+   545                           	
+   546  07EE                     l3552:	
+   547                           ;onoff.c: 73: }
+   548  07EE  2FB6               	goto	l1150
+   549                           	line	67
+   550                           	
+   551  07EF                     l1158:	
+   552                           	
+   553  07EF                     l3554:	
+   554  07EF  0874               	movf	(main@RxData),w
+   555                           	; Switch size 1, requested type "space"
+   556                           ; Number of cases is 4, Range of values is 49 to 52
+   557                           ; switch strategies available:
+   558                           ; Name         Instructions Cycles
+   559                           ; simple_byte           13     7 (average)
+   560                           ; direct_byte           17     9 (fixed)
+   561                           ; jumptable            263     9 (fixed)
+   562                           ;	Chosen strategy is simple_byte
+   563                           
+   564                           	opt asmopt_off
+   565  07F0  3A31               	xorlw	49^0	; case 49
+   566  07F1  1903               	skipnz
+   567  07F2  2FD6               	goto	l3542
+   568  07F3  3A03               	xorlw	50^49	; case 50
+   569  07F4  1903               	skipnz
+   570  07F5  2FDB               	goto	l3544
+   571  07F6  3A01               	xorlw	51^50	; case 51
+   572  07F7  1903               	skipnz
+   573  07F8  2FE0               	goto	l3546
+   574  07F9  3A07               	xorlw	52^51	; case 52
+   575  07FA  1903               	skipnz
+   576  07FB  2FE5               	goto	l3548
+   577  07FC  2FEA               	goto	l3550
+   578                           	opt asmopt_on
+   579                           
+   580                           	line	73
+   581                           	
+   582  07FD                     l1160:	
+   583  07FD  2FB6               	goto	l1150
+   584                           	line	74
+   585                           	
+   586  07FE                     l1154:	
+   587                           	line	56
+   588  07FE  2FB6               	goto	l1150
+   589                           	
+   590  07FF                     l1165:	
+   591                           	line	75
+   592                           	
+   593  07FF                     l1166:	
+   594                           	global	start
+   595  07FF  2801               	ljmp	start
+   596                           	opt stack 0
+   597                           GLOBAL	__end_of_main
+   598  0800                     	__end_of_main:
+   599 ;; =============== function _main ends ============
+   600                           
+   601                           	signat	_main,88
+   602                           	global	_ErrorInd
+   603                           psect	text89,local,class=CODE,delta=2
+   604                           global __ptext89
+   605  076A                     __ptext89:
+   606                           
+   607 ;; *************** function _ErrorInd *****************
+   608 ;; Defined at:
+   609 ;;		line 84 in file "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
+   610 ;; Parameters:    Size  Location     Type
+   611 ;;		None
+   612 ;; Auto vars:     Size  Location     Type
+   613 ;;		None
+   614 ;; Return value:  Size  Location     Type
+   615 ;;		None               void
+   616 ;; Registers used:
+   617 ;;		wreg
+   618 ;; Tracked objects:
+   619 ;;		On entry : 0/0
+   620 ;;		On exit  : 0/0
+   621 ;;		Unchanged: 0/0
+   622 ;; Data sizes:     COMMON   BANK0   BANK1
+   623 ;;      Params:         0       0       0
+   624 ;;      Locals:         0       0       0
+   625 ;;      Temps:          2       0       0
+   626 ;;      Totals:         2       0       0
+   627 ;;Total ram usage:        2 bytes
+   628 ;; Hardware stack levels used:    1
+   629 ;; This function calls:
+   630 ;;		Nothing
+   631 ;; This function is called by:
+   632 ;;		_main
+   633 ;; This function uses a non-reentrant model
+   634 ;;
+   635                           psect	text89
+   636                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
+   637                           	line	84
+   638                           	global	__size_of_ErrorInd
+   639  002D                     	__size_of_ErrorInd	equ	__end_of_ErrorInd-_ErrorInd
+   640                           	
+   641  076A                     _ErrorInd:	
+   642                           	opt	stack 15
+   643                           ; Regs used in _ErrorInd: [wreg]
+   644                           	line	85
+   645                           	
+   646  076A                     l3502:	
+   647                           ;onoff.c: 85: LATA2 = 1; _delay((unsigned long)((50)*(1000000/4000.0)));
+   648  076A  0022               	movlb 2	; select bank2
+   649  076B  150C               	bsf	(2146/8)^0100h,(2146)&7
+   650                           	
+   651  076C                     l3504:	
+   652                           	opt asmopt_off
+   653  076C  3011               movlw	17
+   654  076D  00F1               movwf	((??_ErrorInd+0)+0+1),f
+   655  076E  303A               	movlw	58
+   656  076F  00F0               movwf	((??_ErrorInd+0)+0),f
+   657  0770                     u2197:
+   658  0770  0BF0               	decfsz	((??_ErrorInd+0)+0),f
+   659  0771  2F70               	goto	u2197
+   660  0772  0BF1               	decfsz	((??_ErrorInd+0)+0+1),f
+   661  0773  2F70               	goto	u2197
+   662  0774  0064               	clrwdt
+   663                           opt asmopt_on
+   664                           
+   665                           	line	86
+   666                           	
+   667  0775                     l3506:	
+   668                           ;onoff.c: 86: LATA2 = 0; _delay((unsigned long)((50)*(1000000/4000.0)));
+   669  0775  0022               	movlb 2	; select bank2
+   670  0776  110C               	bcf	(2146/8)^0100h,(2146)&7
+   671                           	opt asmopt_off
+   672  0777  3011               movlw	17
+   673  0778  00F1               movwf	((??_ErrorInd+0)+0+1),f
+   674  0779  303A               	movlw	58
+   675  077A  00F0               movwf	((??_ErrorInd+0)+0),f
+   676  077B                     u2207:
+   677  077B  0BF0               	decfsz	((??_ErrorInd+0)+0),f
+   678  077C  2F7B               	goto	u2207
+   679  077D  0BF1               	decfsz	((??_ErrorInd+0)+0+1),f
+   680  077E  2F7B               	goto	u2207
+   681  077F  0064               	clrwdt
+   682                           opt asmopt_on
+   683                           
+   684                           	line	87
+   685                           	
+   686  0780                     l3508:	
+   687                           ;onoff.c: 87: LATA2 = 1; _delay((unsigned long)((50)*(1000000/4000.0)));
+   688  0780  0022               	movlb 2	; select bank2
+   689  0781  150C               	bsf	(2146/8)^0100h,(2146)&7
+   690                           	opt asmopt_off
+   691  0782  3011               movlw	17
+   692  0783  00F1               movwf	((??_ErrorInd+0)+0+1),f
+   693  0784  303A               	movlw	58
+   694  0785  00F0               movwf	((??_ErrorInd+0)+0),f
+   695  0786                     u2217:
+   696  0786  0BF0               	decfsz	((??_ErrorInd+0)+0),f
+   697  0787  2F86               	goto	u2217
+   698  0788  0BF1               	decfsz	((??_ErrorInd+0)+0+1),f
+   699  0789  2F86               	goto	u2217
+   700  078A  0064               	clrwdt
+   701                           opt asmopt_on
+   702                           
+   703                           	line	88
+   704                           	
+   705  078B                     l3510:	
+   706                           ;onoff.c: 88: LATA2 = 0; _delay((unsigned long)((50)*(1000000/4000.0)));
+   707  078B  0022               	movlb 2	; select bank2
+   708  078C  110C               	bcf	(2146/8)^0100h,(2146)&7
+   709                           	opt asmopt_off
+   710  078D  3011               movlw	17
+   711  078E  00F1               movwf	((??_ErrorInd+0)+0+1),f
+   712  078F  303A               	movlw	58
+   713  0790  00F0               movwf	((??_ErrorInd+0)+0),f
+   714  0791                     u2227:
+   715  0791  0BF0               	decfsz	((??_ErrorInd+0)+0),f
+   716  0792  2F91               	goto	u2227
+   717  0793  0BF1               	decfsz	((??_ErrorInd+0)+0+1),f
+   718  0794  2F91               	goto	u2227
+   719  0795  0064               	clrwdt
+   720                           opt asmopt_on
+   721                           
+   722                           	line	89
+   723                           	
+   724  0796                     l1175:	
+   725  0796  0008               	return
+   726                           	opt stack 0
+   727                           GLOBAL	__end_of_ErrorInd
+   728  0797                     	__end_of_ErrorInd:
+   729 ;; =============== function _ErrorInd ends ============
+   730                           
+   731                           	signat	_ErrorInd,88
+   732                           	global	_FlashLED
+   733                           psect	text90,local,class=CODE,delta=2
+   734                           global __ptext90
+   735  0747                     __ptext90:
+   736                           
+   737 ;; *************** function _FlashLED *****************
+   738 ;; Defined at:
+   739 ;;		line 77 in file "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
+   740 ;; Parameters:    Size  Location     Type
+   741 ;;  i               1    wreg     unsigned char 
+   742 ;; Auto vars:     Size  Location     Type
+   743 ;;  i               1    2[COMMON] unsigned char 
+   744 ;; Return value:  Size  Location     Type
+   745 ;;		None               void
+   746 ;; Registers used:
+   747 ;;		wreg, status,2, status,0
+   748 ;; Tracked objects:
+   749 ;;		On entry : 0/0
+   750 ;;		On exit  : 0/0
+   751 ;;		Unchanged: 0/0
+   752 ;; Data sizes:     COMMON   BANK0   BANK1
+   753 ;;      Params:         0       0       0
+   754 ;;      Locals:         1       0       0
+   755 ;;      Temps:          2       0       0
+   756 ;;      Totals:         3       0       0
+   757 ;;Total ram usage:        3 bytes
+   758 ;; Hardware stack levels used:    1
+   759 ;; This function calls:
+   760 ;;		Nothing
+   761 ;; This function is called by:
+   762 ;;		_main
+   763 ;; This function uses a non-reentrant model
+   764 ;;
+   765                           psect	text90
+   766                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
+   767                           	line	77
+   768                           	global	__size_of_FlashLED
+   769  0023                     	__size_of_FlashLED	equ	__end_of_FlashLED-_FlashLED
+   770                           	
+   771  0747                     _FlashLED:	
+   772                           	opt	stack 15
+   773                           ; Regs used in _FlashLED: [wreg+status,2+status,0]
+   774                           ;FlashLED@i stored from wreg
+   775  0747  00F2               	movwf	(FlashLED@i)
+   776                           	line	78
+   777                           	
+   778  0748                     l3494:	
+   779                           ;onoff.c: 78: while(i--){
+   780  0748  2F60               	goto	l3500
+   781                           	
+   782  0749                     l1170:	
+   783                           	line	79
+   784                           ;onoff.c: 79: LATA2 = 1; _delay((unsigned long)((250)*(1000000/4000.0)));
+   785  0749  0022               	movlb 2	; select bank2
+   786  074A  150C               	bsf	(2146/8)^0100h,(2146)&7
+   787                           	
+   788  074B                     l3496:	
+   789                           	opt asmopt_off
+   790  074B  3052               movlw	82
+   791  074C  00F1               movwf	((??_FlashLED+0)+0+1),f
+   792  074D  3029               	movlw	41
+   793  074E  00F0               movwf	((??_FlashLED+0)+0),f
+   794  074F                     u2237:
+   795  074F  0BF0               	decfsz	((??_FlashLED+0)+0),f
+   796  0750  2F4F               	goto	u2237
+   797  0751  0BF1               	decfsz	((??_FlashLED+0)+0+1),f
+   798  0752  2F4F               	goto	u2237
+   799  0753  2F54               	nop2
+   800                           opt asmopt_on
+   801                           
+   802                           	line	80
+   803                           	
+   804  0754                     l3498:	
+   805                           ;onoff.c: 80: LATA2 = 0; _delay((unsigned long)((250)*(1000000/4000.0)));
+   806  0754  0022               	movlb 2	; select bank2
+   807  0755  110C               	bcf	(2146/8)^0100h,(2146)&7
+   808                           	opt asmopt_off
+   809  0756  3052               movlw	82
+   810  0757  00F1               movwf	((??_FlashLED+0)+0+1),f
+   811  0758  3029               	movlw	41
+   812  0759  00F0               movwf	((??_FlashLED+0)+0),f
+   813  075A                     u2247:
+   814  075A  0BF0               	decfsz	((??_FlashLED+0)+0),f
+   815  075B  2F5A               	goto	u2247
+   816  075C  0BF1               	decfsz	((??_FlashLED+0)+0+1),f
+   817  075D  2F5A               	goto	u2247
+   818  075E  2F5F               	nop2
+   819                           opt asmopt_on
+   820                           
+   821  075F  2F60               	goto	l3500
+   822                           	line	81
+   823                           	
+   824  0760                     l1169:	
+   825                           	line	78
+   826                           	
+   827  0760                     l3500:	
+   828  0760  3001               	movlw	low(01h)
+   829  0761  02F2               	subwf	(FlashLED@i),f
+   830  0762  0872               	movf	((FlashLED@i)),w
+   831  0763  3AFF               	xorlw	0FFh&0ffh
+   832  0764  1D03               	skipz
+   833  0765  2F67               	goto	u2151
+   834  0766  2F68               	goto	u2150
+   835  0767                     u2151:
+   836  0767  2F49               	goto	l1170
+   837  0768                     u2150:
+   838  0768  2F69               	goto	l1172
+   839                           	
+   840  0769                     l1171:	
+   841                           	line	82
+   842                           	
+   843  0769                     l1172:	
+   844  0769  0008               	return
+   845                           	opt stack 0
+   846                           GLOBAL	__end_of_FlashLED
+   847  076A                     	__end_of_FlashLED:
+   848 ;; =============== function _FlashLED ends ============
+   849                           
+   850                           	signat	_FlashLED,4216
+   851                           psect	text91,local,class=CODE,delta=2
+   852                           global __ptext91
+   853  0000                     __ptext91:
+   854                           	global	btemp
+   855  007E                     	btemp set 07Eh
+   856                           
+   857                           	DABS	1,126,2	;btemp
+   858                           	global	wtemp0
+   859  007E                     	wtemp0 set btemp
 
 
 HI-TECH Software PICC Macro Assembler V9.83 build 10920 
-Symbol Table                                                                                   Fri Nov 17 19:46:24 2017
+Symbol Table                                                                                   Fri Nov 17 19:52:59 2017
 
                   _RD 0CA8                    _WR 0CA9                   _GIE 005F                  l1150 07B6  
                 l1151 07B6                  l1160 07FD                  l1152 07BB                  l1161 07DB  
-                l1153 07C7                  l1170 074A                  l1154 07FE                  l1162 07E0  
-                l1171 076A                  l1163 07E5                  l1155 07CC                  l1172 076A  
+                l1153 07C7                  l1170 0749                  l1154 07FE                  l1162 07E0  
+                l1171 0769                  l1163 07E5                  l1155 07CC                  l1172 0769  
                 l1164 07EA                  l1156 07CC                  l1165 07FF                  l1157 07D2  
-                l1149 07B5                  l1166 07FF                  l1158 07EF                  l1175 0797  
-                l1159 07D6                  l1169 0761                  l3500 0761                  l3510 078C  
-                l3502 076B                  l3504 076D                  l3520 07A0                  l3512 0798  
-                l3506 0776                  l3530 07AF                  l3522 07A5                  l3514 079B  
-                l3508 0781                  l3540 07C7                  l3532 07B1                  l3524 07A8  
-                l3516 079D                  l3550 07E5                  l3542 07D2                  l3534 07B2  
-                l3526 07AA                  l3518 079F                  l3552 07EA                  l3544 07D6  
-                l3536 07C0                  l3528 07AD                  l3554 07EE                  l3546 07DB  
-                l3538 07C2                  l3548 07E0                  l3556 07EF                  l3494 0749  
-                l3496 074C                  l3498 0755                  u2150 0769                  u2151 0768  
-                u2207 077C                  u2160 07BB                  u2217 0787                  u2161 07BA  
-                u2170 07C0                  u2227 0792                  u2171 07BF                  u2180 07D1  
-                u2237 0750                  u2181 07D0                  u2247 075B                  u2197 0771  
-                _RCIF 008D                  _WREN 0CAA                  _TXIF 008C                  _WPUA 020C  
-                _main 0798                  btemp 007E                  start 0001                 ?_main 0070  
-               _EEADR 0191                 _BRG16 0CFB                 _CARRY 0018                 _LATA2 0862  
-               _RCREG 0199                 _RCSTA 019D                 _SPBRG 019B                 _PORTA 000C  
-               _TRISA 008C                 _TXREG 019A                 _TXSTA 019E                 wtemp0 007E  
-    __end_of_FlashLED 076B          __end_of_main 0800      __end_of_ErrorInd 0798                ??_main 0073  
-              _EEDATA 0193                _EECON1 0195                _EECON2 0196                _ANSELA 018C  
-              _OSCCON 0099                _nWPUEN 04AF        __pcstackCOMMON 0070             ?_FlashLED 0070  
-           ?_ErrorInd 0070            __pmaintext 0798               _BAUDCON 019F            ??_FlashLED 0070  
-             _RXDTSEL 08EF               _TXCKSEL 08EA            ??_ErrorInd 0070  end_of_initialization 0746  
-           _RCSTAbits 019D             FlashLED@i 0072            main@RxData 0074   start_initialization 0746  
-   __size_of_FlashLED 0023     __size_of_ErrorInd 002D              _FlashLED 0748              _ErrorInd 076B  
-            __ptext90 0748              __ptext91 0000              __ptext88 0000              __ptext89 076B  
-       __size_of_main 0068  
+                l1149 07B5                  l1166 07FF                  l1158 07EF                  l1175 0796  
+                l1159 07D6                  l1169 0760                  l3500 0760                  l3510 078B  
+                l3502 076A                  l3504 076C                  l3520 07A5                  l3512 0797  
+                l3506 0775                  l3530 07B1                  l3522 07A8                  l3514 079D  
+                l3508 0780                  l3540 07D2                  l3532 07B2                  l3524 07AA  
+                l3516 079F                  l3550 07EA                  l3542 07D6                  l3534 07C0  
+                l3526 07AD                  l3518 07A3                  l3552 07EE                  l3544 07DB  
+                l3536 07C2                  l3528 07AF                  l3546 07E0                  l3554 07EF  
+                l3538 07C7                  l3548 07E5                  l3494 0748                  l3496 074B  
+                l3498 0754                  u2150 0768                  u2151 0767                  u2207 077B  
+                u2160 07BB                  u2217 0786                  u2161 07BA                  u2170 07C0  
+                u2227 0791                  u2171 07BF                  u2180 07D1                  u2237 074F  
+                u2181 07D0                  u2247 075A                  u2197 0770                  _RCIF 008D  
+                _WREN 0CAA                  _TXIF 008C                  _WPUA 020C                  _main 0797  
+                btemp 007E                  start 0001                 ?_main 0070                 _EEADR 0191  
+               _BRG16 0CFB                 _CARRY 0018                 _LATA2 0862                 _RCREG 0199  
+               _RCSTA 019D                 _SPBRG 019B                 _PORTA 000C                 _TRISA 008C  
+               _TXREG 019A                 _TXSTA 019E                 wtemp0 007E      __end_of_FlashLED 076A  
+        __end_of_main 0800      __end_of_ErrorInd 0797                ??_main 0073                _EEDATA 0193  
+              _EECON1 0195                _EECON2 0196                _ANSELA 018C                _OSCCON 0099  
+              _nWPUEN 04AF        __pcstackCOMMON 0070             ?_FlashLED 0070             ?_ErrorInd 0070  
+          __pmaintext 0797               _BAUDCON 019F            ??_FlashLED 0070               _RXDTSEL 08EF  
+             _TXCKSEL 08EA            ??_ErrorInd 0070  end_of_initialization 0745             _RCSTAbits 019D  
+           FlashLED@i 0072            main@RxData 0074   start_initialization 0745     __size_of_FlashLED 0023  
+   __size_of_ErrorInd 002D              _FlashLED 0747              _ErrorInd 076A              __ptext90 0747  
+            __ptext91 0000              __ptext88 0000              __ptext89 076A         __size_of_main 0069  

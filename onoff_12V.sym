@@ -10,12 +10,12 @@ _RCIF 8D 0 ABS
 _WPUA 20C 0 ABS
 _TXIF 8C 0 ABS
 _WREN CAA 0 ABS
-_main 798 0 CODE
+_main 797 0 CODE
 btemp 7E 0 ABS
 _exit 1 0 CODE
 start 1 0 CODE
 _BRG16 CFB 0 ABS
-_ErrorInd 76B 0 CODE
+_ErrorInd 76A 0 CODE
 _LATA2 862 0 ABS
 _RCREG 199 0 ABS
 _TRISA 8C 0 ABS
@@ -26,7 +26,7 @@ reset_vec 0 0 CODE
 _SPBRG 19B 0 ABS
 _TXSTA 19E 0 ABS
 _EEADR 191 0 ABS
-__end_of_ErrorInd 798 0 CODE
+__end_of_ErrorInd 797 0 CODE
 wtemp0 7E 0 ABS
 _CARRY 18 0 ABS
 __Hconfig 8009 0 CONFIG
@@ -81,7 +81,7 @@ __end_of_main 800 0 CODE
 __Htext 0 0 ABS
 __Ltext 0 0 ABS
 main@RxData 74 0 COMMON
-end_of_initialization 746 0 CODE
+end_of_initialization 745 0 CODE
 ??_ErrorInd 70 0 COMMON
 __Hsfr10 0 0 ABS
 __Lsfr10 0 0 ABS
@@ -194,7 +194,7 @@ __Hbank25 0 0 BANK25
 __Lbank25 0 0 BANK25
 __Hbank16 0 0 BANK16
 __Lbank16 0 0 BANK16
-__end_of_FlashLED 76B 0 CODE
+__end_of_FlashLED 76A 0 CODE
 __Hbank26 0 0 BANK26
 __Lbank26 0 0 BANK26
 __Hbank17 0 0 BANK17
@@ -205,7 +205,7 @@ __Hbank18 0 0 BANK18
 __Lbank18 0 0 BANK18
 __Hbank28 0 0 BANK28
 __Lbank28 0 0 BANK28
-__ptext90 748 0 CODE
+__ptext90 747 0 CODE
 __Hbank19 0 0 BANK19
 __Lbank19 0 0 BANK19
 __Hbank29 0 0 BANK29
@@ -214,8 +214,8 @@ __ptext91 0 0 CODE
 __ptext88 0 0 CODE
 __Hend_init 3 0 CODE
 __Lend_init 1 0 CODE
-__ptext89 76B 0 CODE
-_FlashLED 748 0 CODE
+__ptext89 76A 0 CODE
+_FlashLED 747 0 CODE
 __Hreset_vec 1 0 CODE
 __Lreset_vec 0 0 CODE
 intlevel0 0 0 CODE
@@ -229,31 +229,31 @@ FlashLED@i 72 0 COMMON
 __HcstackCOMMON 0 0 ABS
 __LcstackCOMMON 0 0 ABS
 __pcstackCOMMON 70 0 COMMON
-start_initialization 746 0 CODE
+start_initialization 745 0 CODE
 __Hmaintext 0 0 ABS
 __Lmaintext 0 0 ABS
-__pmaintext 798 0 CODE
+__pmaintext 797 0 CODE
 %segments
 reset_vec 0 5 CODE 0
 config 1000E 10011 CONFIG 1000E
 cstackCOMMON 70 74 COMMON 70
-maintext F30 FFF CODE F30
-text89 ED6 F2F CODE ED6
-text90 E90 ED5 CODE E90
-cinit E8C E8F CODE E8C
+maintext F2E FFF CODE F2E
+text89 ED4 F2D CODE ED4
+text90 E8E ED3 CODE E8E
+cinit E8A E8D CODE E8A
 %locals
 onoff_12V.obj
 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
 17 8007 0 CONFIG
 24 8008 0 CONFIG
-C:\Users\igalab\AppData\Local\Temp\s8pg.
-130 746 0 CODE
-131 747 0 CODE
+C:\Users\igalab\AppData\Local\Temp\s7as.
+130 745 0 CODE
+131 746 0 CODE
 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
-36 798 0 CODE
-37 79B 0 CODE
-39 79D 0 CODE
-40 79F 0 CODE
+36 797 0 CODE
+37 79A 0 CODE
+38 79D 0 CODE
+39 79F 0 CODE
 41 7A0 0 CODE
 42 7A3 0 CODE
 43 7A5 0 CODE
@@ -283,14 +283,14 @@ C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
 73 7FD 0 CODE
 56 7FE 0 CODE
 75 7FF 0 CODE
-85 76B 0 CODE
-86 776 0 CODE
-87 781 0 CODE
-88 78C 0 CODE
-89 797 0 CODE
-77 748 0 CODE
-78 749 0 CODE
-79 74A 0 CODE
-80 755 0 CODE
-78 761 0 CODE
-82 76A 0 CODE
+85 76A 0 CODE
+86 775 0 CODE
+87 780 0 CODE
+88 78B 0 CODE
+89 796 0 CODE
+77 747 0 CODE
+78 748 0 CODE
+79 749 0 CODE
+80 754 0 CODE
+78 760 0 CODE
+82 769 0 CODE

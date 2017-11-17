@@ -22,7 +22,7 @@ Linker command line:
   -ACONFIG=08007h-08008h -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h \
   -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA \
   -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\igalab\AppData\Local\Temp\s8pg.obj onoff_12V.obj 
+  C:\Users\igalab\AppData\Local\Temp\s7as.obj onoff_12V.obj 
 
 Object code version is 3.10
 
@@ -31,15 +31,15 @@ Machine type is 12LF1822
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\igalab\AppData\Local\Temp\s8pg.obj
+C:\Users\igalab\AppData\Local\Temp\s7as.obj
                 end_init                              1        1        2        0       0
                 reset_vec                             0        0        1        0       0
 onoff_12V.obj   config                             8007     8007        2    1000E       0
-                text90                              748      748       23      E90       0
-                text89                              76B      76B       2D      ED6       0
-                maintext                            798      798       68      F30       0
+                text90                              747      747       23      E8E       0
+                text89                              76A      76A       2D      ED4       0
+                maintext                            797      797       69      F2E       0
                 cstackCOMMON                         70       70        5       70       1
-                cinit                               746      746        2      E8C       0
+                cinit                               745      745        2      E8A       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CONST          
@@ -47,10 +47,10 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   CODE           
                 end_init                              1        1        2         0
                 reset_vec                             0        0        1         0
-                text90                              748      748       23         0
-                text89                              76B      76B       2D         0
-                maintext                            798      798       68         0
-                cinit                               746      746        2         0
+                text90                              747      747       23         0
+                text89                              76A      76A       2D         0
+                maintext                            797      797       69         0
+                cinit                               745      745        2         0
 
         CLASS   STRCODE        
 
@@ -209,10 +209,10 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
                 cstackCOMMON                   000070  000005  000075        70       1  COMMON      1
-                cinit                          000746  000002  000748       E8C       0  CODE        2
-                text90                         000748  000023  00076B       E90       0  CODE        2
-                text89                         00076B  00002D  000798       ED6       0  CODE        2
-                maintext                       000798  000068  000800       F30       0  CODE        2
+                cinit                          000745  000002  000747       E8A       0  CODE        2
+                text90                         000747  000023  00076A       E8E       0  CODE        2
+                text89                         00076A  00002D  000797       ED4       0  CODE        2
+                maintext                       000797  000069  000800       F2E       0  CODE        2
                 config                         008007  000002  008009     1000E       0  CONFIG      2
 
 
@@ -222,11 +222,11 @@ UNUSED ADDRESS RANGES
         BANK0            00020-0006F              50           1
         BANK1            000A0-000BF              20           1
         BIGRAM           02000-0206F              70           1
-        CODE             00003-00745             743           2
+        CODE             00003-00744             742           2
         COMMON           00075-0007D               9           1
-        CONST            00003-00745             100           2
+        CONST            00003-00744             100           2
         EEDATA           0F000-0F0FF             100           2
-        ENTRY            00003-00745             100           2
+        ENTRY            00003-00744             100           2
         IDLOC            08000-08003               4           2
         RAM              00020-0006F              50           1
                          000A0-000BF              20
@@ -262,8 +262,8 @@ UNUSED ADDRESS RANGES
         SFR7             00380-003EF              70           1
         SFR8             00400-0046F              70           1
         SFR9             00480-004EF              70           1
-        STRCODE          00003-00745             743           2
-        STRING           00003-00745             100           2
+        STRCODE          00003-00744             742           2
+        STRING           00003-00744             100           2
 
                                   Symbol Table
 
@@ -282,8 +282,8 @@ _EEADR                (abs)        00191
 _EECON1               (abs)        00195
 _EECON2               (abs)        00196
 _EEDATA               (abs)        00193
-_ErrorInd             text89       0076B
-_FlashLED             text90       00748
+_ErrorInd             text89       0076A
+_FlashLED             text90       00747
 _GIE                  (abs)        0005F
 _LATA2                (abs)        00862
 _OSCCON               (abs)        00099
@@ -474,23 +474,23 @@ __Ltext               text         00000
 __S0                  (abs)        08009
 __S1                  (abs)        00075
 __S2                  (abs)        00000
-__end_of_ErrorInd     text89       00798
-__end_of_FlashLED     text90       0076B
+__end_of_ErrorInd     text89       00797
+__end_of_FlashLED     text90       0076A
 __end_of_main         maintext     00800
 __pcstackCOMMON       cstackCOMMON 00070
-__pmaintext           maintext     00798
+__pmaintext           maintext     00797
 __ptext88             text88       00000
-__ptext89             text89       0076B
-__ptext90             text90       00748
+__ptext89             text89       0076A
+__ptext90             text90       00747
 __ptext91             text91       00000
 __size_of_ErrorInd    (abs)        00000
 __size_of_FlashLED    (abs)        00000
 __size_of_main        (abs)        00000
 _exit                 init         00001
-_main                 maintext     00798
+_main                 maintext     00797
 _nWPUEN               (abs)        004AF
 btemp                 (abs)        0007E
-end_of_initialization cinit        00746
+end_of_initialization cinit        00745
 intlevel0             functab      00000
 intlevel1             functab      00000
 intlevel2             functab      00000
@@ -500,5 +500,5 @@ intlevel5             functab      00000
 main@RxData           cstackCOMMON 00074
 reset_vec             reset_vec    00000
 start                 init         00001
-start_initialization  cinit        00746
+start_initialization  cinit        00745
 wtemp0                (abs)        0007E

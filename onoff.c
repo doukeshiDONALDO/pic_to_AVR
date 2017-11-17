@@ -34,11 +34,11 @@ void main() {
     char RxData;
 //    OSCCON = 0b01101010;                 //  内部クロック4Mhz
     OSCCON = 0b01011010 ;     // 内部クロックは1ＭＨｚとする
-    PORTA  = 0x00;
-//    APFCONbits.RXDTSEL = 1;             //RxはRA5を使用する
+    PORTA  = 0b00000100 ;     // outout pin init , RA2 is high
     RXDTSEL = 1 ;             // 2番ピン(RA5)をＲＸ受信ピンとする
     TXCKSEL = 1 ;             // 3番ピン(RA4)をＴＸ送信ピンとする
-    TRISA  = 0b11101011;                 //RA2:出力 他は入力
+//    TRISA  = 0b11101011;                 //RA2:出力 他は入力
+      TRISA  = 0b00101001 ;     // input RA3 RA0 , output other 
     ANSELA = 0x00;                       //すべてデジタル
     WPUA   = 0b00011111;                 // RA5以外弱プルアップ
     nWPUEN = 0;
