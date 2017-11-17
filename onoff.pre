@@ -2175,73 +2175,63 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 # 17 "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFFFF & 0xFFFC & 0xDFFF & 0xEFFF & 0xFFFF & 0xFFDF & 0xFFE7 & 0xFFBF & 0xFFFF & 0xFFFF") ;
+asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFFFF & 0xFFFC & 0xDFFF & 0xEFFF & 0xFFFF & 0xFFDF & 0xFFE7 & 0xFFBF & 0xFFFF & 0xFFFF");
 
 # 24
 asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFEFF & 0xFFFF & 0xFFFF & 0xFBFF & 0xDFFF");
 
 
-void Wait(unsigned int num)
-{
-int i ;
 
 
-for (i=0 ; i < num ; i++) {
-_delay((unsigned long)((10)*(1000000/4000.0))) ;
+void FlashLED(char);
+void ErrorInd(void);
+
+
+void main() {
+char RxData;
+OSCCON = 0b01101010;
+PORTA = 0x00;
+APFCONbits.RXDTSEL = 1;
+TRISA = 0b11111011;
+ANSELA = 0x00;
+WPUA = 0b00011111;
+nWPUEN = 0;
+
+
+RCSTA = 0b10010000;
+TXSTA = 0b00000100;
+BAUDCON = 0b00001000;
+SPBRGH = 0;
+SPBRGL = 103;
+while(1){
+while (!RCIF);
+if(RCSTAbits.OERR){
+RCSTAbits.CREN=0;
+RCSTAbits.CREN=1;
+RxData = RCREG;
+continue;
+}
+RxData = RCREG;
+switch(RxData){
+case '1':FlashLED(1);break;
+case '2':FlashLED(2);break;
+case '3':FlashLED(3);break;
+case '4':FlashLED(4);break;
+default :ErrorInd() ;break;
+}
+}
+}
+
+void FlashLED(char i){
+while(i--){
+LATA2 = 1; _delay((unsigned long)((250)*(4000000/4000.0)));
+LATA2 = 0; _delay((unsigned long)((250)*(4000000/4000.0)));
 }
 }
 
-void interrupt InterReceiver( void )
-{
-static char i = 0x30;
-static int debug = 0;
-
-# 47
-if (RCIF == 1) {
-
-# 57
-debug = 1-debug;
-Wait(500) ;
-if(debug){
-RA2 = 1;
-RA1 = 1;
-}
-else
-{
-RA2 = 0;
-RA1 = 0;
-}
-}
-RCIF = 0;
-}
-
-
-void main()
-{
-char i ;
-
-OSCCON = 0b01011010 ;
-ANSELA = 0b00000000 ;
-TRISA = 0b00001000 ;
-PORTA = 0b00000000 ;
-
-RXDTSEL = 1 ;
-TXCKSEL = 1 ;
-BRG16 = 1;
-TXSTA = 0b00100100 ;
-RCSTA = 0b10010000 ;
-SPBRG = 25 ;
-RCIF = 0;
-RCIE = 1 ;
-
-PEIE = 1 ;
-GIE = 1 ;
-
-Wait(500) ;
-i = 0x30 ;
-
-while(1) {
-
-# 105
-}
+void ErrorInd(void){
+LATA2 = 1; _delay((unsigned long)((50)*(4000000/4000.0)));
+LATA2 = 0; _delay((unsigned long)((50)*(4000000/4000.0)));
+LATA2 = 1; _delay((unsigned long)((50)*(4000000/4000.0)));
+LATA2 = 0; _delay((unsigned long)((50)*(4000000/4000.0)));
 }
