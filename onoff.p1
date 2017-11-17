@@ -1481,10 +1481,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S170 . . ]
 "2170 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic12lf1822.h
 [v _TOSHbits `VS170  1 e@4079 ]
+[p mainexit ]
+"29 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
+[v _FlashLED `(v  0 ef1`uc ]
+"30 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
+[v _ErrorInd `(v  0 ef ]
 "154 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic.h
 [v __delay `(v  0 ef1`ul ]
 [p i __delay ]
-[p mainexit ]
 [; ;pic12lf1822.h: 132: volatile unsigned char INDF0 @ 0x000;
 [; ;pic12lf1822.h: 136: volatile unsigned char INDF1 @ 0x001;
 [; ;pic12lf1822.h: 140: volatile unsigned char PCL @ 0x002;
@@ -2990,189 +2994,214 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 147: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 148: extern char * ultoa(char * buf, unsigned long val, int base);
 "17 C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c
-[; ;onoff.c: 17: asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFFFF & 0xFFFC & 0xDFFF & 0xEFFF & 0xFFFF & 0xFFDF & 0xFFE7 & 0xFFBF & 0xFFFF & 0xFFFF") ;
+[; ;onoff.c: 17: asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFFFF & 0xFFFC & 0xDFFF & 0xEFFF & 0xFFFF & 0xFFDF & 0xFFE7 & 0xFFBF & 0xFFFF & 0xFFFF");
 [; 	psect config,class=CONFIG,delta=2 ;#
 [; 	dw 0xFFFF & 0xFFFC & 0xDFFF & 0xEFFF & 0xFFFF & 0xFFDF & 0xFFE7 & 0xFFBF & 0xFFFF & 0xFFFF ;#
 "24
 [; ;onoff.c: 24: asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFEFF & 0xFFFF & 0xFFFF & 0xFBFF & 0xDFFF");
 [; 	psect config,class=CONFIG,delta=2 ;#
 [; 	dw 0xFEFF & 0xFFFF & 0xFFFF & 0xFBFF & 0xDFFF ;#
-"28
-[v _Wait `(v  1 ef1`ui ]
-{
-[; ;onoff.c: 27: void Wait(unsigned int num)
-[; ;onoff.c: 28: {
-[e :U _Wait ]
-[v _num `ui  1 r1 ]
-[f ]
-"29
-[v _i `i  1 a ]
-[; ;onoff.c: 29: int i ;
-[; ;onoff.c: 32: for (i=0 ; i < num ; i++) {
-"32
-{
-[e = _i -> 0 `i ]
-[e $U 181  ]
-[e :U 178 ]
-{
-[; ;onoff.c: 33: _delay((unsigned long)((10)*(1000000/4000.0))) ;
+[; ;onoff.c: 29: void FlashLED(char);
+[; ;onoff.c: 30: void ErrorInd(void);
 "33
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"34
-}
-"32
-[e ++ _i -> 1 `i ]
-[e :U 181 ]
-[e $ < -> _i `ui _num 178  ]
-[e :U 179 ]
-"34
-}
-[; ;onoff.c: 34: }
-[; ;onoff.c: 35: }
-"35
-[e :UE 177 ]
-}
-"38
-[v F2073 `(v  1 tf ]
-[v _InterReceiver `IF2073  1 e ]
-{
-[; ;onoff.c: 37: void interrupt InterReceiver( void )
-[; ;onoff.c: 38: {
-[e :U _InterReceiver ]
-[f ]
-"39
-[v F2074 `uc  1 s i ]
-[i F2074
--> -> 48 `i `uc
-]
-"40
-[v F2075 `i  1 s debug ]
-[i F2075
--> 0 `i
-]
-[; ;onoff.c: 39: static char i = 0x30;
-[; ;onoff.c: 40: static int debug = 0;
-[; ;onoff.c: 47: if (RCIF == 1) {
-"47
-[e $ ! == -> _RCIF `i -> 1 `i 183  ]
-{
-[; ;onoff.c: 57: debug = 1-debug;
-"57
-[e = F2075 - -> 1 `i F2075 ]
-[; ;onoff.c: 58: Wait(500) ;
-"58
-[e ( _Wait (1 -> -> 500 `i `ui ]
-[; ;onoff.c: 59: if(debug){
-"59
-[e $ ! != F2075 -> 0 `i 184  ]
-{
-[; ;onoff.c: 60: RA2 = 1;
-"60
-[e = _RA2 -> -> 1 `i `b ]
-[; ;onoff.c: 61: RA1 = 1;
-"61
-[e = _RA1 -> -> 1 `i `b ]
-"62
-}
-[; ;onoff.c: 62: }
-[e $U 185  ]
-"63
-[e :U 184 ]
-[; ;onoff.c: 63: else
-[; ;onoff.c: 64: {
-"64
-{
-[; ;onoff.c: 65: RA2 = 0;
-"65
-[e = _RA2 -> -> 0 `i `b ]
-[; ;onoff.c: 66: RA1 = 0;
-"66
-[e = _RA1 -> -> 0 `i `b ]
-"67
-}
-[e :U 185 ]
-"68
-}
-[e :U 183 ]
-[; ;onoff.c: 67: }
-[; ;onoff.c: 68: }
-[; ;onoff.c: 69: RCIF = 0;
-"69
-[e = _RCIF -> -> 0 `i `b ]
-[; ;onoff.c: 70: }
-"70
-[e :UE 182 ]
-}
-"74
 [v _main `(v  1 ef ]
 {
-[; ;onoff.c: 73: void main()
-[; ;onoff.c: 74: {
+[; ;onoff.c: 33: void main() {
 [e :U _main ]
 [f ]
-"75
-[v _i `uc  1 a ]
-[; ;onoff.c: 75: char i ;
-[; ;onoff.c: 77: OSCCON = 0b01011010 ;
-"77
+"34
+[v _RxData `uc  1 a ]
+[; ;onoff.c: 34: char RxData;
+[; ;onoff.c: 36: OSCCON = 0b01011010 ;
+"36
 [e = _OSCCON -> -> 90 `i `uc ]
-[; ;onoff.c: 78: ANSELA = 0b00000000 ;
-"78
-[e = _ANSELA -> -> 0 `i `uc ]
-[; ;onoff.c: 79: TRISA = 0b00001000 ;
-"79
-[e = _TRISA -> -> 8 `i `uc ]
-[; ;onoff.c: 80: PORTA = 0b00000000 ;
-"80
+[; ;onoff.c: 37: PORTA = 0x00;
+"37
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;onoff.c: 82: RXDTSEL = 1 ;
-"82
+[; ;onoff.c: 39: RXDTSEL = 1 ;
+"39
 [e = _RXDTSEL -> -> 1 `i `b ]
-[; ;onoff.c: 83: TXCKSEL = 1 ;
-"83
+[; ;onoff.c: 40: TXCKSEL = 1 ;
+"40
 [e = _TXCKSEL -> -> 1 `i `b ]
-[; ;onoff.c: 84: BRG16 = 1;
-"84
-[e = _BRG16 -> -> 1 `i `b ]
-[; ;onoff.c: 85: TXSTA = 0b00100100 ;
-"85
-[e = _TXSTA -> -> 36 `i `uc ]
-[; ;onoff.c: 86: RCSTA = 0b10010000 ;
-"86
+[; ;onoff.c: 41: TRISA = 0b11101011;
+"41
+[e = _TRISA -> -> 235 `i `uc ]
+[; ;onoff.c: 42: ANSELA = 0x00;
+"42
+[e = _ANSELA -> -> 0 `i `uc ]
+[; ;onoff.c: 43: WPUA = 0b00011111;
+"43
+[e = _WPUA -> -> 31 `i `uc ]
+[; ;onoff.c: 44: nWPUEN = 0;
+"44
+[e = _nWPUEN -> -> 0 `i `b ]
+[; ;onoff.c: 47: RCSTA = 0b10010000;
+"47
 [e = _RCSTA -> -> 144 `i `uc ]
-[; ;onoff.c: 87: SPBRG = 25 ;
-"87
+[; ;onoff.c: 48: TXSTA = 0b00100100;
+"48
+[e = _TXSTA -> -> 36 `i `uc ]
+[; ;onoff.c: 49: BAUDCON = 0b00001000;
+"49
+[e = _BAUDCON -> -> 8 `i `uc ]
+[; ;onoff.c: 52: BRG16 = 1;
+"52
+[e = _BRG16 -> -> 1 `i `b ]
+[; ;onoff.c: 53: SPBRG = 25 ;
+"53
 [e = _SPBRG -> -> 25 `i `uc ]
-[; ;onoff.c: 88: RCIF = 0;
-"88
-[e = _RCIF -> -> 0 `i `b ]
-[; ;onoff.c: 89: RCIE = 1 ;
-"89
-[e = _RCIE -> -> 1 `i `b ]
-[; ;onoff.c: 91: PEIE = 1 ;
-"91
-[e = _PEIE -> -> 1 `i `b ]
-[; ;onoff.c: 92: GIE = 1 ;
-"92
-[e = _GIE -> -> 1 `i `b ]
-[; ;onoff.c: 94: Wait(500) ;
-"94
-[e ( _Wait (1 -> -> 500 `i `ui ]
-[; ;onoff.c: 95: i = 0x30 ;
-"95
-[e = _i -> -> 48 `i `uc ]
-[; ;onoff.c: 97: while(1) {
-"97
-[e :U 188 ]
+[; ;onoff.c: 56: while(1){
+"56
+[e :U 179 ]
 {
-"105
+[; ;onoff.c: 57: while (!RCIF);
+"57
+[e $U 181  ]
+[e :U 182 ]
+[e :U 181 ]
+[e $ ! _RCIF 182  ]
+[e :U 183 ]
+[; ;onoff.c: 58: if(RCSTAbits.OERR){
+"58
+[e $ ! != -> . . _RCSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 184  ]
+{
+[; ;onoff.c: 59: RCSTAbits.CREN=0;
+"59
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+[; ;onoff.c: 60: RCSTAbits.CREN=1;
+"60
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;onoff.c: 61: RxData = RCREG;
+"61
+[e = _RxData _RCREG ]
+[; ;onoff.c: 62: continue;
+"62
+[e $U 178  ]
+"63
 }
+[e :U 184 ]
+[; ;onoff.c: 63: }
+[; ;onoff.c: 64: RxData = RCREG;
+"64
+[e = _RxData _RCREG ]
+[; ;onoff.c: 65: while(TXIF==0);
+"65
+[e $U 185  ]
+[e :U 186 ]
+[e :U 185 ]
+[e $ == -> _TXIF `i -> 0 `i 186  ]
 [e :U 187 ]
-"97
+[; ;onoff.c: 66: TXREG = RxData;
+"66
+[e = _TXREG _RxData ]
+[; ;onoff.c: 67: switch(RxData){
+"67
+[e $U 189  ]
+{
+[; ;onoff.c: 68: case '1':FlashLED(1);break;
+"68
+[e :U 190 ]
+[e ( _FlashLED (1 -> -> 1 `i `uc ]
 [e $U 188  ]
+[; ;onoff.c: 69: case '2':FlashLED(2);break;
+"69
+[e :U 191 ]
+[e ( _FlashLED (1 -> -> 2 `i `uc ]
+[e $U 188  ]
+[; ;onoff.c: 70: case '3':FlashLED(3);break;
+"70
+[e :U 192 ]
+[e ( _FlashLED (1 -> -> 3 `i `uc ]
+[e $U 188  ]
+[; ;onoff.c: 71: case '4':FlashLED(4);break;
+"71
+[e :U 193 ]
+[e ( _FlashLED (1 -> -> 4 `i `uc ]
+[e $U 188  ]
+[; ;onoff.c: 72: default :ErrorInd() ;break;
+"72
+[e :U 194 ]
+[e ( _ErrorInd ..  ]
+[e $U 188  ]
+"73
+}
+[; ;onoff.c: 73: }
+[e $U 188  ]
+"67
 [e :U 189 ]
-[; ;onoff.c: 105: }
-[; ;onoff.c: 106: }
-"106
-[e :UE 186 ]
+[e [\ _RxData , $ -> -> 49 `ui `uc 190
+ , $ -> -> 50 `ui `uc 191
+ , $ -> -> 51 `ui `uc 192
+ , $ -> -> 52 `ui `uc 193
+ 194 ]
+"73
+[e :U 188 ]
+"74
+}
+[e :U 178 ]
+"56
+[e $U 179  ]
+[e :U 180 ]
+[; ;onoff.c: 74: }
+[; ;onoff.c: 75: }
+"75
+[e :UE 177 ]
+}
+"77
+[v _FlashLED `(v  1 ef1`uc ]
+{
+[; ;onoff.c: 77: void FlashLED(char i){
+[e :U _FlashLED ]
+[v _i `uc  1 r1 ]
+[f ]
+[; ;onoff.c: 78: while(i--){
+"78
+[e $U 196  ]
+[e :U 197 ]
+{
+[; ;onoff.c: 79: LATA2 = 1; _delay((unsigned long)((250)*(1000000/4000.0)));
+"79
+[e = _LATA2 -> -> 1 `i `b ]
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;onoff.c: 80: LATA2 = 0; _delay((unsigned long)((250)*(1000000/4000.0)));
+"80
+[e = _LATA2 -> -> 0 `i `b ]
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"81
+}
+[e :U 196 ]
+"78
+[e $ != -> -- _i -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 197  ]
+[e :U 198 ]
+[; ;onoff.c: 81: }
+[; ;onoff.c: 82: }
+"82
+[e :UE 195 ]
+}
+"84
+[v _ErrorInd `(v  1 ef ]
+{
+[; ;onoff.c: 84: void ErrorInd(void){
+[e :U _ErrorInd ]
+[f ]
+[; ;onoff.c: 85: LATA2 = 1; _delay((unsigned long)((50)*(1000000/4000.0)));
+"85
+[e = _LATA2 -> -> 1 `i `b ]
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;onoff.c: 86: LATA2 = 0; _delay((unsigned long)((50)*(1000000/4000.0)));
+"86
+[e = _LATA2 -> -> 0 `i `b ]
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;onoff.c: 87: LATA2 = 1; _delay((unsigned long)((50)*(1000000/4000.0)));
+"87
+[e = _LATA2 -> -> 1 `i `b ]
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;onoff.c: 88: LATA2 = 0; _delay((unsigned long)((50)*(1000000/4000.0)));
+"88
+[e = _LATA2 -> -> 0 `i `b ]
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;onoff.c: 89: }
+"89
+[e :UE 199 ]
 }

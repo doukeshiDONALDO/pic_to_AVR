@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PIC LITE Macro Assembler V9.83 build 10920 
-                                                                                               Thu Nov 09 20:20:52 2017
+                                                                                               Fri Nov 17 19:46:24 2017
 
 HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
      1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 10920"
@@ -60,865 +60,845 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
     53                           	psect config,class=CONFIG,delta=2 ;#
     54                           # 24 "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
     55  8008  DAFF               	dw 0xFEFF & 0xFFFF & 0xFFFF & 0xFBFF & 0xDFFF ;#
-    56                           	FNCALL	_main,_Wait
-    57                           	FNROOT	_main
-    58                           	FNCALL	_InterReceiver,i1_Wait
-    59                           	FNCALL	intlevel1,_InterReceiver
-    60                           	global	intlevel1
-    61                           	FNROOT	intlevel1
-    62                           	global	InterReceiver@i
-    63                           psect	idataCOMMON,class=CODE,space=0,delta=2
-    64                           global __pidataCOMMON
-    65  00A1                     __pidataCOMMON:
-    66                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-    67                           	line	39
-    68                           
-    69                           ;initializer for InterReceiver@i
-    70  00A1  3430               	retlw	030h
-    71                           	global	InterReceiver@debug
-    72                           	global	_PORTA
-    73  000C                     _PORTA	set	12
-    74                           	global	_CARRY
-    75  0018                     _CARRY	set	24
-    76                           	global	_GIE
-    77  005F                     _GIE	set	95
-    78                           	global	_PEIE
-    79  005E                     _PEIE	set	94
-    80                           	global	_RA1
-    81  0061                     _RA1	set	97
-    82                           	global	_RA2
-    83  0062                     _RA2	set	98
-    84                           	global	_RCIF
-    85  008D                     _RCIF	set	141
-    86                           	global	_OSCCON
-    87  0099                     _OSCCON	set	153
-    88                           	global	_TRISA
-    89  008C                     _TRISA	set	140
-    90                           	global	_RCIE
-    91  048D                     _RCIE	set	1165
-    92                           	global	_RXDTSEL
-    93  08EF                     _RXDTSEL	set	2287
-    94                           	global	_TXCKSEL
-    95  08EA                     _TXCKSEL	set	2282
-    96                           	global	_EEADR
-    97  0191                     _EEADR	set	401
-    98                           	global	_ANSELA
-    99  018C                     _ANSELA	set	396
-   100                           	global	_EECON1
-   101  0195                     _EECON1	set	405
-   102                           	global	_EECON2
-   103  0196                     _EECON2	set	406
-   104                           	global	_EEDATA
-   105  0193                     _EEDATA	set	403
-   106                           	global	_RCSTA
-   107  019D                     _RCSTA	set	413
-   108                           	global	_SPBRG
-   109  019B                     _SPBRG	set	411
-   110                           	global	_TXSTA
-   111  019E                     _TXSTA	set	414
-   112                           	global	_BRG16
-   113  0CFB                     _BRG16	set	3323
-   114                           	global	_RD
-   115  0CA8                     _RD	set	3240
-   116                           	global	_WR
-   117  0CA9                     _WR	set	3241
-   118                           	global	_WREN
-   119  0CAA                     _WREN	set	3242
-   120                           	file	"C:\Users\igalab\AppData\Local\Temp\s75s."
-   121                           	line	#
-   122                           psect cinit,class=CODE,delta=2
-   123                           global start_initialization
-   124  0099                     start_initialization:
-   125                           
-   126                           psect	bssCOMMON,class=COMMON,space=1
-   127                           global __pbssCOMMON
-   128  0079                     __pbssCOMMON:
-   129  0079                     InterReceiver@debug:
-   130  0079                            ds      2
-   131                           
-   132                           psect	dataCOMMON,class=COMMON,space=1
-   133                           global __pdataCOMMON
-   134  007B                     __pdataCOMMON:
-   135                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   136  007B                     InterReceiver@i:
-   137  007B                            ds      1
-   138                           
-   139                           ; Clear objects allocated to COMMON
-   140                           psect cinit,class=CODE,delta=2
-   141                           	global __pbssCOMMON
-   142  0099  01F9               	clrf	((__pbssCOMMON)+0)&07Fh
-   143  009A  01FA               	clrf	((__pbssCOMMON)+1)&07Fh
-   144                           ; Initialize objects allocated to COMMON
-   145                           	global __pidataCOMMON,__pdataCOMMON
-   146                           psect cinit,class=CODE,delta=2
-   147  009B  3180  20A1  3180   	fcall	__pidataCOMMON+0		;fetch initializer
-   148  009E  00FB               	movwf	__pdataCOMMON+0&07fh		
-   149                           psect cinit,class=CODE,delta=2
-   150                           global end_of_initialization
-   151                           
-   152                           ;End of C runtime variable initialization code
-   153                           
-   154  009F                     end_of_initialization:
-   155  009F  0020               movlb 0
-   156  00A0  2834               ljmp _main	;jump to C main() function
-   157                           psect	cstackCOMMON,class=COMMON,space=1
-   158                           global __pcstackCOMMON
-   159  0070                     __pcstackCOMMON:
-   160                           	global	?_InterReceiver
-   161  0070                     ?_InterReceiver:	; 0 bytes @ 0x0
-   162                           	global	?_main
-   163  0070                     ?_main:	; 0 bytes @ 0x0
-   164                           	global	?i1_Wait
-   165  0070                     ?i1_Wait:	; 0 bytes @ 0x0
-   166                           	global	i1Wait@num
-   167  0070                     i1Wait@num:	; 2 bytes @ 0x0
-   168  0070                     	ds	2
-   169                           	global	??i1_Wait
-   170  0072                     ??i1_Wait:	; 0 bytes @ 0x2
-   171  0072                     	ds	2
-   172                           	global	i1Wait@i
-   173  0074                     i1Wait@i:	; 2 bytes @ 0x4
-   174  0074                     	ds	2
-   175                           	global	??_InterReceiver
-   176  0076                     ??_InterReceiver:	; 0 bytes @ 0x6
-   177  0076                     	ds	3
-   178                           psect	cstackBANK0,class=BANK0,space=1
-   179                           global __pcstackBANK0
-   180  0020                     __pcstackBANK0:
-   181                           	global	?_Wait
-   182  0020                     ?_Wait:	; 0 bytes @ 0x0
-   183                           	global	Wait@num
-   184  0020                     Wait@num:	; 2 bytes @ 0x0
-   185  0020                     	ds	2
-   186                           	global	??_Wait
-   187  0022                     ??_Wait:	; 0 bytes @ 0x2
-   188  0022                     	ds	2
-   189                           	global	Wait@i
-   190  0024                     Wait@i:	; 2 bytes @ 0x4
-   191  0024                     	ds	2
-   192                           	global	??_main
-   193  0026                     ??_main:	; 0 bytes @ 0x6
-   194  0026                     	ds	1
-   195                           	global	main@i
-   196  0027                     main@i:	; 1 bytes @ 0x7
-   197  0027                     	ds	1
-   198 ;;Data sizes: Strings 0, constant 0, data 1, bss 2, persistent 0 stack 0
-   199 ;;Auto spaces:   Size  Autos    Used
-   200 ;; COMMON          14      9      12
-   201 ;; BANK0           80      8       8
-   202 ;; BANK1           32      0       0
-   203                           
-   204 ;;
-   205 ;; Pointer list with targets:
-   206                           
-   207                           
-   208                           
-   209 ;;
-   210 ;; Critical Paths under _main in COMMON
-   211 ;;
-   212 ;;   None.
-   213 ;;
-   214 ;; Critical Paths under _InterReceiver in COMMON
-   215 ;;
-   216 ;;   _InterReceiver->i1_Wait
-   217 ;;
-   218 ;; Critical Paths under _main in BANK0
-   219 ;;
-   220 ;;   _main->_Wait
-   221 ;;
-   222 ;; Critical Paths under _InterReceiver in BANK0
-   223 ;;
-   224 ;;   None.
-   225 ;;
-   226 ;; Critical Paths under _main in BANK1
-   227 ;;
-   228 ;;   None.
-   229 ;;
-   230 ;; Critical Paths under _InterReceiver in BANK1
-   231 ;;
-   232 ;;   None.
-   233                           
-   234 ;;
-   235 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
-   236 ;;
-   237                           
-   238 ;;
-   239 ;;Call Graph Tables:
-   240 ;;
-   241 ;; ---------------------------------------------------------------------------------
-   242 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
-   243 ;; ---------------------------------------------------------------------------------
-   244 ;; (0) _main                                                 2     2      0      47
-   245 ;;                                              6 BANK0      2     2      0
-   246 ;;                               _Wait
-   247 ;; ---------------------------------------------------------------------------------
-   248 ;; (1) _Wait                                                 6     4      2      46
-   249 ;;                                              0 BANK0      6     4      2
-   250 ;; ---------------------------------------------------------------------------------
-   251 ;; Estimated maximum stack depth 1
-   252 ;; ---------------------------------------------------------------------------------
-   253 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
-   254 ;; ---------------------------------------------------------------------------------
-   255 ;; (2) _InterReceiver                                        3     3      0     120
-   256 ;;                                              6 COMMON     3     3      0
-   257 ;;                             i1_Wait
-   258 ;; ---------------------------------------------------------------------------------
-   259 ;; (3) i1_Wait                                               6     4      2     120
-   260 ;;                                              0 COMMON     6     4      2
-   261 ;; ---------------------------------------------------------------------------------
-   262 ;; Estimated maximum stack depth 3
-   263 ;; ---------------------------------------------------------------------------------
-   264                           
-   265 ;; Call Graph Graphs:
-   266                           
-   267 ;; _main (ROOT)
-   268 ;;   _Wait
-   269 ;;
-   270 ;; _InterReceiver (ROOT)
-   271 ;;   i1_Wait
-   272 ;;
-   273                           
-   274 ;; Address spaces:
-   275                           
-   276 ;;Name               Size   Autos  Total    Cost      Usage
-   277 ;;BIGRAM              70      0       0       0        0.0%
-   278 ;;EEDATA             100      0       0       0        0.0%
-   279 ;;NULL                 0      0       0       0        0.0%
-   280 ;;CODE                 0      0       0       0        0.0%
-   281 ;;BITCOMMON            E      0       0       1        0.0%
-   282 ;;BITSFR0              0      0       0       1        0.0%
-   283 ;;SFR0                 0      0       0       1        0.0%
-   284 ;;COMMON               E      9       C       2       85.7%
-   285 ;;BITSFR1              0      0       0       2        0.0%
-   286 ;;SFR1                 0      0       0       2        0.0%
-   287 ;;BITSFR2              0      0       0       3        0.0%
-   288 ;;SFR2                 0      0       0       3        0.0%
-   289 ;;STACK                0      0       5       3        0.0%
-   290 ;;BITSFR3              0      0       0       4        0.0%
-   291 ;;SFR3                 0      0       0       4        0.0%
-   292 ;;ABS                  0      0      14       4        0.0%
-   293 ;;BITBANK0            50      0       0       5        0.0%
-   294 ;;BITSFR4              0      0       0       5        0.0%
-   295 ;;SFR4                 0      0       0       5        0.0%
-   296 ;;BANK0               50      8       8       6       10.0%
-   297 ;;BITSFR5              0      0       0       6        0.0%
-   298 ;;SFR5                 0      0       0       6        0.0%
-   299 ;;BITBANK1            20      0       0       7        0.0%
-   300 ;;BITSFR6              0      0       0       7        0.0%
-   301 ;;SFR6                 0      0       0       7        0.0%
-   302 ;;BANK1               20      0       0       8        0.0%
-   303 ;;BITSFR7              0      0       0       8        0.0%
-   304 ;;SFR7                 0      0       0       8        0.0%
-   305 ;;BITSFR8              0      0       0       9        0.0%
-   306 ;;SFR8                 0      0       0       9        0.0%
-   307 ;;DATA                 0      0      19       9        0.0%
-   308 ;;BITSFR9              0      0       0      10        0.0%
-   309 ;;SFR9                 0      0       0      10        0.0%
-   310 ;;BITSFR10             0      0       0      11        0.0%
-   311 ;;SFR10                0      0       0      11        0.0%
-   312 ;;BITSFR11             0      0       0      12        0.0%
-   313 ;;SFR11                0      0       0      12        0.0%
-   314 ;;BITSFR12             0      0       0      13        0.0%
-   315 ;;SFR12                0      0       0      13        0.0%
-   316 ;;BITSFR13             0      0       0      14        0.0%
-   317 ;;SFR13                0      0       0      14        0.0%
-   318 ;;BITSFR14             0      0       0      15        0.0%
-   319 ;;SFR14                0      0       0      15        0.0%
-   320 ;;BITSFR15             0      0       0      16        0.0%
-   321 ;;SFR15                0      0       0      16        0.0%
-   322 ;;BITSFR16             0      0       0      17        0.0%
-   323 ;;SFR16                0      0       0      17        0.0%
-   324 ;;BITSFR17             0      0       0      18        0.0%
-   325 ;;SFR17                0      0       0      18        0.0%
-   326 ;;BITSFR18             0      0       0      19        0.0%
-   327 ;;SFR18                0      0       0      19        0.0%
-   328 ;;BITSFR19             0      0       0      20        0.0%
-   329 ;;SFR19                0      0       0      20        0.0%
-   330 ;;BITSFR20             0      0       0      21        0.0%
-   331 ;;SFR20                0      0       0      21        0.0%
-   332 ;;BITSFR21             0      0       0      22        0.0%
-   333 ;;SFR21                0      0       0      22        0.0%
-   334 ;;BITSFR22             0      0       0      23        0.0%
-   335 ;;SFR22                0      0       0      23        0.0%
-   336 ;;BITSFR23             0      0       0      24        0.0%
-   337 ;;SFR23                0      0       0      24        0.0%
-   338 ;;BITSFR24             0      0       0      25        0.0%
-   339 ;;SFR24                0      0       0      25        0.0%
-   340 ;;BITSFR25             0      0       0      26        0.0%
-   341 ;;SFR25                0      0       0      26        0.0%
-   342 ;;BITSFR26             0      0       0      27        0.0%
-   343 ;;SFR26                0      0       0      27        0.0%
-   344 ;;BITSFR27             0      0       0      28        0.0%
-   345 ;;SFR27                0      0       0      28        0.0%
-   346 ;;BITSFR28             0      0       0      29        0.0%
-   347 ;;SFR28                0      0       0      29        0.0%
-   348 ;;BITSFR29             0      0       0      30        0.0%
-   349 ;;SFR29                0      0       0      30        0.0%
-   350 ;;BITSFR30             0      0       0      31        0.0%
-   351 ;;SFR30                0      0       0      31        0.0%
-   352 ;;BITSFR31             0      0       0      32        0.0%
-   353 ;;SFR31                0      0       0      32        0.0%
-   354                           
-   355                           	global	_main
-   356                           psect	maintext,global,class=CODE,delta=2
-   357                           global __pmaintext
-   358  0034                     __pmaintext:
-   359                           
-   360 ;; *************** function _main *****************
-   361 ;; Defined at:
-   362 ;;		line 74 in file "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   363 ;; Parameters:    Size  Location     Type
-   364 ;;		None
-   365 ;; Auto vars:     Size  Location     Type
-   366 ;;  i               1    7[BANK0 ] unsigned char 
-   367 ;; Return value:  Size  Location     Type
-   368 ;;		None               void
-   369 ;; Registers used:
-   370 ;;		wreg, status,2, status,0, pclath, cstack
-   371 ;; Tracked objects:
-   372 ;;		On entry : 17F/0
-   373 ;;		On exit  : 0/0
-   374 ;;		Unchanged: 0/0
-   375 ;; Data sizes:     COMMON   BANK0   BANK1
-   376 ;;      Params:         0       0       0
-   377 ;;      Locals:         0       1       0
-   378 ;;      Temps:          0       1       0
-   379 ;;      Totals:         0       2       0
-   380 ;;Total ram usage:        2 bytes
-   381 ;; Hardware stack levels required when called:    3
-   382 ;; This function calls:
-   383 ;;		_Wait
-   384 ;; This function is called by:
-   385 ;;		Startup code after reset
-   386 ;; This function uses a non-reentrant model
-   387 ;;
-   388                           psect	maintext
-   389                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   390                           	line	74
-   391                           	global	__size_of_main
-   392  002B                     	__size_of_main	equ	__end_of_main-_main
-   393                           	
-   394  0034                     _main:	
-   395                           	opt	stack 13
-   396                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
-   397                           	line	77
-   398                           	
-   399  0034                     l3539:	
-   400                           ;onoff.c: 75: char i ;
-   401                           ;onoff.c: 77: OSCCON = 0b01011010 ;
-   402  0034  305A               	movlw	(05Ah)
-   403  0035  0021               	movlb 1	; select bank1
-   404  0036  0099               	movwf	(153)^080h	;volatile
-   405                           	line	78
-   406                           	
-   407  0037                     l3541:	
-   408                           ;onoff.c: 78: ANSELA = 0b00000000 ;
-   409  0037  0023               	movlb 3	; select bank3
-   410  0038  018C               	clrf	(396)^0180h	;volatile
-   411                           	line	79
-   412                           	
-   413  0039                     l3543:	
-   414                           ;onoff.c: 79: TRISA = 0b00001000 ;
-   415  0039  3008               	movlw	(08h)
-   416  003A  0021               	movlb 1	; select bank1
-   417  003B  008C               	movwf	(140)^080h	;volatile
-   418                           	line	80
-   419                           ;onoff.c: 80: PORTA = 0b00000000 ;
-   420  003C  0020               	movlb 0	; select bank0
-   421  003D  018C               	clrf	(12)	;volatile
-   422                           	line	82
+    56                           	FNCALL	_main,_FlashLED
+    57                           	FNCALL	_main,_ErrorInd
+    58                           	FNROOT	_main
+    59                           	global	_PORTA
+    60                           psect	text88,local,class=CODE,delta=2
+    61                           global __ptext88
+    62  0000                     __ptext88:
+    63  000C                     _PORTA	set	12
+    64                           	global	_CARRY
+    65  0018                     _CARRY	set	24
+    66                           	global	_GIE
+    67  005F                     _GIE	set	95
+    68                           	global	_RCIF
+    69  008D                     _RCIF	set	141
+    70                           	global	_TXIF
+    71  008C                     _TXIF	set	140
+    72                           	global	_OSCCON
+    73  0099                     _OSCCON	set	153
+    74                           	global	_TRISA
+    75  008C                     _TRISA	set	140
+    76                           	global	_nWPUEN
+    77  04AF                     _nWPUEN	set	1199
+    78                           	global	_LATA2
+    79  0862                     _LATA2	set	2146
+    80                           	global	_RXDTSEL
+    81  08EF                     _RXDTSEL	set	2287
+    82                           	global	_TXCKSEL
+    83  08EA                     _TXCKSEL	set	2282
+    84                           	global	_EEADR
+    85  0191                     _EEADR	set	401
+    86                           	global	_ANSELA
+    87  018C                     _ANSELA	set	396
+    88                           	global	_BAUDCON
+    89  019F                     _BAUDCON	set	415
+    90                           	global	_EECON1
+    91  0195                     _EECON1	set	405
+    92                           	global	_EECON2
+    93  0196                     _EECON2	set	406
+    94                           	global	_EEDATA
+    95  0193                     _EEDATA	set	403
+    96                           	global	_RCREG
+    97  0199                     _RCREG	set	409
+    98                           	global	_RCSTA
+    99  019D                     _RCSTA	set	413
+   100                           	global	_RCSTAbits
+   101  019D                     _RCSTAbits	set	413
+   102                           	global	_SPBRG
+   103  019B                     _SPBRG	set	411
+   104                           	global	_TXREG
+   105  019A                     _TXREG	set	410
+   106                           	global	_TXSTA
+   107  019E                     _TXSTA	set	414
+   108                           	global	_BRG16
+   109  0CFB                     _BRG16	set	3323
+   110                           	global	_RD
+   111  0CA8                     _RD	set	3240
+   112                           	global	_WR
+   113  0CA9                     _WR	set	3241
+   114                           	global	_WREN
+   115  0CAA                     _WREN	set	3242
+   116                           	global	_WPUA
+   117  020C                     _WPUA	set	524
+   118                           	file	"C:\Users\igalab\AppData\Local\Temp\s8pg."
+   119                           	line	#
+   120                           psect cinit,class=CODE,delta=2
+   121                           global start_initialization
+   122  0746                     start_initialization:
+   123                           
+   124                           psect cinit,class=CODE,delta=2
+   125                           global end_of_initialization
+   126                           
+   127                           ;End of C runtime variable initialization code
+   128                           
+   129  0746                     end_of_initialization:
+   130  0746  0020               movlb 0
+   131  0747  2F98               ljmp _main	;jump to C main() function
+   132                           psect	cstackCOMMON,class=COMMON,space=1
+   133                           global __pcstackCOMMON
+   134  0070                     __pcstackCOMMON:
+   135                           	global	?_FlashLED
+   136  0070                     ?_FlashLED:	; 0 bytes @ 0x0
+   137                           	global	??_FlashLED
+   138  0070                     ??_FlashLED:	; 0 bytes @ 0x0
+   139                           	global	?_ErrorInd
+   140  0070                     ?_ErrorInd:	; 0 bytes @ 0x0
+   141                           	global	??_ErrorInd
+   142  0070                     ??_ErrorInd:	; 0 bytes @ 0x0
+   143                           	global	?_main
+   144  0070                     ?_main:	; 0 bytes @ 0x0
+   145  0070                     	ds	2
+   146                           	global	FlashLED@i
+   147  0072                     FlashLED@i:	; 1 bytes @ 0x2
+   148  0072                     	ds	1
+   149                           	global	??_main
+   150  0073                     ??_main:	; 0 bytes @ 0x3
+   151  0073                     	ds	1
+   152                           	global	main@RxData
+   153  0074                     main@RxData:	; 1 bytes @ 0x4
+   154  0074                     	ds	1
+   155 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   156 ;;Auto spaces:   Size  Autos    Used
+   157 ;; COMMON          14      5       5
+   158 ;; BANK0           80      0       0
+   159 ;; BANK1           32      0       0
+   160                           
+   161 ;;
+   162 ;; Pointer list with targets:
+   163                           
+   164                           
+   165                           
+   166 ;;
+   167 ;; Critical Paths under _main in COMMON
+   168 ;;
+   169 ;;   _main->_FlashLED
+   170 ;;
+   171 ;; Critical Paths under _main in BANK0
+   172 ;;
+   173 ;;   None.
+   174 ;;
+   175 ;; Critical Paths under _main in BANK1
+   176 ;;
+   177 ;;   None.
+   178                           
+   179 ;;
+   180 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   181 ;;
+   182                           
+   183 ;;
+   184 ;;Call Graph Tables:
+   185 ;;
+   186 ;; ---------------------------------------------------------------------------------
+   187 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   188 ;; ---------------------------------------------------------------------------------
+   189 ;; (0) _main                                                 2     2      0      45
+   190 ;;                                              3 COMMON     2     2      0
+   191 ;;                           _FlashLED
+   192 ;;                           _ErrorInd
+   193 ;; ---------------------------------------------------------------------------------
+   194 ;; (1) _ErrorInd                                             2     2      0       0
+   195 ;;                                              0 COMMON     2     2      0
+   196 ;; ---------------------------------------------------------------------------------
+   197 ;; (1) _FlashLED                                             3     3      0      15
+   198 ;;                                              0 COMMON     3     3      0
+   199 ;; ---------------------------------------------------------------------------------
+   200 ;; Estimated maximum stack depth 1
+   201 ;; ---------------------------------------------------------------------------------
+   202                           
+   203 ;; Call Graph Graphs:
+   204                           
+   205 ;; _main (ROOT)
+   206 ;;   _FlashLED
+   207 ;;   _ErrorInd
+   208 ;;
+   209                           
+   210 ;; Address spaces:
+   211                           
+   212 ;;Name               Size   Autos  Total    Cost      Usage
+   213 ;;BIGRAM              70      0       0       0        0.0%
+   214 ;;EEDATA             100      0       0       0        0.0%
+   215 ;;NULL                 0      0       0       0        0.0%
+   216 ;;CODE                 0      0       0       0        0.0%
+   217 ;;BITCOMMON            E      0       0       1        0.0%
+   218 ;;BITSFR0              0      0       0       1        0.0%
+   219 ;;SFR0                 0      0       0       1        0.0%
+   220 ;;COMMON               E      5       5       2       35.7%
+   221 ;;BITSFR1              0      0       0       2        0.0%
+   222 ;;SFR1                 0      0       0       2        0.0%
+   223 ;;BITSFR2              0      0       0       3        0.0%
+   224 ;;SFR2                 0      0       0       3        0.0%
+   225 ;;STACK                0      0       1       3        0.0%
+   226 ;;BITSFR3              0      0       0       4        0.0%
+   227 ;;SFR3                 0      0       0       4        0.0%
+   228 ;;ABS                  0      0       0       4        0.0%
+   229 ;;BITBANK0            50      0       0       5        0.0%
+   230 ;;BITSFR4              0      0       0       5        0.0%
+   231 ;;SFR4                 0      0       0       5        0.0%
+   232 ;;BANK0               50      0       0       6        0.0%
+   233 ;;BITSFR5              0      0       0       6        0.0%
+   234 ;;SFR5                 0      0       0       6        0.0%
+   235 ;;BITBANK1            20      0       0       7        0.0%
+   236 ;;BITSFR6              0      0       0       7        0.0%
+   237 ;;SFR6                 0      0       0       7        0.0%
+   238 ;;BANK1               20      0       0       8        0.0%
+   239 ;;BITSFR7              0      0       0       8        0.0%
+   240 ;;SFR7                 0      0       0       8        0.0%
+   241 ;;BITSFR8              0      0       0       9        0.0%
+   242 ;;SFR8                 0      0       0       9        0.0%
+   243 ;;DATA                 0      0       0       9        0.0%
+   244 ;;BITSFR9              0      0       0      10        0.0%
+   245 ;;SFR9                 0      0       0      10        0.0%
+   246 ;;BITSFR10             0      0       0      11        0.0%
+   247 ;;SFR10                0      0       0      11        0.0%
+   248 ;;BITSFR11             0      0       0      12        0.0%
+   249 ;;SFR11                0      0       0      12        0.0%
+   250 ;;BITSFR12             0      0       0      13        0.0%
+   251 ;;SFR12                0      0       0      13        0.0%
+   252 ;;BITSFR13             0      0       0      14        0.0%
+   253 ;;SFR13                0      0       0      14        0.0%
+   254 ;;BITSFR14             0      0       0      15        0.0%
+   255 ;;SFR14                0      0       0      15        0.0%
+   256 ;;BITSFR15             0      0       0      16        0.0%
+   257 ;;SFR15                0      0       0      16        0.0%
+   258 ;;BITSFR16             0      0       0      17        0.0%
+   259 ;;SFR16                0      0       0      17        0.0%
+   260 ;;BITSFR17             0      0       0      18        0.0%
+   261 ;;SFR17                0      0       0      18        0.0%
+   262 ;;BITSFR18             0      0       0      19        0.0%
+   263 ;;SFR18                0      0       0      19        0.0%
+   264 ;;BITSFR19             0      0       0      20        0.0%
+   265 ;;SFR19                0      0       0      20        0.0%
+   266 ;;BITSFR20             0      0       0      21        0.0%
+   267 ;;SFR20                0      0       0      21        0.0%
+   268 ;;BITSFR21             0      0       0      22        0.0%
+   269 ;;SFR21                0      0       0      22        0.0%
+   270 ;;BITSFR22             0      0       0      23        0.0%
+   271 ;;SFR22                0      0       0      23        0.0%
+   272 ;;BITSFR23             0      0       0      24        0.0%
+   273 ;;SFR23                0      0       0      24        0.0%
+   274 ;;BITSFR24             0      0       0      25        0.0%
+   275 ;;SFR24                0      0       0      25        0.0%
+   276 ;;BITSFR25             0      0       0      26        0.0%
+   277 ;;SFR25                0      0       0      26        0.0%
+   278 ;;BITSFR26             0      0       0      27        0.0%
+   279 ;;SFR26                0      0       0      27        0.0%
+   280 ;;BITSFR27             0      0       0      28        0.0%
+   281 ;;SFR27                0      0       0      28        0.0%
+   282 ;;BITSFR28             0      0       0      29        0.0%
+   283 ;;SFR28                0      0       0      29        0.0%
+   284 ;;BITSFR29             0      0       0      30        0.0%
+   285 ;;SFR29                0      0       0      30        0.0%
+   286 ;;BITSFR30             0      0       0      31        0.0%
+   287 ;;SFR30                0      0       0      31        0.0%
+   288 ;;BITSFR31             0      0       0      32        0.0%
+   289 ;;SFR31                0      0       0      32        0.0%
+   290                           
+   291                           	global	_main
+   292                           psect	maintext,global,class=CODE,delta=2
+   293                           global __pmaintext
+   294  0798                     __pmaintext:
+   295                           
+   296 ;; *************** function _main *****************
+   297 ;; Defined at:
+   298 ;;		line 33 in file "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
+   299 ;; Parameters:    Size  Location     Type
+   300 ;;		None
+   301 ;; Auto vars:     Size  Location     Type
+   302 ;;  RxData          1    4[COMMON] unsigned char 
+   303 ;; Return value:  Size  Location     Type
+   304 ;;		None               void
+   305 ;; Registers used:
+   306 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   307 ;; Tracked objects:
+   308 ;;		On entry : 17F/0
+   309 ;;		On exit  : 0/0
+   310 ;;		Unchanged: 0/0
+   311 ;; Data sizes:     COMMON   BANK0   BANK1
+   312 ;;      Params:         0       0       0
+   313 ;;      Locals:         1       0       0
+   314 ;;      Temps:          1       0       0
+   315 ;;      Totals:         2       0       0
+   316 ;;Total ram usage:        2 bytes
+   317 ;; Hardware stack levels required when called:    1
+   318 ;; This function calls:
+   319 ;;		_FlashLED
+   320 ;;		_ErrorInd
+   321 ;; This function is called by:
+   322 ;;		Startup code after reset
+   323 ;; This function uses a non-reentrant model
+   324 ;;
+   325                           psect	maintext
+   326                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
+   327                           	line	33
+   328                           	global	__size_of_main
+   329  0068                     	__size_of_main	equ	__end_of_main-_main
+   330                           	
+   331  0798                     _main:	
+   332                           	opt	stack 15
+   333                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   334                           	line	36
+   335                           	
+   336  0798                     l3512:	
+   337                           ;onoff.c: 34: char RxData;
+   338                           ;onoff.c: 36: OSCCON = 0b01011010 ;
+   339  0798  305A               	movlw	(05Ah)
+   340  0799  0021               	movlb 1	; select bank1
+   341  079A  0099               	movwf	(153)^080h	;volatile
+   342                           	line	37
+   343                           	
+   344  079B                     l3514:	
+   345                           ;onoff.c: 37: PORTA = 0x00;
+   346  079B  0020               	movlb 0	; select bank0
+   347  079C  018C               	clrf	(12)	;volatile
+   348                           	line	39
+   349                           	
+   350  079D                     l3516:	
+   351                           ;onoff.c: 39: RXDTSEL = 1 ;
+   352  079D  0022               	movlb 2	; select bank2
+   353  079E  179D               	bsf	(2287/8)^0100h,(2287)&7
+   354                           	line	40
+   355                           	
+   356  079F                     l3518:	
+   357                           ;onoff.c: 40: TXCKSEL = 1 ;
+   358  079F  151D               	bsf	(2282/8)^0100h,(2282)&7
+   359                           	line	41
+   360                           	
+   361  07A0                     l3520:	
+   362                           ;onoff.c: 41: TRISA = 0b11101011;
+   363  07A0  30EB               	movlw	(0EBh)
+   364  07A1  0021               	movlb 1	; select bank1
+   365  07A2  008C               	movwf	(140)^080h	;volatile
+   366                           	line	42
+   367                           ;onoff.c: 42: ANSELA = 0x00;
+   368  07A3  0023               	movlb 3	; select bank3
+   369  07A4  018C               	clrf	(396)^0180h	;volatile
+   370                           	line	43
+   371                           	
+   372  07A5                     l3522:	
+   373                           ;onoff.c: 43: WPUA = 0b00011111;
+   374  07A5  301F               	movlw	(01Fh)
+   375  07A6  0024               	movlb 4	; select bank4
+   376  07A7  008C               	movwf	(524)^0200h	;volatile
+   377                           	line	44
+   378                           	
+   379  07A8                     l3524:	
+   380                           ;onoff.c: 44: nWPUEN = 0;
+   381  07A8  0021               	movlb 1	; select bank1
+   382  07A9  1395               	bcf	(1199/8)^080h,(1199)&7
+   383                           	line	47
+   384                           	
+   385  07AA                     l3526:	
+   386                           ;onoff.c: 47: RCSTA = 0b10010000;
+   387  07AA  3090               	movlw	(090h)
+   388  07AB  0023               	movlb 3	; select bank3
+   389  07AC  009D               	movwf	(413)^0180h	;volatile
+   390                           	line	48
+   391                           	
+   392  07AD                     l3528:	
+   393                           ;onoff.c: 48: TXSTA = 0b00100100;
+   394  07AD  3024               	movlw	(024h)
+   395  07AE  009E               	movwf	(414)^0180h	;volatile
+   396                           	line	49
+   397                           	
+   398  07AF                     l3530:	
+   399                           ;onoff.c: 49: BAUDCON = 0b00001000;
+   400  07AF  3008               	movlw	(08h)
+   401  07B0  009F               	movwf	(415)^0180h	;volatile
+   402                           	line	52
+   403                           	
+   404  07B1                     l3532:	
+   405                           ;onoff.c: 52: BRG16 = 1;
+   406  07B1  159F               	bsf	(3323/8)^0180h,(3323)&7
+   407                           	line	53
+   408                           	
+   409  07B2                     l3534:	
+   410                           ;onoff.c: 53: SPBRG = 25 ;
+   411  07B2  3019               	movlw	(019h)
+   412  07B3  009B               	movwf	(411)^0180h	;volatile
+   413  07B4  2FB6               	goto	l1150
+   414                           	line	56
+   415                           ;onoff.c: 56: while(1){
+   416                           	
+   417  07B5                     l1149:	
+   418                           	line	57
+   419                           ;onoff.c: 57: while (!RCIF);
+   420  07B5  2FB6               	goto	l1150
+   421                           	
+   422  07B6                     l1151:	
    423                           	
-   424  003E                     l3545:	
-   425                           ;onoff.c: 82: RXDTSEL = 1 ;
-   426  003E  0022               	movlb 2	; select bank2
-   427  003F  179D               	bsf	(2287/8)^0100h,(2287)&7
-   428                           	line	83
-   429                           	
-   430  0040                     l3547:	
-   431                           ;onoff.c: 83: TXCKSEL = 1 ;
-   432  0040  151D               	bsf	(2282/8)^0100h,(2282)&7
-   433                           	line	84
-   434                           	
-   435  0041                     l3549:	
-   436                           ;onoff.c: 84: BRG16 = 1;
-   437  0041  0023               	movlb 3	; select bank3
-   438  0042  159F               	bsf	(3323/8)^0180h,(3323)&7
-   439                           	line	85
-   440                           	
-   441  0043                     l3551:	
-   442                           ;onoff.c: 85: TXSTA = 0b00100100 ;
-   443  0043  3024               	movlw	(024h)
-   444  0044  009E               	movwf	(414)^0180h	;volatile
-   445                           	line	86
-   446                           	
-   447  0045                     l3553:	
-   448                           ;onoff.c: 86: RCSTA = 0b10010000 ;
-   449  0045  3090               	movlw	(090h)
-   450  0046  009D               	movwf	(413)^0180h	;volatile
-   451                           	line	87
+   424  07B6                     l1150:	
+   425  07B6  0020               	movlb 0	; select bank0
+   426  07B7  1E91               	btfss	(141/8),(141)&7
+   427  07B8  2FBA               	goto	u2161
+   428  07B9  2FBB               	goto	u2160
+   429  07BA                     u2161:
+   430  07BA  2FB6               	goto	l1150
+   431  07BB                     u2160:
+   432                           	
+   433  07BB                     l1152:	
+   434                           	line	58
+   435                           ;onoff.c: 58: if(RCSTAbits.OERR){
+   436  07BB  0023               	movlb 3	; select bank3
+   437  07BC  1C9D               	btfss	(413)^0180h,1	;volatile
+   438  07BD  2FBF               	goto	u2171
+   439  07BE  2FC0               	goto	u2170
+   440  07BF                     u2171:
+   441  07BF  2FC7               	goto	l3540
+   442  07C0                     u2170:
+   443                           	line	59
+   444                           	
+   445  07C0                     l3536:	
+   446                           ;onoff.c: 59: RCSTAbits.CREN=0;
+   447  07C0  121D               	bcf	(413)^0180h,4	;volatile
+   448                           	line	60
+   449                           ;onoff.c: 60: RCSTAbits.CREN=1;
+   450  07C1  161D               	bsf	(413)^0180h,4	;volatile
+   451                           	line	61
    452                           	
-   453  0047                     l3555:	
-   454                           ;onoff.c: 87: SPBRG = 25 ;
-   455  0047  3019               	movlw	(019h)
-   456  0048  009B               	movwf	(411)^0180h	;volatile
-   457                           	line	88
-   458                           	
-   459  0049                     l3557:	
-   460                           ;onoff.c: 88: RCIF = 0;
-   461  0049  0020               	movlb 0	; select bank0
-   462  004A  1291               	bcf	(141/8),(141)&7
-   463                           	line	89
-   464                           	
-   465  004B                     l3559:	
-   466                           ;onoff.c: 89: RCIE = 1 ;
-   467  004B  0021               	movlb 1	; select bank1
-   468  004C  1691               	bsf	(1165/8)^080h,(1165)&7
-   469                           	line	91
-   470                           	
-   471  004D                     l3561:	
-   472                           ;onoff.c: 91: PEIE = 1 ;
-   473  004D  170B               	bsf	(94/8),(94)&7
-   474                           	line	92
-   475                           	
-   476  004E                     l3563:	
-   477                           ;onoff.c: 92: GIE = 1 ;
-   478  004E  178B               	bsf	(95/8),(95)&7
-   479                           	line	94
-   480                           	
-   481  004F                     l3565:	
-   482                           ;onoff.c: 94: Wait(500) ;
-   483  004F  30F4               	movlw	low(01F4h)
-   484  0050  0020               	movlb 0	; select bank0
-   485  0051  00A0               	movwf	(?_Wait)
-   486  0052  3001               	movlw	high(01F4h)
-   487  0053  00A1               	movwf	((?_Wait))+1
-   488  0054  3180  205F  3180   	fcall	_Wait
-   489                           	line	95
-   490                           	
-   491  0057                     l3567:	
-   492                           ;onoff.c: 95: i = 0x30 ;
-   493  0057  3030               	movlw	(030h)
-   494  0058  0020               	movlb 0	; select bank0
-   495  0059  00A6               	movwf	(??_main+0)+0
-   496  005A  0826               	movf	(??_main+0)+0,w
-   497  005B  00A7               	movwf	(main@i)
-   498  005C  285D               	goto	l1162
-   499                           	line	97
-   500                           ;onoff.c: 97: while(1) {
-   501                           	
-   502  005D                     l1161:	
-   503                           	line	105
-   504                           	
-   505  005D                     l1162:	
-   506                           	line	97
-   507  005D  285D               	goto	l1162
-   508                           	
-   509  005E                     l1163:	
-   510                           	line	106
-   511                           	
-   512  005E                     l1164:	
-   513                           	global	start
-   514  005E  2832               	ljmp	start
-   515                           	opt stack 0
-   516                           GLOBAL	__end_of_main
-   517  005F                     	__end_of_main:
-   518 ;; =============== function _main ends ============
-   519                           
-   520                           	signat	_main,88
-   521                           	global	_Wait
-   522                           psect	text129,local,class=CODE,delta=2
-   523                           global __ptext129
-   524  005F                     __ptext129:
-   525                           
-   526 ;; *************** function _Wait *****************
-   527 ;; Defined at:
-   528 ;;		line 28 in file "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   529 ;; Parameters:    Size  Location     Type
-   530 ;;  num             2    0[BANK0 ] unsigned int 
-   531 ;; Auto vars:     Size  Location     Type
-   532 ;;  i               2    4[BANK0 ] int 
-   533 ;; Return value:  Size  Location     Type
-   534 ;;		None               void
-   535 ;; Registers used:
-   536 ;;		wreg, status,2
-   537 ;; Tracked objects:
-   538 ;;		On entry : 0/0
-   539 ;;		On exit  : 0/0
-   540 ;;		Unchanged: 0/0
-   541 ;; Data sizes:     COMMON   BANK0   BANK1
-   542 ;;      Params:         0       2       0
-   543 ;;      Locals:         0       2       0
-   544 ;;      Temps:          0       2       0
-   545 ;;      Totals:         0       6       0
-   546 ;;Total ram usage:        6 bytes
-   547 ;; Hardware stack levels used:    1
-   548 ;; Hardware stack levels required when called:    2
-   549 ;; This function calls:
-   550 ;;		Nothing
-   551 ;; This function is called by:
-   552 ;;		_main
-   553 ;; This function uses a non-reentrant model
-   554 ;;
-   555                           psect	text129
-   556                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   557                           	line	28
-   558                           	global	__size_of_Wait
-   559  001E                     	__size_of_Wait	equ	__end_of_Wait-_Wait
-   560                           	
-   561  005F                     _Wait:	
-   562                           	opt	stack 13
-   563                           ; Regs used in _Wait: [wreg+status,2]
-   564                           	line	32
-   565                           	
-   566  005F                     l3535:	
-   567                           ;onoff.c: 29: int i ;
-   568                           ;onoff.c: 32: for (i=0 ; i < num ; i++) {
-   569  005F  0020               	movlb 0	; select bank0
-   570  0060  01A4               	clrf	(Wait@i)
-   571  0061  01A5               	clrf	(Wait@i+1)
-   572  0062  2871               	goto	l1145
-   573                           	
-   574  0063                     l1146:	
-   575                           	line	33
-   576                           	
-   577  0063                     l3537:	
-   578                           ;onoff.c: 33: _delay((unsigned long)((10)*(1000000/4000.0))) ;
-   579                           	opt asmopt_off
-   580  0063  3004               movlw	4
-   581  0064  00A3               movwf	((??_Wait+0)+0+1),f
-   582  0065  303D               	movlw	61
-   583  0066  00A2               movwf	((??_Wait+0)+0),f
-   584  0067                     u2217:
-   585  0067  0BA2               	decfsz	((??_Wait+0)+0),f
-   586  0068  2867               	goto	u2217
-   587  0069  0BA3               	decfsz	((??_Wait+0)+0+1),f
-   588  006A  2867               	goto	u2217
-   589  006B  286C               	nop2
-   590                           opt asmopt_on
-   591                           
-   592                           	line	32
-   593  006C  3001               	movlw	low(01h)
-   594  006D  0020               	movlb 0	; select bank0
-   595  006E  07A4               	addwf	(Wait@i),f
-   596  006F  3000               	movlw	high(01h)
-   597  0070  3DA5               	addwfc	(Wait@i+1),f
-   598                           	
-   599  0071                     l1145:	
-   600  0071  0821               	movf	(Wait@num+1),w
-   601  0072  0225               	subwf	(Wait@i+1),w
-   602  0073  1D03               	skipz
-   603  0074  2877               	goto	u2205
-   604  0075  0820               	movf	(Wait@num),w
-   605  0076  0224               	subwf	(Wait@i),w
-   606  0077                     u2205:
-   607  0077  1C03               	skipc
-   608  0078  287A               	goto	u2201
-   609  0079  287B               	goto	u2200
-   610  007A                     u2201:
-   611  007A  2863               	goto	l3537
-   612  007B                     u2200:
-   613  007B  287C               	goto	l1148
-   614                           	
-   615  007C                     l1147:	
-   616                           	line	35
-   617                           	
-   618  007C                     l1148:	
-   619  007C  0008               	return
-   620                           	opt stack 0
-   621                           GLOBAL	__end_of_Wait
-   622  007D                     	__end_of_Wait:
-   623 ;; =============== function _Wait ends ============
-   624                           
-   625                           	signat	_Wait,4216
-   626                           	global	_InterReceiver
-   627                           psect	intentry,class=CODE,delta=2
-   628                           global __pintentry
-   629  0004                     __pintentry:
-   630                           
-   631 ;; *************** function _InterReceiver *****************
-   632 ;; Defined at:
-   633 ;;		line 38 in file "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   634 ;; Parameters:    Size  Location     Type
-   635 ;;		None
-   636 ;; Auto vars:     Size  Location     Type
-   637 ;;		None
-   638 ;; Return value:  Size  Location     Type
-   639 ;;		None               void
-   640 ;; Registers used:
-   641 ;;		wreg, status,2, status,0, pclath, cstack
-   642 ;; Tracked objects:
-   643 ;;		On entry : 0/0
-   644 ;;		On exit  : 0/0
-   645 ;;		Unchanged: 0/0
-   646 ;; Data sizes:     COMMON   BANK0   BANK1
-   647 ;;      Params:         0       0       0
-   648 ;;      Locals:         0       0       0
-   649 ;;      Temps:          3       0       0
-   650 ;;      Totals:         3       0       0
-   651 ;;Total ram usage:        3 bytes
-   652 ;; Hardware stack levels used:    1
-   653 ;; Hardware stack levels required when called:    1
-   654 ;; This function calls:
-   655 ;;		i1_Wait
-   656 ;; This function is called by:
-   657 ;;		Interrupt level 1
-   658 ;; This function uses a non-reentrant model
-   659 ;;
-   660                           psect	intentry
-   661                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   662                           	line	38
-   663                           	global	__size_of_InterReceiver
-   664  002E                     	__size_of_InterReceiver	equ	__end_of_InterReceiver-_InterReceiver
-   665                           	
-   666  0004                     _InterReceiver:	
-   667                           	opt	stack 13
-   668                           ; Regs used in _InterReceiver: [wreg+status,2+status,0+pclath+cstack]
-   669                           psect	intentry
-   670  0004  3180               	pagesel	$
-   671  0005  0020               	movlb 0	; select bank0
-   672  0006  087F               	movf	btemp+1,w
-   673  0007  00F8               	movwf	(??_InterReceiver+2)
-   674                           	line	47
-   675                           	
-   676  0008                     i1l2613:	
-   677                           ;onoff.c: 39: static char i = 0x30;
-   678                           ;onoff.c: 40: static int debug = 0;
-   679                           ;onoff.c: 47: if (RCIF == 1) {
-   680  0008  1E91               	btfss	(141/8),(141)&7
-   681  0009  280B               	goto	u1_21
-   682  000A  280C               	goto	u1_20
-   683  000B                     u1_21:
-   684  000B  282E               	goto	i1l1155
-   685  000C                     u1_20:
-   686                           	line	57
-   687                           	
-   688  000C                     i1l2615:	
-   689                           ;onoff.c: 57: debug = 1-debug;
-   690  000C  0979               	comf	(InterReceiver@debug),w
-   691  000D  00F6               	movwf	(??_InterReceiver+0)+0
-   692  000E  097A               	comf	(InterReceiver@debug+1),w
-   693  000F  00F7               	movwf	((??_InterReceiver+0)+0+1)
-   694  0010  0AF6               	incf	(??_InterReceiver+0)+0,f
-   695  0011  1903               	skipnz
-   696  0012  0AF7               	incf	((??_InterReceiver+0)+0+1),f
-   697  0013  0876               	movf	0+(??_InterReceiver+0)+0,w
-   698  0014  3E01               	addlw	low(01h)
-   699  0015  00F9               	movwf	(InterReceiver@debug)
-   700  0016  3000               	movlw	high(01h)
-   701  0017  3D77               	addwfc	1+(??_InterReceiver+0)+0,w
-   702  0018  00FA               	movwf	1+(InterReceiver@debug)
-   703                           	line	58
-   704                           	
-   705  0019                     i1l2617:	
-   706                           ;onoff.c: 58: Wait(500) ;
-   707  0019  30F4               	movlw	low(01F4h)
-   708  001A  00F0               	movwf	(?i1_Wait)
-   709  001B  3001               	movlw	high(01F4h)
-   710  001C  00F1               	movwf	((?i1_Wait))+1
-   711  001D  3180  207D  3180   	fcall	i1_Wait
-   712                           	line	59
-   713                           	
-   714  0020                     i1l2619:	
-   715                           ;onoff.c: 59: if(debug){
-   716  0020  087A               	movf	(InterReceiver@debug+1),w
-   717  0021  0479               	iorwf	(InterReceiver@debug),w
-   718  0022  1903               	skipnz
-   719  0023  2825               	goto	u2_21
-   720  0024  2826               	goto	u2_20
-   721  0025                     u2_21:
-   722  0025  282A               	goto	i1l1156
-   723  0026                     u2_20:
-   724                           	line	60
-   725                           	
-   726  0026                     i1l2621:	
-   727                           ;onoff.c: 60: RA2 = 1;
-   728  0026  0020               	movlb 0	; select bank0
-   729  0027  150C               	bsf	(98/8),(98)&7
-   730                           	line	61
-   731                           ;onoff.c: 61: RA1 = 1;
-   732  0028  148C               	bsf	(97/8),(97)&7
-   733                           	line	62
-   734                           ;onoff.c: 62: }
-   735  0029  282E               	goto	i1l1155
-   736                           	line	63
-   737                           	
-   738  002A                     i1l1156:	
-   739                           	line	65
-   740                           ;onoff.c: 63: else
-   741                           ;onoff.c: 64: {
-   742                           ;onoff.c: 65: RA2 = 0;
-   743  002A  0020               	movlb 0	; select bank0
-   744  002B  110C               	bcf	(98/8),(98)&7
-   745                           	line	66
-   746                           ;onoff.c: 66: RA1 = 0;
-   747  002C  108C               	bcf	(97/8),(97)&7
-   748  002D  282E               	goto	i1l1155
-   749                           	line	67
-   750                           	
-   751  002E                     i1l1157:	
-   752                           	line	68
-   753                           	
-   754  002E                     i1l1155:	
-   755                           	line	69
-   756                           ;onoff.c: 67: }
-   757                           ;onoff.c: 68: }
-   758                           ;onoff.c: 69: RCIF = 0;
-   759  002E  1291               	bcf	(141/8),(141)&7
-   760                           	line	70
-   761                           	
-   762  002F                     i1l1158:	
-   763  002F  0878               	movf	(??_InterReceiver+2),w
-   764  0030  00FF               	movwf	btemp+1
-   765  0031  0009               	retfie
-   766                           	opt stack 0
-   767                           GLOBAL	__end_of_InterReceiver
-   768  0032                     	__end_of_InterReceiver:
-   769 ;; =============== function _InterReceiver ends ============
-   770                           
-   771                           	signat	_InterReceiver,88
-   772                           	global	i1_Wait
-   773                           psect	text131,local,class=CODE,delta=2
-   774                           global __ptext131
-   775  007D                     __ptext131:
-   776                           
-   777 ;; *************** function i1_Wait *****************
-   778 ;; Defined at:
-   779 ;;		line 28 in file "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   780 ;; Parameters:    Size  Location     Type
-   781 ;;  Wait            2    0[COMMON] unsigned int 
-   782 ;; Auto vars:     Size  Location     Type
-   783 ;;  Wait            2    4[COMMON] int 
-   784 ;; Return value:  Size  Location     Type
-   785 ;;		None               void
-   786 ;; Registers used:
-   787 ;;		wreg, status,2
-   788 ;; Tracked objects:
-   789 ;;		On entry : 0/0
-   790 ;;		On exit  : 0/0
-   791 ;;		Unchanged: 0/0
-   792 ;; Data sizes:     COMMON   BANK0   BANK1
-   793 ;;      Params:         2       0       0
-   794 ;;      Locals:         2       0       0
-   795 ;;      Temps:          2       0       0
-   796 ;;      Totals:         6       0       0
-   797 ;;Total ram usage:        6 bytes
-   798 ;; Hardware stack levels used:    1
-   799 ;; This function calls:
-   800 ;;		Nothing
-   801 ;; This function is called by:
-   802 ;;		_InterReceiver
-   803 ;; This function uses a non-reentrant model
-   804 ;;
-   805                           psect	text131
-   806                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
-   807                           	line	28
-   808                           	global	__size_ofi1_Wait
-   809  001C                     	__size_ofi1_Wait	equ	__end_ofi1_Wait-i1_Wait
-   810                           	
-   811  007D                     i1_Wait:	
-   812                           	opt	stack 13
-   813                           ; Regs used in i1_Wait: [wreg+status,2]
-   814                           	line	32
-   815                           	
-   816  007D                     i1l3497:	
-   817                           ;onoff.c: 29: int i ;
-   818                           ;onoff.c: 32: for (i=0 ; i < num ; i++) {
-   819  007D  01F4               	clrf	(i1Wait@i)
-   820  007E  01F5               	clrf	(i1Wait@i+1)
-   821  007F  288D               	goto	i1l1145
-   822                           	
-   823  0080                     i1l1146:	
-   824                           	line	33
-   825                           	
-   826  0080                     i1l3499:	
-   827                           ;onoff.c: 33: _delay((unsigned long)((10)*(1000000/4000.0))) ;
-   828                           	opt asmopt_off
-   829  0080  3004               movlw	4
-   830  0081  00F3               movwf	((??i1_Wait+0)+0+1),f
-   831  0082  303D               	movlw	61
-   832  0083  00F2               movwf	((??i1_Wait+0)+0),f
-   833  0084                     u222_27:
-   834  0084  0BF2               	decfsz	((??i1_Wait+0)+0),f
-   835  0085  2884               	goto	u222_27
-   836  0086  0BF3               	decfsz	((??i1_Wait+0)+0+1),f
-   837  0087  2884               	goto	u222_27
-   838  0088  2889               	nop2
-   839                           opt asmopt_on
-   840                           
-   841                           	line	32
-   842  0089  3001               	movlw	low(01h)
-   843  008A  07F4               	addwf	(i1Wait@i),f
-   844  008B  3000               	movlw	high(01h)
-   845  008C  3DF5               	addwfc	(i1Wait@i+1),f
-   846                           	
-   847  008D                     i1l1145:	
-   848  008D  0871               	movf	(i1Wait@num+1),w
-   849  008E  0275               	subwf	(i1Wait@i+1),w
-   850  008F  1D03               	skipz
-   851  0090  2893               	goto	u218_25
-   852  0091  0870               	movf	(i1Wait@num),w
-   853  0092  0274               	subwf	(i1Wait@i),w
-   854  0093                     u218_25:
-   855  0093  1C03               	skipc
-   856  0094  2896               	goto	u218_21
-   857  0095  2897               	goto	u218_20
-   858  0096                     u218_21:
-   859  0096  2880               	goto	i1l3499
-   860  0097                     u218_20:
-   861  0097  2898               	goto	i1l1148
-   862                           	
-   863  0098                     i1l1147:	
-   864                           	line	35
-   865                           	
-   866  0098                     i1l1148:	
-   867  0098  0008               	return
-   868                           	opt stack 0
-   869                           GLOBAL	__end_ofi1_Wait
-   870  0099                     	__end_ofi1_Wait:
-   871 ;; =============== function i1_Wait ends ============
-   872                           
-   873                           	signat	i1_Wait,88
-   874                           psect	text132,local,class=CODE,delta=2
-   875                           global __ptext132
-   876  0000                     __ptext132:
-   877                           	global	btemp
-   878  007E                     	btemp set 07Eh
-   879                           
-   880                           	DABS	1,126,2	;btemp
-   881                           	global	wtemp0
-   882  007E                     	wtemp0 set btemp
+   453  07C2                     l3538:	
+   454                           ;onoff.c: 61: RxData = RCREG;
+   455  07C2  0819               	movf	(409)^0180h,w	;volatile
+   456  07C3  00F3               	movwf	(??_main+0)+0
+   457  07C4  0873               	movf	(??_main+0)+0,w
+   458  07C5  00F4               	movwf	(main@RxData)
+   459                           	line	62
+   460                           ;onoff.c: 62: continue;
+   461  07C6  2FB6               	goto	l1150
+   462                           	line	63
+   463                           	
+   464  07C7                     l1153:	
+   465                           	line	64
+   466                           	
+   467  07C7                     l3540:	
+   468                           ;onoff.c: 63: }
+   469                           ;onoff.c: 64: RxData = RCREG;
+   470  07C7  0819               	movf	(409)^0180h,w	;volatile
+   471  07C8  00F3               	movwf	(??_main+0)+0
+   472  07C9  0873               	movf	(??_main+0)+0,w
+   473  07CA  00F4               	movwf	(main@RxData)
+   474                           	line	65
+   475                           ;onoff.c: 65: while(TXIF==0);
+   476  07CB  2FCC               	goto	l1155
+   477                           	
+   478  07CC                     l1156:	
+   479                           	
+   480  07CC                     l1155:	
+   481  07CC  0020               	movlb 0	; select bank0
+   482  07CD  1E11               	btfss	(140/8),(140)&7
+   483  07CE  2FD0               	goto	u2181
+   484  07CF  2FD1               	goto	u2180
+   485  07D0                     u2181:
+   486  07D0  2FCC               	goto	l1155
+   487  07D1                     u2180:
+   488  07D1  2FD2               	goto	l3542
+   489                           	
+   490  07D2                     l1157:	
+   491                           	line	66
+   492                           	
+   493  07D2                     l3542:	
+   494                           ;onoff.c: 66: TXREG = RxData;
+   495  07D2  0874               	movf	(main@RxData),w
+   496  07D3  0023               	movlb 3	; select bank3
+   497  07D4  009A               	movwf	(410)^0180h	;volatile
+   498                           	line	67
+   499                           ;onoff.c: 67: switch(RxData){
+   500  07D5  2FEF               	goto	l3556
+   501                           	line	68
+   502                           ;onoff.c: 68: case '1':FlashLED(1);break;
+   503                           	
+   504  07D6                     l1159:	
+   505                           	
+   506  07D6                     l3544:	
+   507  07D6  3001               	movlw	(01h)
+   508  07D7  3187  2748  3187   	fcall	_FlashLED
+   509  07DA  2FB6               	goto	l1150
+   510                           	line	69
+   511                           ;onoff.c: 69: case '2':FlashLED(2);break;
+   512                           	
+   513  07DB                     l1161:	
+   514                           	
+   515  07DB                     l3546:	
+   516  07DB  3002               	movlw	(02h)
+   517  07DC  3187  2748  3187   	fcall	_FlashLED
+   518  07DF  2FB6               	goto	l1150
+   519                           	line	70
+   520                           ;onoff.c: 70: case '3':FlashLED(3);break;
+   521                           	
+   522  07E0                     l1162:	
+   523                           	
+   524  07E0                     l3548:	
+   525  07E0  3003               	movlw	(03h)
+   526  07E1  3187  2748  3187   	fcall	_FlashLED
+   527  07E4  2FB6               	goto	l1150
+   528                           	line	71
+   529                           ;onoff.c: 71: case '4':FlashLED(4);break;
+   530                           	
+   531  07E5                     l1163:	
+   532                           	
+   533  07E5                     l3550:	
+   534  07E5  3004               	movlw	(04h)
+   535  07E6  3187  2748  3187   	fcall	_FlashLED
+   536  07E9  2FB6               	goto	l1150
+   537                           	line	72
+   538                           ;onoff.c: 72: default :ErrorInd() ;break;
+   539                           	
+   540  07EA                     l1164:	
+   541                           	
+   542  07EA                     l3552:	
+   543  07EA  3187  276B  3187   	fcall	_ErrorInd
+   544  07ED  2FB6               	goto	l1150
+   545                           	line	73
+   546                           	
+   547  07EE                     l3554:	
+   548                           ;onoff.c: 73: }
+   549  07EE  2FB6               	goto	l1150
+   550                           	line	67
+   551                           	
+   552  07EF                     l1158:	
+   553                           	
+   554  07EF                     l3556:	
+   555  07EF  0874               	movf	(main@RxData),w
+   556                           	; Switch size 1, requested type "space"
+   557                           ; Number of cases is 4, Range of values is 49 to 52
+   558                           ; switch strategies available:
+   559                           ; Name         Instructions Cycles
+   560                           ; simple_byte           13     7 (average)
+   561                           ; direct_byte           17     9 (fixed)
+   562                           ; jumptable            263     9 (fixed)
+   563                           ;	Chosen strategy is simple_byte
+   564                           
+   565                           	opt asmopt_off
+   566  07F0  3A31               	xorlw	49^0	; case 49
+   567  07F1  1903               	skipnz
+   568  07F2  2FD6               	goto	l3544
+   569  07F3  3A03               	xorlw	50^49	; case 50
+   570  07F4  1903               	skipnz
+   571  07F5  2FDB               	goto	l3546
+   572  07F6  3A01               	xorlw	51^50	; case 51
+   573  07F7  1903               	skipnz
+   574  07F8  2FE0               	goto	l3548
+   575  07F9  3A07               	xorlw	52^51	; case 52
+   576  07FA  1903               	skipnz
+   577  07FB  2FE5               	goto	l3550
+   578  07FC  2FEA               	goto	l3552
+   579                           	opt asmopt_on
+   580                           
+   581                           	line	73
+   582                           	
+   583  07FD                     l1160:	
+   584  07FD  2FB6               	goto	l1150
+   585                           	line	74
+   586                           	
+   587  07FE                     l1154:	
+   588                           	line	56
+   589  07FE  2FB6               	goto	l1150
+   590                           	
+   591  07FF                     l1165:	
+   592                           	line	75
+   593                           	
+   594  07FF                     l1166:	
+   595                           	global	start
+   596  07FF  2801               	ljmp	start
+   597                           	opt stack 0
+   598                           GLOBAL	__end_of_main
+   599  0800                     	__end_of_main:
+   600 ;; =============== function _main ends ============
+   601                           
+   602                           	signat	_main,88
+   603                           	global	_ErrorInd
+   604                           psect	text89,local,class=CODE,delta=2
+   605                           global __ptext89
+   606  076B                     __ptext89:
+   607                           
+   608 ;; *************** function _ErrorInd *****************
+   609 ;; Defined at:
+   610 ;;		line 84 in file "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
+   611 ;; Parameters:    Size  Location     Type
+   612 ;;		None
+   613 ;; Auto vars:     Size  Location     Type
+   614 ;;		None
+   615 ;; Return value:  Size  Location     Type
+   616 ;;		None               void
+   617 ;; Registers used:
+   618 ;;		wreg
+   619 ;; Tracked objects:
+   620 ;;		On entry : 0/0
+   621 ;;		On exit  : 0/0
+   622 ;;		Unchanged: 0/0
+   623 ;; Data sizes:     COMMON   BANK0   BANK1
+   624 ;;      Params:         0       0       0
+   625 ;;      Locals:         0       0       0
+   626 ;;      Temps:          2       0       0
+   627 ;;      Totals:         2       0       0
+   628 ;;Total ram usage:        2 bytes
+   629 ;; Hardware stack levels used:    1
+   630 ;; This function calls:
+   631 ;;		Nothing
+   632 ;; This function is called by:
+   633 ;;		_main
+   634 ;; This function uses a non-reentrant model
+   635 ;;
+   636                           psect	text89
+   637                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
+   638                           	line	84
+   639                           	global	__size_of_ErrorInd
+   640  002D                     	__size_of_ErrorInd	equ	__end_of_ErrorInd-_ErrorInd
+   641                           	
+   642  076B                     _ErrorInd:	
+   643                           	opt	stack 15
+   644                           ; Regs used in _ErrorInd: [wreg]
+   645                           	line	85
+   646                           	
+   647  076B                     l3502:	
+   648                           ;onoff.c: 85: LATA2 = 1; _delay((unsigned long)((50)*(1000000/4000.0)));
+   649  076B  0022               	movlb 2	; select bank2
+   650  076C  150C               	bsf	(2146/8)^0100h,(2146)&7
+   651                           	
+   652  076D                     l3504:	
+   653                           	opt asmopt_off
+   654  076D  3011               movlw	17
+   655  076E  00F1               movwf	((??_ErrorInd+0)+0+1),f
+   656  076F  303A               	movlw	58
+   657  0770  00F0               movwf	((??_ErrorInd+0)+0),f
+   658  0771                     u2197:
+   659  0771  0BF0               	decfsz	((??_ErrorInd+0)+0),f
+   660  0772  2F71               	goto	u2197
+   661  0773  0BF1               	decfsz	((??_ErrorInd+0)+0+1),f
+   662  0774  2F71               	goto	u2197
+   663  0775  0064               	clrwdt
+   664                           opt asmopt_on
+   665                           
+   666                           	line	86
+   667                           	
+   668  0776                     l3506:	
+   669                           ;onoff.c: 86: LATA2 = 0; _delay((unsigned long)((50)*(1000000/4000.0)));
+   670  0776  0022               	movlb 2	; select bank2
+   671  0777  110C               	bcf	(2146/8)^0100h,(2146)&7
+   672                           	opt asmopt_off
+   673  0778  3011               movlw	17
+   674  0779  00F1               movwf	((??_ErrorInd+0)+0+1),f
+   675  077A  303A               	movlw	58
+   676  077B  00F0               movwf	((??_ErrorInd+0)+0),f
+   677  077C                     u2207:
+   678  077C  0BF0               	decfsz	((??_ErrorInd+0)+0),f
+   679  077D  2F7C               	goto	u2207
+   680  077E  0BF1               	decfsz	((??_ErrorInd+0)+0+1),f
+   681  077F  2F7C               	goto	u2207
+   682  0780  0064               	clrwdt
+   683                           opt asmopt_on
+   684                           
+   685                           	line	87
+   686                           	
+   687  0781                     l3508:	
+   688                           ;onoff.c: 87: LATA2 = 1; _delay((unsigned long)((50)*(1000000/4000.0)));
+   689  0781  0022               	movlb 2	; select bank2
+   690  0782  150C               	bsf	(2146/8)^0100h,(2146)&7
+   691                           	opt asmopt_off
+   692  0783  3011               movlw	17
+   693  0784  00F1               movwf	((??_ErrorInd+0)+0+1),f
+   694  0785  303A               	movlw	58
+   695  0786  00F0               movwf	((??_ErrorInd+0)+0),f
+   696  0787                     u2217:
+   697  0787  0BF0               	decfsz	((??_ErrorInd+0)+0),f
+   698  0788  2F87               	goto	u2217
+   699  0789  0BF1               	decfsz	((??_ErrorInd+0)+0+1),f
+   700  078A  2F87               	goto	u2217
+   701  078B  0064               	clrwdt
+   702                           opt asmopt_on
+   703                           
+   704                           	line	88
+   705                           	
+   706  078C                     l3510:	
+   707                           ;onoff.c: 88: LATA2 = 0; _delay((unsigned long)((50)*(1000000/4000.0)));
+   708  078C  0022               	movlb 2	; select bank2
+   709  078D  110C               	bcf	(2146/8)^0100h,(2146)&7
+   710                           	opt asmopt_off
+   711  078E  3011               movlw	17
+   712  078F  00F1               movwf	((??_ErrorInd+0)+0+1),f
+   713  0790  303A               	movlw	58
+   714  0791  00F0               movwf	((??_ErrorInd+0)+0),f
+   715  0792                     u2227:
+   716  0792  0BF0               	decfsz	((??_ErrorInd+0)+0),f
+   717  0793  2F92               	goto	u2227
+   718  0794  0BF1               	decfsz	((??_ErrorInd+0)+0+1),f
+   719  0795  2F92               	goto	u2227
+   720  0796  0064               	clrwdt
+   721                           opt asmopt_on
+   722                           
+   723                           	line	89
+   724                           	
+   725  0797                     l1175:	
+   726  0797  0008               	return
+   727                           	opt stack 0
+   728                           GLOBAL	__end_of_ErrorInd
+   729  0798                     	__end_of_ErrorInd:
+   730 ;; =============== function _ErrorInd ends ============
+   731                           
+   732                           	signat	_ErrorInd,88
+   733                           	global	_FlashLED
+   734                           psect	text90,local,class=CODE,delta=2
+   735                           global __ptext90
+   736  0748                     __ptext90:
+   737                           
+   738 ;; *************** function _FlashLED *****************
+   739 ;; Defined at:
+   740 ;;		line 77 in file "C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
+   741 ;; Parameters:    Size  Location     Type
+   742 ;;  i               1    wreg     unsigned char 
+   743 ;; Auto vars:     Size  Location     Type
+   744 ;;  i               1    2[COMMON] unsigned char 
+   745 ;; Return value:  Size  Location     Type
+   746 ;;		None               void
+   747 ;; Registers used:
+   748 ;;		wreg, status,2, status,0
+   749 ;; Tracked objects:
+   750 ;;		On entry : 0/0
+   751 ;;		On exit  : 0/0
+   752 ;;		Unchanged: 0/0
+   753 ;; Data sizes:     COMMON   BANK0   BANK1
+   754 ;;      Params:         0       0       0
+   755 ;;      Locals:         1       0       0
+   756 ;;      Temps:          2       0       0
+   757 ;;      Totals:         3       0       0
+   758 ;;Total ram usage:        3 bytes
+   759 ;; Hardware stack levels used:    1
+   760 ;; This function calls:
+   761 ;;		Nothing
+   762 ;; This function is called by:
+   763 ;;		_main
+   764 ;; This function uses a non-reentrant model
+   765 ;;
+   766                           psect	text90
+   767                           	file	"C:\Users\igalab\Documents\ONOFF_12V\ONOFF_12V\onoff.c"
+   768                           	line	77
+   769                           	global	__size_of_FlashLED
+   770  0023                     	__size_of_FlashLED	equ	__end_of_FlashLED-_FlashLED
+   771                           	
+   772  0748                     _FlashLED:	
+   773                           	opt	stack 15
+   774                           ; Regs used in _FlashLED: [wreg+status,2+status,0]
+   775                           ;FlashLED@i stored from wreg
+   776  0748  00F2               	movwf	(FlashLED@i)
+   777                           	line	78
+   778                           	
+   779  0749                     l3494:	
+   780                           ;onoff.c: 78: while(i--){
+   781  0749  2F61               	goto	l3500
+   782                           	
+   783  074A                     l1170:	
+   784                           	line	79
+   785                           ;onoff.c: 79: LATA2 = 1; _delay((unsigned long)((250)*(1000000/4000.0)));
+   786  074A  0022               	movlb 2	; select bank2
+   787  074B  150C               	bsf	(2146/8)^0100h,(2146)&7
+   788                           	
+   789  074C                     l3496:	
+   790                           	opt asmopt_off
+   791  074C  3052               movlw	82
+   792  074D  00F1               movwf	((??_FlashLED+0)+0+1),f
+   793  074E  3029               	movlw	41
+   794  074F  00F0               movwf	((??_FlashLED+0)+0),f
+   795  0750                     u2237:
+   796  0750  0BF0               	decfsz	((??_FlashLED+0)+0),f
+   797  0751  2F50               	goto	u2237
+   798  0752  0BF1               	decfsz	((??_FlashLED+0)+0+1),f
+   799  0753  2F50               	goto	u2237
+   800  0754  2F55               	nop2
+   801                           opt asmopt_on
+   802                           
+   803                           	line	80
+   804                           	
+   805  0755                     l3498:	
+   806                           ;onoff.c: 80: LATA2 = 0; _delay((unsigned long)((250)*(1000000/4000.0)));
+   807  0755  0022               	movlb 2	; select bank2
+   808  0756  110C               	bcf	(2146/8)^0100h,(2146)&7
+   809                           	opt asmopt_off
+   810  0757  3052               movlw	82
+   811  0758  00F1               movwf	((??_FlashLED+0)+0+1),f
+   812  0759  3029               	movlw	41
+   813  075A  00F0               movwf	((??_FlashLED+0)+0),f
+   814  075B                     u2247:
+   815  075B  0BF0               	decfsz	((??_FlashLED+0)+0),f
+   816  075C  2F5B               	goto	u2247
+   817  075D  0BF1               	decfsz	((??_FlashLED+0)+0+1),f
+   818  075E  2F5B               	goto	u2247
+   819  075F  2F60               	nop2
+   820                           opt asmopt_on
+   821                           
+   822  0760  2F61               	goto	l3500
+   823                           	line	81
+   824                           	
+   825  0761                     l1169:	
+   826                           	line	78
+   827                           	
+   828  0761                     l3500:	
+   829  0761  3001               	movlw	low(01h)
+   830  0762  02F2               	subwf	(FlashLED@i),f
+   831  0763  0872               	movf	((FlashLED@i)),w
+   832  0764  3AFF               	xorlw	0FFh&0ffh
+   833  0765  1D03               	skipz
+   834  0766  2F68               	goto	u2151
+   835  0767  2F69               	goto	u2150
+   836  0768                     u2151:
+   837  0768  2F4A               	goto	l1170
+   838  0769                     u2150:
+   839  0769  2F6A               	goto	l1172
+   840                           	
+   841  076A                     l1171:	
+   842                           	line	82
+   843                           	
+   844  076A                     l1172:	
+   845  076A  0008               	return
+   846                           	opt stack 0
+   847                           GLOBAL	__end_of_FlashLED
+   848  076B                     	__end_of_FlashLED:
+   849 ;; =============== function _FlashLED ends ============
+   850                           
+   851                           	signat	_FlashLED,4216
+   852                           psect	text91,local,class=CODE,delta=2
+   853                           global __ptext91
+   854  0000                     __ptext91:
+   855                           	global	btemp
+   856  007E                     	btemp set 07Eh
+   857                           
+   858                           	DABS	1,126,2	;btemp
+   859                           	global	wtemp0
+   860  007E                     	wtemp0 set btemp
 
 
 HI-TECH Software PICC Macro Assembler V9.83 build 10920 
-Symbol Table                                                                                   Thu Nov 09 20:20:52 2017
+Symbol Table                                                                                   Fri Nov 17 19:46:24 2017
 
-                    _RD 0CA8                      _WR 0CA9                     _GIE 005F                     _RA1 0061  
-                   _RA2 0062                    l1145 0071                    l1161 005D                    l1146 0063  
-                  l1162 005D                    l1147 007C                    l1163 005E                    l1148 007C  
-                  l1164 005E                    l3541 0037                    l3535 005F                    l3551 0043  
-                  l3543 0039                    l3537 0063                    l3561 004D                    l3553 0045  
-                  l3545 003E                    l3563 004E                    l3555 0047                    l3547 0040  
-                  l3539 0034                    l3565 004F                    l3557 0049                    l3549 0041  
-                  l3567 0057                    l3559 004B                    u2200 007B                    u2201 007A  
-                  u2205 0077                    u2217 0067                    _PEIE 005E                    _RCIE 048D  
-                  _RCIF 008D                    _WREN 0CAA                    u1_20 000C                    u1_21 000B  
-                  u2_20 0026                    u2_21 0025                    _Wait 005F                    _main 0034  
-                  btemp 007E                    start 0032                   ?_Wait 0020                   ?_main 0070  
-                 _EEADR 0191                   _BRG16 0CFB                   _CARRY 0018                   _RCSTA 019D  
-                 _SPBRG 019B                   _PORTA 000C                   _TRISA 008C                   _TXSTA 019E  
-                 Wait@i 0024                   main@i 0027                   wtemp0 007E  __size_of_InterReceiver 002E  
-          __end_of_Wait 007D            __end_of_main 005F                  ??_Wait 0022                  ??_main 0026  
-                _EEDATA 0193                  _EECON1 0195                  _EECON2 0196                  _ANSELA 018C  
-                i1l1145 008D                  i1l1146 0080                  i1l1147 0098                  i1l1155 002E  
-                i1l1148 0098                  i1l1156 002A                  i1l1157 002E                  i1l1158 002F  
-                i1l2621 0026                  i1l2613 0008                  i1l2615 000C                  i1l2617 0019  
-                i1l2619 0020                  i1l3497 007D                  i1l3499 0080                  u222_27 0084  
-                u218_20 0097                  u218_21 0096                  u218_25 0093                  _OSCCON 0099  
-                i1_Wait 007D           _InterReceiver 0004            __pdataCOMMON 007B          __pcstackCOMMON 0070  
-        ?_InterReceiver 0070                 ?i1_Wait 0070              __pmaintext 0034              __pintentry 0004  
-               i1Wait@i 0074                 _RXDTSEL 08EF                 _TXCKSEL 08EA         __size_ofi1_Wait 001C  
-               Wait@num 0020         ??_InterReceiver 0076          InterReceiver@i 007B    end_of_initialization 009F  
-             i1Wait@num 0070          __end_ofi1_Wait 0099           __pidataCOMMON 00A1     start_initialization 0099  
-              ??i1_Wait 0072             __pbssCOMMON 0079           __pcstackBANK0 0020               __ptext131 007D  
-             __ptext132 0000               __ptext129 005F   __end_of_InterReceiver 0032      InterReceiver@debug 0079  
-         __size_of_Wait 001E           __size_of_main 002B                intlevel1 0000  
+                  _RD 0CA8                    _WR 0CA9                   _GIE 005F                  l1150 07B6  
+                l1151 07B6                  l1160 07FD                  l1152 07BB                  l1161 07DB  
+                l1153 07C7                  l1170 074A                  l1154 07FE                  l1162 07E0  
+                l1171 076A                  l1163 07E5                  l1155 07CC                  l1172 076A  
+                l1164 07EA                  l1156 07CC                  l1165 07FF                  l1157 07D2  
+                l1149 07B5                  l1166 07FF                  l1158 07EF                  l1175 0797  
+                l1159 07D6                  l1169 0761                  l3500 0761                  l3510 078C  
+                l3502 076B                  l3504 076D                  l3520 07A0                  l3512 0798  
+                l3506 0776                  l3530 07AF                  l3522 07A5                  l3514 079B  
+                l3508 0781                  l3540 07C7                  l3532 07B1                  l3524 07A8  
+                l3516 079D                  l3550 07E5                  l3542 07D2                  l3534 07B2  
+                l3526 07AA                  l3518 079F                  l3552 07EA                  l3544 07D6  
+                l3536 07C0                  l3528 07AD                  l3554 07EE                  l3546 07DB  
+                l3538 07C2                  l3548 07E0                  l3556 07EF                  l3494 0749  
+                l3496 074C                  l3498 0755                  u2150 0769                  u2151 0768  
+                u2207 077C                  u2160 07BB                  u2217 0787                  u2161 07BA  
+                u2170 07C0                  u2227 0792                  u2171 07BF                  u2180 07D1  
+                u2237 0750                  u2181 07D0                  u2247 075B                  u2197 0771  
+                _RCIF 008D                  _WREN 0CAA                  _TXIF 008C                  _WPUA 020C  
+                _main 0798                  btemp 007E                  start 0001                 ?_main 0070  
+               _EEADR 0191                 _BRG16 0CFB                 _CARRY 0018                 _LATA2 0862  
+               _RCREG 0199                 _RCSTA 019D                 _SPBRG 019B                 _PORTA 000C  
+               _TRISA 008C                 _TXREG 019A                 _TXSTA 019E                 wtemp0 007E  
+    __end_of_FlashLED 076B          __end_of_main 0800      __end_of_ErrorInd 0798                ??_main 0073  
+              _EEDATA 0193                _EECON1 0195                _EECON2 0196                _ANSELA 018C  
+              _OSCCON 0099                _nWPUEN 04AF        __pcstackCOMMON 0070             ?_FlashLED 0070  
+           ?_ErrorInd 0070            __pmaintext 0798               _BAUDCON 019F            ??_FlashLED 0070  
+             _RXDTSEL 08EF               _TXCKSEL 08EA            ??_ErrorInd 0070  end_of_initialization 0746  
+           _RCSTAbits 019D             FlashLED@i 0072            main@RxData 0074   start_initialization 0746  
+   __size_of_FlashLED 0023     __size_of_ErrorInd 002D              _FlashLED 0748              _ErrorInd 076B  
+            __ptext90 0748              __ptext91 0000              __ptext88 0000              __ptext89 076B  
+       __size_of_main 0068  
